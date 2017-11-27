@@ -76,9 +76,9 @@
         "address": [
           {
             "streetAddress": "3262 CEDAR AVE",
-            "otherDesignation": "MADISON",
-            "city": "CO",
-            "stateOrProvince": "98082"
+            "city": "MADISON",
+            "stateOrProvince": "CO",
+            "zip": "98082"
           }
         ],
         "countyCode": "98082",
@@ -144,7 +144,7 @@
             "livingWillCode": "I",
             "organDonorCode": "F",
             "separateBill": "Y",
-            "universalServiceID": {
+            "publicityIndicator": {
               "id": "O"
             },
             "protectionIndicator": "Y"
@@ -167,9 +167,9 @@
         "address": [
           {
             "streetAddress": "2212 JUNIPER DR",
-            "otherDesignation": "MADISON",
-            "city": "CO",
-            "stateOrProvince": "93292"
+            "city": "MADISON",
+            "stateOrProvince": "CO",
+            "zip": "93292"
           }
         ],
         "phone": [
@@ -442,9 +442,9 @@
         "guarantorAddress": [
           {
             "streetAddress": "2212 JUNIPER DR",
-            "otherDesignation": "MADISON",
-            "city": "CO",
-            "stateOrProvince": "93292"
+            "city": "MADISON",
+            "stateOrProvince": "CO",
+            "zip": "93292"
           }
         ],
         "guarantorPhNumHome": [
@@ -514,9 +514,9 @@
         "companyAddress": [
           {
             "streetAddress": "5259 JUNIPER TER",
-            "otherDesignation": "MADISON",
-            "city": "PA",
-            "stateOrProvince": "98846"
+            "city": "MADISON",
+            "stateOrProvince": "PA",
+            "zip": "98846"
           }
         ],
         "companyPhoneNumber": [
@@ -545,7 +545,7 @@
           "authorizationNumber": "A15401823424"
         },
         "planType": "HDHP",
-        "companyContactPerson": [
+        "insuredName": [
           {
             "lastName": "HANEY",
             "firstName": "LOGAN",
@@ -557,9 +557,9 @@
         "insuredAddress": [
           {
             "streetAddress": "3262 CEDAR AVE",
-            "otherDesignation": "MADISON",
-            "city": "CO",
-            "stateOrProvince": "98082"
+            "city": "MADISON",
+            "stateOrProvince": "CO",
+            "zip": "98082"
           }
         ],
         "assignmentOfBenefits": "Y",
@@ -583,9 +583,9 @@
         "insuredEmployerAddress": [
           {
             "streetAddress": "3322 ASH DR",
-            "otherDesignation": "MADISON",
-            "city": "AL",
-            "stateOrProvince": "99278"
+            "city": "MADISON",
+            "stateOrProvince": "AL",
+            "zip": "99278"
           }
         ],
         "priorInsurancePlanId": "V56750706",

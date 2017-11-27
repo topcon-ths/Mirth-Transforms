@@ -71,9 +71,9 @@
         "address": [
           {
             "streetAddress": "271 CEDAR AVE",
-            "otherDesignation": "MADISON",
-            "city": "NE",
-            "stateOrProvince": "93063"
+            "city": "MADISON",
+            "stateOrProvince": "NE",
+            "zip": "93063"
           }
         ],
         "countyCode": "93063",
@@ -139,7 +139,7 @@
             "livingWillCode": "U",
             "organDonorCode": "Y",
             "separateBill": "Y",
-            "universalServiceID": {
+            "publicityIndicator": {
               "id": "N"
             },
             "protectionIndicator": "N"
@@ -299,9 +299,9 @@
         "companyAddress": [
           {
             "streetAddress": "9821 WALNUT LN",
-            "otherDesignation": "MADISON",
-            "city": "MA",
-            "stateOrProvince": "93470"
+            "city": "MADISON",
+            "stateOrProvince": "MA",
+            "zip": "93470"
           }
         ],
         "companyPhoneNumber": [
@@ -330,7 +330,7 @@
           "authorizationNumber": "A96427349095"
         },
         "planType": "MCD",
-        "companyContactPerson": [
+        "insuredName": [
           {
             "lastName": "WILCOX",
             "firstName": "SARAH",
@@ -342,9 +342,9 @@
         "insuredAddress": [
           {
             "streetAddress": "271 CEDAR AVE",
-            "otherDesignation": "MADISON",
-            "city": "NE",
-            "stateOrProvince": "93063"
+            "city": "MADISON",
+            "stateOrProvince": "NE",
+            "zip": "93063"
           }
         ],
         "assignmentOfBenefits": "N",
@@ -368,9 +368,9 @@
         "insuredEmployerAddress": [
           {
             "streetAddress": "8929 WALNUT CT",
-            "otherDesignation": "MADISON",
-            "city": "CT",
-            "stateOrProvince": "99083"
+            "city": "MADISON",
+            "stateOrProvince": "CT",
+            "zip": "99083"
           }
         ],
         "priorInsurancePlanId": "X32277845",

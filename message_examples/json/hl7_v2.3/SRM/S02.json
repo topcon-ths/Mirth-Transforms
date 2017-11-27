@@ -59,9 +59,9 @@
       ],
       "placerContactAddress": {
         "streetAddress": "6689 HAWTHORN DR",
-        "otherDesignation": "MADISON",
-        "city": "IA",
-        "stateOrProvince": "90575"
+        "city": "MADISON",
+        "stateOrProvince": "IA",
+        "zip": "90575"
       },
       "personnelResourceId": {
         "pointOfCare": "XXPOC",
@@ -135,9 +135,9 @@
         "address": [
           {
             "streetAddress": "7466 MAPLE WAY",
-            "otherDesignation": "MADISON",
-            "city": "OR",
-            "stateOrProvince": "98575"
+            "city": "MADISON",
+            "stateOrProvince": "OR",
+            "zip": "98575"
           }
         ],
         "countyCode": "98575",

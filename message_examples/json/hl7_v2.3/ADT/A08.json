@@ -76,9 +76,9 @@
         "address": [
           {
             "streetAddress": "8745 ASH AVE",
-            "otherDesignation": "MADISON",
-            "city": "AK",
-            "stateOrProvince": "94698"
+            "city": "MADISON",
+            "stateOrProvince": "AK",
+            "zip": "94698"
           }
         ],
         "countyCode": "94698",
@@ -144,7 +144,7 @@
             "livingWillCode": "Y",
             "organDonorCode": "I",
             "separateBill": "N",
-            "universalServiceID": {
+            "publicityIndicator": {
               "id": "U"
             },
             "protectionIndicator": "N"
@@ -167,9 +167,9 @@
         "address": [
           {
             "streetAddress": "5339 BIRCH DR",
-            "otherDesignation": "MADISON",
-            "city": "NY",
-            "stateOrProvince": "90583"
+            "city": "MADISON",
+            "stateOrProvince": "NY",
+            "zip": "90583"
           }
         ],
         "phone": [
@@ -254,9 +254,9 @@
           {
             "id": "81229878",
             "lastName": "CANTRELL",
-            "firstName": "MADISON",
-            "middleInitOrName": "R",
-            "prefix": "NP"
+            "middleInitOrName": "MADISON",
+            "suffix": "R",
+            "degree": "NP"
           }
         ],
         "referringDoctor": [
@@ -441,9 +441,9 @@
         "guarantorAddress": [
           {
             "streetAddress": "5339 BIRCH DR",
-            "otherDesignation": "MADISON",
-            "city": "NY",
-            "stateOrProvince": "90583"
+            "city": "MADISON",
+            "stateOrProvince": "NY",
+            "zip": "90583"
           }
         ],
         "guarantorPhNumHome": [
@@ -513,9 +513,9 @@
         "companyAddress": [
           {
             "streetAddress": "3896 MAPLE WAY",
-            "otherDesignation": "MADISON",
-            "city": "TX",
-            "stateOrProvince": "95689"
+            "city": "MADISON",
+            "stateOrProvince": "TX",
+            "zip": "95689"
           }
         ],
         "companyPhoneNumber": [
@@ -544,7 +544,7 @@
           "authorizationNumber": "A32072155113"
         },
         "planType": "PPO",
-        "companyContactPerson": [
+        "insuredName": [
           {
             "lastName": "WEST",
             "firstName": "KYLE",
@@ -556,9 +556,9 @@
         "insuredAddress": [
           {
             "streetAddress": "8745 ASH AVE",
-            "otherDesignation": "MADISON",
-            "city": "AK",
-            "stateOrProvince": "94698"
+            "city": "MADISON",
+            "stateOrProvince": "AK",
+            "zip": "94698"
           }
         ],
         "assignmentOfBenefits": "N",
@@ -582,9 +582,9 @@
         "insuredEmployerAddress": [
           {
             "streetAddress": "1874 CEDAR TER",
-            "otherDesignation": "MADISON",
-            "city": "AR",
-            "stateOrProvince": "94238"
+            "city": "MADISON",
+            "stateOrProvince": "AR",
+            "zip": "94238"
           }
         ],
         "priorInsurancePlanId": "D16293266",

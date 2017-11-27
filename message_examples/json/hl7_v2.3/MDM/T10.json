@@ -76,9 +76,9 @@
         "address": [
           {
             "streetAddress": "6796 HAWTHORN WAY",
-            "otherDesignation": "MADISON",
-            "city": "CT",
-            "stateOrProvince": "95080"
+            "city": "MADISON",
+            "stateOrProvince": "CT",
+            "zip": "95080"
           }
         ],
         "countyCode": "95080",

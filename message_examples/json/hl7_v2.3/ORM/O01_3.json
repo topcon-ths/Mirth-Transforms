@@ -71,9 +71,9 @@
         "address": [
           {
             "streetAddress": "2130 MAPLE WAY",
-            "otherDesignation": "MADISON",
-            "city": "MN",
-            "stateOrProvince": "91130"
+            "city": "MADISON",
+            "stateOrProvince": "MN",
+            "zip": "91130"
           }
         ],
         "countyCode": "91130",
@@ -139,7 +139,7 @@
             "livingWillCode": "N",
             "organDonorCode": "Y",
             "separateBill": "Y",
-            "universalServiceID": {
+            "publicityIndicator": {
               "id": "N"
             },
             "protectionIndicator": "Y"
@@ -299,9 +299,9 @@
         "companyAddress": [
           {
             "streetAddress": "1748 ASH TER",
-            "otherDesignation": "MADISON",
-            "city": "HI",
-            "stateOrProvince": "93493"
+            "city": "MADISON",
+            "stateOrProvince": "HI",
+            "zip": "93493"
           }
         ],
         "companyPhoneNumber": [
@@ -331,7 +331,7 @@
           "authorizationNumber": "A80856480804"
         },
         "planType": "EPO",
-        "companyContactPerson": [
+        "insuredName": [
           {
             "lastName": "MELENDEZ",
             "firstName": "JULIE",
@@ -343,9 +343,9 @@
         "insuredAddress": [
           {
             "streetAddress": "2130 MAPLE WAY",
-            "otherDesignation": "MADISON",
-            "city": "MN",
-            "stateOrProvince": "91130"
+            "city": "MADISON",
+            "stateOrProvince": "MN",
+            "zip": "91130"
           }
         ],
         "assignmentOfBenefits": "Y",
@@ -369,9 +369,9 @@
         "insuredEmployerAddress": [
           {
             "streetAddress": "6401 MAPLE DR",
-            "otherDesignation": "MADISON",
-            "city": "NM",
-            "stateOrProvince": "90206"
+            "city": "MADISON",
+            "stateOrProvince": "NM",
+            "zip": "90206"
           }
         ],
         "priorInsurancePlanId": "A79887607",
@@ -486,9 +486,9 @@
         "guarantorAddress": [
           {
             "streetAddress": "7812 ASH WAY",
-            "otherDesignation": "MADISON",
-            "city": "ND",
-            "stateOrProvince": "95404"
+            "city": "MADISON",
+            "stateOrProvince": "ND",
+            "zip": "95404"
           }
         ],
         "guarantorPhNumHome": [
