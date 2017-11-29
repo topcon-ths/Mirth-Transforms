@@ -62,9 +62,9 @@
         "address": [
           {
             "streetAddress": "405 ASH LN",
-            "otherDesignation": "MADISON",
-            "city": "CO",
-            "stateOrProvince": "97194"
+            "city": "MADISON",
+            "stateOrProvince": "CO",
+            "zip": "97194"
           }
         ],
         "countyCode": "97194",
@@ -130,7 +130,7 @@
             "livingWillCode": "N",
             "organDonorCode": "Y",
             "separateBill": "Y",
-            "universalServiceID": {
+            "publicityIndicator": {
               "id": "N"
             },
             "protectionIndicator": "N"

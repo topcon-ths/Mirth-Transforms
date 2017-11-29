@@ -59,9 +59,9 @@
       },
       "placerContactAddress": {
         "streetAddress": "9767 ELM LN",
-        "otherDesignation": "MADISON",
-        "city": "NC",
-        "stateOrProvince": "99258"
+        "city": "MADISON",
+        "stateOrProvince": "NC",
+        "zip": "99258"
       },
       "placerContactLocation": {
         "pointOfCare": "XXPOC",
@@ -81,9 +81,9 @@
       },
       "fillerContactAddress": {
         "streetAddress": "2126 ELM TER",
-        "otherDesignation": "MADISON",
-        "city": "NH",
-        "stateOrProvince": "93493"
+        "city": "MADISON",
+        "stateOrProvince": "NH",
+        "zip": "93493"
       },
       "fillerContactLocation": {
         "pointOfCare": "XXPOC",
@@ -162,9 +162,9 @@
         "address": [
           {
             "streetAddress": "6188 HAWTHORN LN",
-            "otherDesignation": "MADISON",
-            "city": "UT",
-            "stateOrProvince": "99767"
+            "city": "MADISON",
+            "stateOrProvince": "UT",
+            "zip": "99767"
           }
         ],
         "countyCode": "99767",

@@ -76,9 +76,9 @@
         "address": [
           {
             "streetAddress": "7389 CEDAR WAY",
-            "otherDesignation": "MADISON",
-            "city": "MA",
-            "stateOrProvince": "96749"
+            "city": "MADISON",
+            "stateOrProvince": "MA",
+            "zip": "96749"
           }
         ],
         "countyCode": "96749",
@@ -144,7 +144,7 @@
             "livingWillCode": "Y",
             "organDonorCode": "Y",
             "separateBill": "N",
-            "universalServiceID": {
+            "publicityIndicator": {
               "id": "N"
             },
             "protectionIndicator": "N"
@@ -167,9 +167,9 @@
         "address": [
           {
             "streetAddress": "1920 ELM AVE",
-            "otherDesignation": "MADISON",
-            "city": "IA",
-            "stateOrProvince": "91590"
+            "city": "MADISON",
+            "stateOrProvince": "IA",
+            "zip": "91590"
           }
         ],
         "phone": [
@@ -440,9 +440,9 @@
         "guarantorAddress": [
           {
             "streetAddress": "1920 ELM AVE",
-            "otherDesignation": "MADISON",
-            "city": "IA",
-            "stateOrProvince": "91590"
+            "city": "MADISON",
+            "stateOrProvince": "IA",
+            "zip": "91590"
           }
         ],
         "guarantorPhNumHome": [
@@ -512,9 +512,9 @@
         "companyAddress": [
           {
             "streetAddress": "3275 JUNIPER CT",
-            "otherDesignation": "MADISON",
-            "city": "PA",
-            "stateOrProvince": "96972"
+            "city": "MADISON",
+            "stateOrProvince": "PA",
+            "zip": "96972"
           }
         ],
         "companyPhoneNumber": [
@@ -543,7 +543,7 @@
           "authorizationNumber": "A39689888469"
         },
         "planType": "EPO",
-        "companyContactPerson": [
+        "insuredName": [
           {
             "lastName": "SMALL",
             "firstName": "ANTHONY",
@@ -555,9 +555,9 @@
         "insuredAddress": [
           {
             "streetAddress": "7389 CEDAR WAY",
-            "otherDesignation": "MADISON",
-            "city": "MA",
-            "stateOrProvince": "96749"
+            "city": "MADISON",
+            "stateOrProvince": "MA",
+            "zip": "96749"
           }
         ],
         "assignmentOfBenefits": "N",
@@ -581,9 +581,9 @@
         "insuredEmployerAddress": [
           {
             "streetAddress": "1870 WALNUT CT",
-            "otherDesignation": "MADISON",
-            "city": "IN",
-            "stateOrProvince": "92546"
+            "city": "MADISON",
+            "stateOrProvince": "IN",
+            "zip": "92546"
           }
         ],
         "priorInsurancePlanId": "S98880525",

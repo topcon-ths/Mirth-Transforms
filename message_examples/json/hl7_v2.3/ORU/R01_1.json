@@ -62,9 +62,9 @@
         "address": [
           {
             "streetAddress": "1505 CEDAR TER",
-            "otherDesignation": "MADISON",
-            "city": "WY",
-            "stateOrProvince": "90992"
+            "city": "MADISON",
+            "stateOrProvince": "WY",
+            "zip": "90992"
           }
         ],
         "countyCode": "90992",
@@ -130,7 +130,7 @@
             "livingWillCode": "I",
             "organDonorCode": "F",
             "separateBill": "N",
-            "universalServiceID": {
+            "publicityIndicator": {
               "id": "U"
             },
             "protectionIndicator": "Y"

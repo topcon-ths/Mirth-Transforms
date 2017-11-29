@@ -62,9 +62,9 @@
         "address": [
           {
             "streetAddress": "9481 ELM DR",
-            "otherDesignation": "MADISON",
-            "city": "GA",
-            "stateOrProvince": "94159"
+            "city": "MADISON",
+            "stateOrProvince": "GA",
+            "zip": "94159"
           }
         ],
         "countyCode": "94159",
@@ -130,7 +130,7 @@
             "livingWillCode": "I",
             "organDonorCode": "Y",
             "separateBill": "N",
-            "universalServiceID": {
+            "publicityIndicator": {
               "id": "U"
             },
             "protectionIndicator": "N"

@@ -59,9 +59,9 @@
       },
       "placerContactAddress": {
         "streetAddress": "4731 OAK AVE",
-        "otherDesignation": "MADISON",
-        "city": "VT",
-        "stateOrProvince": "93894"
+        "city": "MADISON",
+        "stateOrProvince": "VT",
+        "zip": "93894"
       },
       "placerContactLocation": {
         "pointOfCare": "XXPOC",
@@ -81,9 +81,9 @@
       },
       "fillerContactAddress": {
         "streetAddress": "7015 OAK AVE",
-        "otherDesignation": "MADISON",
-        "city": "NY",
-        "stateOrProvince": "90984"
+        "city": "MADISON",
+        "stateOrProvince": "NY",
+        "zip": "90984"
       },
       "fillerContactLocation": {
         "pointOfCare": "XXPOC",
@@ -162,9 +162,9 @@
         "address": [
           {
             "streetAddress": "256 ASH CT",
-            "otherDesignation": "MADISON",
-            "city": "AZ",
-            "stateOrProvince": "92726"
+            "city": "MADISON",
+            "stateOrProvince": "AZ",
+            "zip": "92726"
           }
         ],
         "countyCode": "92726",

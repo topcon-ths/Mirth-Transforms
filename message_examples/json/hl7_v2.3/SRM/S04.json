@@ -59,9 +59,9 @@
       ],
       "placerContactAddress": {
         "streetAddress": "6559 HAWTHORN TER",
-        "otherDesignation": "MADISON",
-        "city": "NY",
-        "stateOrProvince": "90061"
+        "city": "MADISON",
+        "stateOrProvince": "NY",
+        "zip": "90061"
       },
       "personnelResourceId": {
         "pointOfCare": "XXPOC",
@@ -135,9 +135,9 @@
         "address": [
           {
             "streetAddress": "7137 WALNUT LN",
-            "otherDesignation": "MADISON",
-            "city": "NM",
-            "stateOrProvince": "95869"
+            "city": "MADISON",
+            "stateOrProvince": "NM",
+            "zip": "95869"
           }
         ],
         "countyCode": "95869",

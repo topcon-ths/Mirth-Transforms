@@ -71,9 +71,9 @@
         "address": [
           {
             "streetAddress": "9510 CEDAR TER",
-            "otherDesignation": "MADISON",
-            "city": "NE",
-            "stateOrProvince": "91131"
+            "city": "MADISON",
+            "stateOrProvince": "NE",
+            "zip": "91131"
           }
         ],
         "countyCode": "91131",
@@ -139,7 +139,7 @@
             "livingWillCode": "N",
             "organDonorCode": "I",
             "separateBill": "Y",
-            "universalServiceID": {
+            "publicityIndicator": {
               "id": "U"
             },
             "protectionIndicator": "N"
@@ -299,9 +299,9 @@
         "companyAddress": [
           {
             "streetAddress": "7120 ELM DR",
-            "otherDesignation": "MADISON",
-            "city": "WV",
-            "stateOrProvince": "93352"
+            "city": "MADISON",
+            "stateOrProvince": "WV",
+            "zip": "93352"
           }
         ],
         "companyPhoneNumber": [
@@ -330,7 +330,7 @@
           "authorizationNumber": "A6208701877"
         },
         "planType": "HDHP",
-        "companyContactPerson": [
+        "insuredName": [
           {
             "lastName": "ORTEGA",
             "firstName": "ALICE",
@@ -342,9 +342,9 @@
         "insuredAddress": [
           {
             "streetAddress": "9510 CEDAR TER",
-            "otherDesignation": "MADISON",
-            "city": "NE",
-            "stateOrProvince": "91131"
+            "city": "MADISON",
+            "stateOrProvince": "NE",
+            "zip": "91131"
           }
         ],
         "assignmentOfBenefits": "Y",
@@ -368,9 +368,9 @@
         "insuredEmployerAddress": [
           {
             "streetAddress": "7577 HAWTHORN CT",
-            "otherDesignation": "MADISON",
-            "city": "HI",
-            "stateOrProvince": "93827"
+            "city": "MADISON",
+            "stateOrProvince": "HI",
+            "zip": "93827"
           }
         ],
         "priorInsurancePlanId": "T34209608",
@@ -485,9 +485,9 @@
         "guarantorAddress": [
           {
             "streetAddress": "2785 ASH WAY",
-            "otherDesignation": "MADISON",
-            "city": "OR",
-            "stateOrProvince": "94722"
+            "city": "MADISON",
+            "stateOrProvince": "OR",
+            "zip": "94722"
           }
         ],
         "guarantorPhNumHome": [

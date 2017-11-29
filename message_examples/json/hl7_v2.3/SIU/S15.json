@@ -59,9 +59,9 @@
       },
       "placerContactAddress": {
         "streetAddress": "7333 HAWTHORN LN",
-        "otherDesignation": "MADISON",
-        "city": "VA",
-        "stateOrProvince": "97352"
+        "city": "MADISON",
+        "stateOrProvince": "VA",
+        "zip": "97352"
       },
       "placerContactLocation": {
         "pointOfCare": "XXPOC",
@@ -81,9 +81,9 @@
       },
       "fillerContactAddress": {
         "streetAddress": "3895 ELM WAY",
-        "otherDesignation": "MADISON",
-        "city": "NM",
-        "stateOrProvince": "92185"
+        "city": "MADISON",
+        "stateOrProvince": "NM",
+        "zip": "92185"
       },
       "fillerContactLocation": {
         "pointOfCare": "XXPOC",
@@ -162,9 +162,9 @@
         "address": [
           {
             "streetAddress": "5838 HAWTHORN LN",
-            "otherDesignation": "MADISON",
-            "city": "CO",
-            "stateOrProvince": "98484"
+            "city": "MADISON",
+            "stateOrProvince": "CO",
+            "zip": "98484"
           }
         ],
         "countyCode": "98484",

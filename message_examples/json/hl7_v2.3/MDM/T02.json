@@ -76,9 +76,9 @@
         "address": [
           {
             "streetAddress": "9193 WALNUT DR",
-            "otherDesignation": "MADISON",
-            "city": "NJ",
-            "stateOrProvince": "91764"
+            "city": "MADISON",
+            "stateOrProvince": "NJ",
+            "zip": "91764"
           }
         ],
         "countyCode": "91764",

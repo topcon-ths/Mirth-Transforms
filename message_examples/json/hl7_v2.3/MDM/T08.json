@@ -76,9 +76,9 @@
         "address": [
           {
             "streetAddress": "8713 WALNUT WAY",
-            "otherDesignation": "MADISON",
-            "city": "AK",
-            "stateOrProvince": "95936"
+            "city": "MADISON",
+            "stateOrProvince": "AK",
+            "zip": "95936"
           }
         ],
         "countyCode": "95936",

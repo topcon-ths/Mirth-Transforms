@@ -56,9 +56,9 @@
       ],
       "placerContactAddress": {
         "streetAddress": "6163 BIRCH CT",
-        "otherDesignation": "MADISON",
-        "city": "MA",
-        "stateOrProvince": "93160"
+        "city": "MADISON",
+        "stateOrProvince": "MA",
+        "zip": "93160"
       },
       "personnelResourceId": {
         "pointOfCare": "XXPOC",
@@ -132,9 +132,9 @@
         "address": [
           {
             "streetAddress": "8888 JUNIPER WAY",
-            "otherDesignation": "MADISON",
-            "city": "MT",
-            "stateOrProvince": "94595"
+            "city": "MADISON",
+            "stateOrProvince": "MT",
+            "zip": "94595"
           }
         ],
         "countyCode": "94595",

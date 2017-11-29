@@ -43,10 +43,10 @@ ORU^R01 - Observation Message
 ORM^O01 - Order Message</description>
   <enabled>true</enabled>
   <lastModified>
-    <time>1509551162476</time>
-    <timezone>America/Chicago</timezone>
+    <time>1510954743699</time>
+    <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>34</revision>
+  <revision>37</revision>
   <sourceConnector version="3.4.1">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
@@ -258,7 +258,7 @@ function PID(patient){
 	patient.sex + &quot;|&quot; + //sex
 	patient.name.alias + &quot;|&quot; + //alias
 	patient.race + &quot;|&quot; + //race
-	patient.address.street+&quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+patient.address.state+&quot;^&quot;+patient.address.zip + &quot;|&quot; + //address
+	patient.address.street+&quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+patient.address.state+&quot;^&quot;+patient.address.zip + &quot;|&quot; + //address
 	patient.address.zip + &quot;|&quot; + //county code
 	patient.phone.home + &quot;|&quot; + //home phone
 	patient.phone.work + &quot;|&quot; + //business phone
@@ -330,7 +330,7 @@ function NK1(rel){ //requires a relative
 	var nk1 = &quot;NK1|1|&quot; +
 			rel.name.last+&quot;^&quot;+rel.name.first + &quot;|&quot;+ //name
 			rel.relationship+&quot;|&quot; + //relationship
-			rel.address.street+&quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+rel.address.state+&quot;^&quot;+rel.address.zip + &quot;|&quot; + //address
+			rel.address.street+&quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+rel.address.state+&quot;^&quot;+rel.address.zip + &quot;|&quot; + //address
 			rel.phone.home + &quot;|&quot; + //home phone
 			rel.phone.work + &quot;|&quot; + //business phone
 			&quot;N|&quot; + //contact role = next of kin
@@ -491,11 +491,11 @@ function SCH(eventType,appt){//* need to square up statuses with event type
 	&quot;|&quot;+ //appointment timing quantity
 	appt.placer.id.external+&quot;^&quot;+appt.placer.name.last+&quot;^&quot;+appt.placer.name.first+&quot;|&quot;+ //placer contact person
 	appt.placer.phone.home+&quot;|&quot;+ //placer contact phone number
-	appt.placer.address.street+&quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+appt.placer.address.state+&quot;^&quot;+appt.placer.address.zip + &quot;|&quot; + //placer contact address
+	appt.placer.address.street+&quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+appt.placer.address.state+&quot;^&quot;+appt.placer.address.zip + &quot;|&quot; + //placer contact address
 	patientLocation(&quot;E&quot;)+&quot;|&quot;+ //placer contact location
 	appt.filler.id.external+&quot;^&quot;+appt.filler.name.last+&quot;^&quot;+appt.filler.name.first+&quot;|&quot;+ //filler contact person
 	appt.filler.phone.home+&quot;|&quot;+ //placer contact phone number
-	appt.filler.address.street+&quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+appt.filler.address.state+&quot;^&quot;+appt.filler.address.zip + &quot;|&quot; + //placer contact address
+	appt.filler.address.street+&quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+appt.filler.address.state+&quot;^&quot;+appt.filler.address.zip + &quot;|&quot; + //placer contact address
 	patientLocation(&quot;F&quot;)+&quot;|&quot;+ //placer contact location
 	appt.placer.id.external+&quot;^&quot;+appt.placer.name.last+&quot;^&quot;+appt.placer.name.first+&quot;|&quot;+ //entered by person
 	appt.placer.phone.home+&quot;|&quot;+ //entered by phone number
@@ -632,7 +632,7 @@ function ARQ(eventType,appt){
 	&quot;|&quot;+//repeating interval duration
 	appt.placer.id.external+&quot;^&quot;+appt.placer.name.last+&quot;^&quot;+appt.placer.name.first+&quot;|&quot;+ //placer contact person
 	appt.placer.phone.home+&quot;|&quot;+ //placer contact phone number
-	appt.placer.address.street+&quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+appt.placer.address.state+&quot;^&quot;+appt.placer.address.zip + &quot;|&quot; + //placer contact address
+	appt.placer.address.street+&quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+appt.placer.address.state+&quot;^&quot;+appt.placer.address.zip + &quot;|&quot; + //placer contact address
 	patientLocation(&quot;E&quot;)+&quot;|&quot;+ //placer contact location
 	appt.placer.id.external+&quot;^&quot;+appt.placer.name.last+&quot;^&quot;+appt.placer.name.first+&quot;|&quot;+ //entered by person
 	appt.placer.phone.home+&quot;|&quot;+ //entered by phone number
@@ -815,7 +815,7 @@ function GT1(rel){//going to use a relative here, same as NK1
 	rel.id.external+&quot;|&quot; + //Guarantor Number
 	rel.name.last+&quot;^&quot;+rel.name.first+&quot;^&quot;+rel.name.initial+&quot;|&quot; + //Guarantor Name
 	&quot;|&quot; + //Guarantor Spouse Name
-	rel.address.street+&quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+rel.address.state+&quot;^&quot;+rel.address.zip + &quot;|&quot; + //address
+	rel.address.street+&quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+rel.address.state+&quot;^&quot;+rel.address.zip + &quot;|&quot; + //address
 	rel.phone.home + &quot;|&quot; + //home phone
 	rel.phone.work + &quot;|&quot; + //business phone
 	rel.dob+&quot;|&quot; + //Guarantor Date/Time of Birth
@@ -888,7 +888,7 @@ function IN1(ins){
 	ins.planId+&quot;|&quot; + //Insurance Plan ID
 	ins.company.id+&quot;|&quot; + //Insurance Company ID
 	ins.company.name+&quot;|&quot; + //Insurance Company Name
-	ins.company.address.street + &quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+ins.company.address.state+&quot;^&quot;+ins.company.address.zip+&quot;|&quot; + //Insurance Company Address
+	ins.company.address.street + &quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+ins.company.address.state+&quot;^&quot;+ins.company.address.zip+&quot;|&quot; + //Insurance Company Address
 	ins.company.contactPerson+&quot;|&quot; + //Insurance Co. Contact Ppers
 	ins.company.contactPhone+&quot;|&quot; + //Insurance Co Phone Number
 	ins.groupNumber+&quot;|&quot; + //Group Number
@@ -902,7 +902,7 @@ function IN1(ins){
 	ins.insured.name.last + &quot;^&quot; + ins.insured.name.first+&quot;^&quot;+ins.insured.name.initial+&quot;|&quot; + //Name of Insured
 	&quot;SELF|&quot; + //Insured&apos;s Relationship to Patient
 	ins.insured.dob+&quot;|&quot; + //Insured&apos;s Date of Birth
-	ins.insured.address.street + &quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+ins.insured.address.state+&quot;^&quot;+ins.insured.address.zip+&quot;|&quot; + //Insured&apos;s Address
+	ins.insured.address.street + &quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+ins.insured.address.state+&quot;^&quot;+ins.insured.address.zip+&quot;|&quot; + //Insured&apos;s Address
 	valFromList([&quot;Y&quot;,&quot;N&quot;,&quot;M&quot;])+&quot;|&quot; + //Assignment of Benefits
 	valFromList([&quot;CO&quot;,&quot;IN&quot;])+&quot;|&quot; + //Coordination of Benefits
 	&quot;1|&quot; + //Coord of Ben. Priority
@@ -927,7 +927,7 @@ function IN1(ins){
 	&quot;|&quot; + //Room Rate - Private
 	ins.insured.jobStatus+&quot;|&quot; + //Insured&apos;s Employment Status
 	ins.insured.sex+&quot;|&quot; + //Insured&apos;s Sex
-	ins.insured.employer.address.street + &quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+ins.insured.employer.address.state+&quot;^&quot;+ins.insured.employer.address.zip+&quot;|&quot; + //Insured&apos;s Employer Address
+	ins.insured.employer.address.street + &quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+ins.insured.employer.address.state+&quot;^&quot;+ins.insured.employer.address.zip+&quot;|&quot; + //Insured&apos;s Employer Address
 	&quot;|&quot; + //Verification Status
 	ins.priorPlanId+&quot;|&quot; + //Prior Insurance Plan ID
 	ins.coverageType+&quot;|&quot; + //Coverage Type
@@ -2170,7 +2170,7 @@ function PID(patient){
 	patient.sex + &quot;|&quot; + //sex
 	patient.name.alias + &quot;|&quot; + //alias
 	patient.race + &quot;|&quot; + //race
-	patient.address.street+&quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+patient.address.state+&quot;^&quot;+patient.address.zip + &quot;|&quot; + //address
+	patient.address.street+&quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+patient.address.state+&quot;^&quot;+patient.address.zip + &quot;|&quot; + //address
 	patient.address.zip + &quot;|&quot; + //county code
 	patient.phone.home + &quot;|&quot; + //home phone
 	patient.phone.work + &quot;|&quot; + //business phone
@@ -2242,7 +2242,7 @@ function NK1(rel){ //requires a relative
 	var nk1 = &quot;NK1|1|&quot; +
 			rel.name.last+&quot;^&quot;+rel.name.first + &quot;|&quot;+ //name
 			rel.relationship+&quot;|&quot; + //relationship
-			rel.address.street+&quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+rel.address.state+&quot;^&quot;+rel.address.zip + &quot;|&quot; + //address
+			rel.address.street+&quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+rel.address.state+&quot;^&quot;+rel.address.zip + &quot;|&quot; + //address
 			rel.phone.home + &quot;|&quot; + //home phone
 			rel.phone.work + &quot;|&quot; + //business phone
 			&quot;N|&quot; + //contact role = next of kin
@@ -2403,11 +2403,11 @@ function SCH(eventType,appt){//* need to square up statuses with event type
 	&quot;|&quot;+ //appointment timing quantity
 	appt.placer.id.external+&quot;^&quot;+appt.placer.name.last+&quot;^&quot;+appt.placer.name.first+&quot;|&quot;+ //placer contact person
 	appt.placer.phone.home+&quot;|&quot;+ //placer contact phone number
-	appt.placer.address.street+&quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+appt.placer.address.state+&quot;^&quot;+appt.placer.address.zip + &quot;|&quot; + //placer contact address
+	appt.placer.address.street+&quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+appt.placer.address.state+&quot;^&quot;+appt.placer.address.zip + &quot;|&quot; + //placer contact address
 	patientLocation(&quot;E&quot;)+&quot;|&quot;+ //placer contact location
 	appt.filler.id.external+&quot;^&quot;+appt.filler.name.last+&quot;^&quot;+appt.filler.name.first+&quot;|&quot;+ //filler contact person
 	appt.filler.phone.home+&quot;|&quot;+ //placer contact phone number
-	appt.filler.address.street+&quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+appt.filler.address.state+&quot;^&quot;+appt.filler.address.zip + &quot;|&quot; + //placer contact address
+	appt.filler.address.street+&quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+appt.filler.address.state+&quot;^&quot;+appt.filler.address.zip + &quot;|&quot; + //placer contact address
 	patientLocation(&quot;F&quot;)+&quot;|&quot;+ //placer contact location
 	appt.placer.id.external+&quot;^&quot;+appt.placer.name.last+&quot;^&quot;+appt.placer.name.first+&quot;|&quot;+ //entered by person
 	appt.placer.phone.home+&quot;|&quot;+ //entered by phone number
@@ -2544,7 +2544,7 @@ function ARQ(eventType,appt){
 	&quot;|&quot;+//repeating interval duration
 	appt.placer.id.external+&quot;^&quot;+appt.placer.name.last+&quot;^&quot;+appt.placer.name.first+&quot;|&quot;+ //placer contact person
 	appt.placer.phone.home+&quot;|&quot;+ //placer contact phone number
-	appt.placer.address.street+&quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+appt.placer.address.state+&quot;^&quot;+appt.placer.address.zip + &quot;|&quot; + //placer contact address
+	appt.placer.address.street+&quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+appt.placer.address.state+&quot;^&quot;+appt.placer.address.zip + &quot;|&quot; + //placer contact address
 	patientLocation(&quot;E&quot;)+&quot;|&quot;+ //placer contact location
 	appt.placer.id.external+&quot;^&quot;+appt.placer.name.last+&quot;^&quot;+appt.placer.name.first+&quot;|&quot;+ //entered by person
 	appt.placer.phone.home+&quot;|&quot;+ //entered by phone number
@@ -2727,7 +2727,7 @@ function GT1(rel){//going to use a relative here, same as NK1
 	rel.id.external+&quot;|&quot; + //Guarantor Number
 	rel.name.last+&quot;^&quot;+rel.name.first+&quot;^&quot;+rel.name.initial+&quot;|&quot; + //Guarantor Name
 	&quot;|&quot; + //Guarantor Spouse Name
-	rel.address.street+&quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+rel.address.state+&quot;^&quot;+rel.address.zip + &quot;|&quot; + //address
+	rel.address.street+&quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+rel.address.state+&quot;^&quot;+rel.address.zip + &quot;|&quot; + //address
 	rel.phone.home + &quot;|&quot; + //home phone
 	rel.phone.work + &quot;|&quot; + //business phone
 	rel.dob+&quot;|&quot; + //Guarantor Date/Time of Birth
@@ -2800,7 +2800,7 @@ function IN1(ins){
 	ins.planId+&quot;|&quot; + //Insurance Plan ID
 	ins.company.id+&quot;|&quot; + //Insurance Company ID
 	ins.company.name+&quot;|&quot; + //Insurance Company Name
-	ins.company.address.street + &quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+ins.company.address.state+&quot;^&quot;+ins.company.address.zip+&quot;|&quot; + //Insurance Company Address
+	ins.company.address.street + &quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+ins.company.address.state+&quot;^&quot;+ins.company.address.zip+&quot;|&quot; + //Insurance Company Address
 	ins.company.contactPerson+&quot;|&quot; + //Insurance Co. Contact Ppers
 	ins.company.contactPhone+&quot;|&quot; + //Insurance Co Phone Number
 	ins.groupNumber+&quot;|&quot; + //Group Number
@@ -2814,7 +2814,7 @@ function IN1(ins){
 	ins.insured.name.last + &quot;^&quot; + ins.insured.name.first+&quot;^&quot;+ins.insured.name.initial+&quot;|&quot; + //Name of Insured
 	&quot;SELF|&quot; + //Insured&apos;s Relationship to Patient
 	ins.insured.dob+&quot;|&quot; + //Insured&apos;s Date of Birth
-	ins.insured.address.street + &quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+ins.insured.address.state+&quot;^&quot;+ins.insured.address.zip+&quot;|&quot; + //Insured&apos;s Address
+	ins.insured.address.street + &quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+ins.insured.address.state+&quot;^&quot;+ins.insured.address.zip+&quot;|&quot; + //Insured&apos;s Address
 	valFromList([&quot;Y&quot;,&quot;N&quot;,&quot;M&quot;])+&quot;|&quot; + //Assignment of Benefits
 	valFromList([&quot;CO&quot;,&quot;IN&quot;])+&quot;|&quot; + //Coordination of Benefits
 	&quot;1|&quot; + //Coord of Ben. Priority
@@ -2839,7 +2839,7 @@ function IN1(ins){
 	&quot;|&quot; + //Room Rate - Private
 	ins.insured.jobStatus+&quot;|&quot; + //Insured&apos;s Employment Status
 	ins.insured.sex+&quot;|&quot; + //Insured&apos;s Sex
-	ins.insured.employer.address.street + &quot;^&quot;+&quot;MADISON&quot;+&quot;^&quot;+ins.insured.employer.address.state+&quot;^&quot;+ins.insured.employer.address.zip+&quot;|&quot; + //Insured&apos;s Employer Address
+	ins.insured.employer.address.street + &quot;^^&quot;+&quot;MADISON&quot;+&quot;^&quot;+ins.insured.employer.address.state+&quot;^&quot;+ins.insured.employer.address.zip+&quot;|&quot; + //Insured&apos;s Employer Address
 	&quot;|&quot; + //Verification Status
 	ins.priorPlanId+&quot;|&quot; + //Prior Insurance Plan ID
 	ins.coverageType+&quot;|&quot; + //Coverage Type
@@ -4085,836 +4085,6 @@ return;</undeployScript>
   </properties>
   <codeTemplateLibraries>
     <codeTemplateLibrary version="3.4.1">
-      <id>6d0c6485-4269-4b9d-a467-ef993795bead</id>
-      <name>CCD Parser Functions</name>
-      <revision>23</revision>
-      <lastModified>
-        <time>1509462347995</time>
-        <timezone>America/New_York</timezone>
-      </lastModified>
-      <description>Added by Rick; used in the CCD parser to reduce amount of replicated code</description>
-      <includeNewChannels>true</includeNewChannels>
-      <enabledChannelIds>
-        <string>46214349-f697-4c7b-8d26-44fd409efc53</string>
-        <string>8b69b2e3-4cb0-40f9-93e4-b56c33ba112d</string>
-        <string>03fbd8a8-0215-47fb-8077-bdfea025f8be</string>
-        <string>e7c2be6b-fba1-4fa6-8960-0fe4e997b5bd</string>
-        <string>abf6afe4-de93-44e8-b59c-1c967d045b38</string>
-        <string>9966294e-7c31-4f52-9d2f-2fd705e583a9</string>
-        <string>e00c4162-2e90-440a-8e99-1543a0d8472d</string>
-        <string>0fa23c6d-b057-44bc-a4b3-f4019fea0c5e</string>
-        <string>7a7a1307-a695-490f-9755-46ada428c159</string>
-        <string>9901adbe-50a3-431f-8b18-b93375093c6f</string>
-        <string>4108bf57-50de-4347-8719-64f582334aa0</string>
-        <string>3c90fc7c-1aa1-4381-83a1-116e3e6bdd61</string>
-        <string>638e0505-abd0-405d-8422-8b6e0e84e238</string>
-        <string>9ff5bb6e-6c76-4b3a-9e87-033a11dad4f6</string>
-        <string>a7091b52-5045-47d3-84ae-e5a6579e2943</string>
-        <string>aa0e5130-6ffd-4960-a1f4-a9cefd1af050</string>
-        <string>3511e706-3d3c-4174-a65f-0905688e9f22</string>
-        <string>9977e3d2-2184-4e4f-8815-f9b42830dd51</string>
-        <string>2edfb44b-d53e-43c0-9cee-dfb8c5d28c80</string>
-        <string>d4999fca-ca91-46f8-b6f5-c292dc987b18</string>
-        <string>8f7a81c6-ab97-4335-b731-f3d2c715cada</string>
-        <string>b1e2fe6b-4991-40ff-a9f4-4ce5abed0109</string>
-        <string>6c07f763-a93a-47ae-a1d8-2580fc0f5ccc</string>
-        <string>c8f5ba67-7d41-4abf-b4f5-dd122b441f36</string>
-        <string>053386c8-3182-4620-bc1b-9d3974d34be8</string>
-        <string>2dcc02c1-0e50-44e2-aa63-46b5bbb6d31c</string>
-        <string>cbf805bc-e6ee-49e7-845c-59aa24926fdd</string>
-        <string>698bc4ea-c9c7-4af3-9cbc-0ae9f27665bd</string>
-        <string>20ebe877-0a55-4589-8daa-bbc66f8c1746</string>
-        <string>104680bd-a293-4edc-a33a-ecfeec069da5</string>
-        <string>782cfee5-4ca6-49c3-ae7f-dd76a5e4df48</string>
-        <string>d0b3a0e3-01ff-4ce5-a4a7-748c7413e51f</string>
-        <string>dce6c65a-511c-4d06-909e-6e9553281842</string>
-        <string>993fe87c-697f-4259-b59f-ebd7e3913ac8</string>
-        <string>424319ec-4d06-44ae-b395-b0e0e3c161e5</string>
-        <string>640344b6-2d0e-4858-bd43-ef58d9329f75</string>
-        <string>ca365ea6-ed99-40e5-8d62-a97a1ce5e39d</string>
-        <string>b9e4ec1b-3666-4a7c-a6e5-d44bf4acb58b</string>
-        <string>d51e8dea-3e2a-49d4-9475-21db46ed1559</string>
-        <string>c67da354-57e3-401f-b684-2190b92335ac</string>
-        <string>423968eb-01ad-465f-891a-250444e65d13</string>
-        <string>e8667ddb-063e-48cf-a163-f2d50944296b</string>
-        <string>fc6b053f-f078-477d-b317-e55aa12e8d1a</string>
-        <string>0a73e2f2-ef41-4e08-afde-3f0a445106eb</string>
-        <string>e340c788-a921-4bab-92d9-ff8e0a640575</string>
-        <string>b340b685-f8f8-4df2-a03e-82efe8d9afcf</string>
-        <string>14fd925a-eaab-457c-9d8b-18803350fb1a</string>
-        <string>ae2cac45-d0d6-404f-9530-3fc44e2369cc</string>
-        <string>86e7b454-162a-4a1f-8fc5-411a5a13c719</string>
-        <string>f19cd2f0-ffcf-4004-b23c-0553ab70b87e</string>
-        <string>a8454dfe-aa8e-469f-a5bc-fe30fd3d3033</string>
-        <string>fd282052-cae0-4b01-9f4a-2a68f8d4fd8a</string>
-        <string>cadedffd-7184-4c62-9ed9-5cf36ccb32b8</string>
-        <string>98d6cd83-c049-44d8-ad48-1c44d95ce6f2</string>
-        <string>fc7fa005-2346-4dc2-9fb2-faaa090c556f</string>
-        <string>af777014-3696-4fad-8f98-293e7d65a90c</string>
-        <string>17f3958e-1207-47ba-aab9-5aab3ef15476</string>
-        <string>1045246c-704d-445d-8733-86aa16205994</string>
-        <string>0d6774d6-8663-4513-8a78-fea5ebe69bbc</string>
-        <string>b56f9561-3659-4e4d-a03c-723b2daf9f49</string>
-        <string>2a032710-3d63-450a-b0bf-c0099bb29aab</string>
-        <string>1cb576e1-6c80-457b-a7d7-9406113157a3</string>
-        <string>98f83c38-c1c4-47ed-ba61-67033814b02c</string>
-        <string>4bf5438f-232a-487a-9581-c796f605654d</string>
-        <string>1f7adc36-6fa0-47f3-9228-d55c8a988ac0</string>
-        <string>5c88d795-4958-4147-b151-b84111a83d89</string>
-        <string>f4d63228-33f4-4815-bbb2-8adbc29f0aee</string>
-        <string>749d6b73-ced6-4638-a7ad-4049c811a35c</string>
-        <string>fd4d78dd-a65d-47a1-9bcf-816445cdb1ae</string>
-        <string>412610bb-4ac3-4229-8929-f7969018a9dd</string>
-        <string>d94f8c71-b05b-4446-813d-be17058a6480</string>
-        <string>a48610e7-1f18-467b-bb69-b3ac5c2b8c04</string>
-        <string>2a852e27-e54c-4181-af04-2450fde45ad6</string>
-        <string>a6bb0a27-6db8-4218-9478-a1600bae3a7b</string>
-        <string>ab1f0813-77a3-4b4e-90be-a472e999a047</string>
-        <string>07b13575-8803-4340-92e8-40bc9f160fc8</string>
-        <string>4dcf348b-f385-4889-8e10-580092be907f</string>
-        <string>6f4013b1-cbc4-412b-9984-2204fe7746da</string>
-        <string>201f789f-5c38-450b-97a8-4da54ba5e164</string>
-        <string>30573bec-3215-4dc8-becb-091ab5485be0</string>
-        <string>55de7d91-8e2e-473b-9ca1-09aa47254a75</string>
-        <string>add3dd62-61ff-4c63-a4a5-59b97c22c830</string>
-        <string>ce9ebf65-8647-46bb-83aa-f1acb687c877</string>
-        <string>8c5fe265-98c6-4995-9238-6a62dec9e188</string>
-      </enabledChannelIds>
-      <disabledChannelIds>
-        <string>d455ea23-9aa7-4b59-8fd7-8370a4f27ca6</string>
-        <string>3a0d6cc3-aa81-405f-9030-9e6f1aaede1e</string>
-        <string>7fa5ee0f-5da8-4460-b9b9-9ad791096261</string>
-        <string>52e9904e-a3ec-44fa-ae8a-d660a6e10a42</string>
-        <string>6a028098-984c-4f83-8c2c-f4a8ef723fa4</string>
-        <string>4c14f245-2cd7-4e51-9401-6a941fa948f5</string>
-        <string>2e588a16-27ef-4a60-b2e9-9226184e4c38</string>
-        <string>647fa65c-d0bb-4f32-a1f6-b218136ebdb8</string>
-        <string>27b614a4-fbd6-41bc-b37f-d9454a0b73eb</string>
-        <string>44ade9e2-d2ec-40f0-99cd-c2518f1aef0a</string>
-        <string>a605c468-d34f-4966-9c18-db8ce72e023f</string>
-        <string>5d5e608e-a7ac-4955-9bec-b4e5c373df58</string>
-        <string>6546423b-30d4-46dc-92d7-3e651a542a42</string>
-        <string>ab4e0274-be44-444a-8530-c08ae238cd93</string>
-        <string>9391bf69-d2f7-4085-bff0-723ef11a9df5</string>
-        <string>56d379ec-7c67-44d0-8512-7ff4123b8ad7</string>
-        <string>6b596516-8f0e-40d8-a1dd-a2e48e998759</string>
-        <string>ab76ce23-b3e2-43de-afdb-803e2285b19a</string>
-        <string>4b7b461d-8246-4797-a8f3-06f07d9efee4</string>
-        <string>76e2dd55-419b-4f78-8cb4-b8eb687499f5</string>
-        <string>866fbd5b-63a2-4211-b13f-dabd5601de7c</string>
-        <string>184f26f3-f72c-4208-a66e-6ff4b78d0d98</string>
-        <string>689629e8-f3d1-4ded-b2e8-b28264f74da6</string>
-        <string>479ca566-d489-4f92-ac92-6bb019eecd27</string>
-        <string>16177464-5281-45bf-ab5f-3c4c7f09b17b</string>
-        <string>515eb748-bcc9-4b46-a086-be3174f3df41</string>
-        <string>4b0ecc68-fedd-4cbb-8b37-198134cdc437</string>
-        <string>651d65e5-1460-44d9-8b9d-ee983797f36e</string>
-        <string>3076fe92-da8c-46f1-b162-4498433c82c3</string>
-        <string>f6ba16ce-08cf-499f-8dac-143646aadd51</string>
-        <string>06f51744-9fe3-4c9c-a100-0497fc79a5b1</string>
-        <string>6a029d79-d96f-4437-b9ef-10b2f345dd5d</string>
-        <string>4da26cfa-8b26-4353-9928-f33f024bc8a6</string>
-        <string>741b0b1a-9658-48bd-b3e8-9e95ca5d560d</string>
-        <string>e3d318f1-22b1-4fa3-b747-b5bb587c2a85</string>
-        <string>217689ee-ddf7-4085-9261-3e030e95293a</string>
-        <string>a20be57d-4b14-4932-88fd-b3264b444fdf</string>
-        <string>3dde045a-c514-4cd7-b6d5-5576155177d5</string>
-        <string>a99f3b5a-07f0-400d-ae09-c195cf2a59c5</string>
-        <string>a85d7d85-3b82-41b2-a815-db89bcbe7178</string>
-        <string>70d1e94a-bc04-413e-8510-f534075deb79</string>
-        <string>f2231b87-3c49-498a-962d-03503bc04147</string>
-        <string>6d5edbe0-3c33-4a60-b78b-08e32afdb880</string>
-        <string>8729b803-b38a-46f6-be11-5169facc2632</string>
-        <string>015db3f7-825c-484e-86b2-33b9e79b727c</string>
-        <string>12832ab3-cdac-485f-bf81-4c525359af88</string>
-        <string>6a27e181-4776-46d7-b862-5cc4968ec8e7</string>
-        <string>60254522-dc8c-43d6-bb41-ac66897c0d43</string>
-        <string>5d6d3d5d-ce3c-4f05-b4f1-ef77d2758b9c</string>
-        <string>f893da87-8e5f-48b8-9280-c384ff3bcc99</string>
-        <string>83eb8d17-1892-4bfd-b19b-e28e0ca03b69</string>
-        <string>1d2d8815-0962-4986-b731-b1f49a733db8</string>
-        <string>89d61bc0-7a9e-4f6d-87fd-8a4923778ff7</string>
-        <string>1192bb86-1f4d-4ca0-9343-e1b87d790154</string>
-        <string>b4bd0c42-d5f3-43bf-ab4a-019cd0e60539</string>
-        <string>660f2bb8-3471-47a4-9299-98a985017333</string>
-        <string>95063c7e-f39a-44a4-9229-5700e9bae5c3</string>
-        <string>f05e8220-7ec0-413b-88f8-0d2f34fa366f</string>
-        <string>f6b6cbe4-cdca-42f0-ac74-dfa7e49a27c6</string>
-        <string>efbbf234-9875-4b0b-b559-4c9892b59306</string>
-        <string>f1246189-09ae-4ecb-b73e-35d9d4a21876</string>
-        <string>4e31a472-bdcc-4b60-b735-bbb8c41b1180</string>
-        <string>e13444ab-c985-4dfd-b1e9-ba87e7f3aefa</string>
-        <string>c43b6a54-5476-4eb7-82c7-b741009c4031</string>
-        <string>f590b560-ca56-45de-8716-1432f7b6efc5</string>
-        <string>3fc61612-3fc3-4a64-b42f-2975a71f66b7</string>
-        <string>f47f2edc-2a29-4fc4-9de6-a9efa9fcbb38</string>
-        <string>f1b9e55e-698d-4d5a-a6fd-d8bc75f7251f</string>
-        <string>55dd910c-ab46-47e7-b391-6294ff74ddb7</string>
-        <string>1c42c8ac-a6f9-4b1b-900d-944744763ebc</string>
-        <string>cf4c7e6e-0dd0-4c6d-9cdd-7456d42e1355</string>
-        <string>01f4cc85-32d3-44af-9a17-d0a05ecbb7c9</string>
-        <string>8ad7fdc5-1f21-46aa-8c7d-9ffa84b81140</string>
-        <string>49417742-6400-4764-ad93-3e46753b2a84</string>
-        <string>99beb09b-6d76-4fc1-aa07-8e53472b7036</string>
-        <string>20b589b6-4167-4f8d-b8ab-242f62a28452</string>
-        <string>93aa0bb7-a3e4-488d-98ec-d14ba49d1c9c</string>
-        <string>4ad918f5-1323-44a9-b3ec-fce83e062b9d</string>
-        <string>b4c20126-17c5-4c11-a76e-7fa2aaf94cbe</string>
-        <string>220aeb9b-3050-43ff-bd41-7e38cec5010e</string>
-        <string>a5d996dd-b8ea-4048-b32f-4d07f421c2a8</string>
-        <string>0d245f0f-1239-46cb-96db-b6c03ee91b18</string>
-        <string>2de6bc63-2d0c-4891-8662-05331cdbc135</string>
-        <string>5b9794c5-2fe5-4a49-8d2f-d1f6d8a7b4cf</string>
-        <string>7223dcc0-41c9-4cba-872f-3cb8ca724ea3</string>
-        <string>a74ae7d3-b6c3-49b5-840f-0aafbac3fa6b</string>
-        <string>b92f73d2-fb74-4a63-bec5-c8464bc22653</string>
-        <string>1b3c62d3-349e-4a72-a2ff-ecb3a7916e50</string>
-        <string>ef90d21a-b975-45f9-8426-83de2de99188</string>
-        <string>67fc930f-301b-402d-8945-7120fec639a4</string>
-        <string>6548b06b-0e02-4375-8749-b61e5a016ed2</string>
-        <string>76656822-9750-4ba0-8b42-8efc01f75230</string>
-        <string>0b1bc154-0162-4f83-9baa-570bd2cd4728</string>
-        <string>86e5d119-ef36-4eb6-852e-701228076b51</string>
-        <string>748de96b-9101-47d0-88aa-c18344c194ca</string>
-        <string>5f25aa3a-1e23-4cb6-8fb6-c391a4e60184</string>
-        <string>0583be0c-65e8-4fb6-ab54-682787e783e0</string>
-        <string>6704e9fc-7f6f-4e67-bfd4-527ba1a8b186</string>
-        <string>cfd56cfa-9021-429c-80a8-59002b07e9f4</string>
-        <string>04ef8a88-576f-42ab-a637-5383776a0b60</string>
-        <string>8cfa82cc-ee8a-428a-9fff-e32b2439b9c8</string>
-        <string>5bb11640-8f2c-4bfa-96ca-061a09ee8b5e</string>
-        <string>6d6a6667-6c83-476a-a0f6-dd8d524dd887</string>
-        <string>fbd5a175-ad41-44f6-95d3-bd898a3f3fb8</string>
-        <string>3e410cac-c886-4973-87a2-db3f29a67ca1</string>
-        <string>2d2c762c-2f17-482e-af65-1b979c758250</string>
-        <string>1a7d6d5f-97a9-4e77-80eb-cfb94fa445c6</string>
-        <string>ab7f86cd-94ff-4237-bef9-3e45057821ba</string>
-        <string>fd891108-6b82-4ca9-a0ac-0d163926ae0a</string>
-        <string>bc5b7a3d-b86d-48d1-81fd-a5f92303defb</string>
-        <string>4c9b4da2-faf1-45b3-9cdf-bec2f81bf308</string>
-      </disabledChannelIds>
-      <codeTemplates>
-        <codeTemplate version="3.4.1">
-          <id>9a814b0e-616b-4a97-b21f-9bed3f05e601</id>
-          <name>Convert CCD HL7 Date to ISO</name>
-          <revision>1</revision>
-          <lastModified>
-            <time>1484077437128</time>
-            <timezone>America/New_York</timezone>
-          </lastModified>
-          <type>FUNCTION</type>
-          <contextSet>
-            <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-            </delegate>
-          </contextSet>
-          <code>/**
-	Converts CCD HL7 v2.x date format ISO date format
-*/
-/* author: abakken */
-
-function convertCCDHL7Date( hl7DateString, timezone ) {
-	var isoDate;
-	var dateString;
-	var hl7Formatter;
-	var isoFormatter;
-
-	if (timezone) {
-		isoFormatter.setTimeZone(Packages.java.util.TimeZone.getTimeZone(timezone));
-	}
-	
-	if ( hl7DateString != null &amp;&amp; !isNaN(hl7DateString.substring(0,13)) &amp;&amp; hl7DateString.length &gt; 14 ) {
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMddHHmmssZ&quot;);
-		isoFormatter = new Packages.java.text.SimpleDateFormat(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:ssZ&quot;);
-	}
-	else if ( hl7DateString != null &amp;&amp; !isNaN(hl7DateString) &amp;&amp; hl7DateString &gt; 0 &amp;&amp; hl7DateString.length == 14 ) {
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMddHHmmss&quot;);
-		isoFormatter = new Packages.java.text.SimpleDateFormat(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss&quot;);
-	} 
-	else if ( hl7DateString != null &amp;&amp; !isNaN(hl7DateString) &amp;&amp; hl7DateString &gt; 0 &amp;&amp; hl7DateString.length == 12 ) {
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMddHHmm&quot;);
-		isoFormatter = new Packages.java.text.SimpleDateFormat(&quot;yyyy-MM-dd&apos;T&apos;HH:mm&quot;);
-	} 
-	else if ( hl7DateString != null &amp;&amp; !isNaN(hl7DateString) &amp;&amp; hl7DateString &gt; 0 &amp;&amp; hl7DateString.length == 8 ) {
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMdd&quot;);
-		isoFormatter = new Packages.java.text.SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
-	} 
-	else dateString = hl7DateString;
-	
-	try {
-		if (hl7Formatter) {
-			isoDate = hl7Formatter.parse(hl7DateString);
-			isoDate = isoFormatter.format(isoDate);
-			dateString = new String(isoDate);
-		}
-	} catch (err) {
-		dateString = hl7DateString;
-	} finally {
-		return dateString;
-	}
-}</code>
-        </codeTemplate>
-        <codeTemplate version="3.4.1">
-          <id>9785a6b4-1c00-4bfb-89b8-e9fce7c3b97d</id>
-          <name>MDHT Arrays to String Arrays</name>
-          <revision>1</revision>
-          <lastModified>
-            <time>1459785257635</time>
-            <timezone>America/New_York</timezone>
-          </lastModified>
-          <type>FUNCTION</type>
-          <contextSet>
-            <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-            </delegate>
-          </contextSet>
-          <code>/**
-	Get MDHT given name array and turn it into string array
-*/
-
-/* author: rwattras */
-
-function mdhtArrayToStringArray(mdhtArray) {
-	var array = [];
-
-	for (var q = 0; q &lt; mdhtArray.size(); q++) {
-		if (mdhtArray.get(q) != null) {
-			array.push(new String(mdhtArray.get(q).getText()));
-		}
-	}
-
-	return array;
-}</code>
-        </codeTemplate>
-      </codeTemplates>
-    </codeTemplateLibrary>
-    <codeTemplateLibrary version="3.4.1">
-      <id>61c46c07-648f-4a0e-ba87-a4385aa24652</id>
-      <name>Catalyze Code Templates</name>
-      <revision>22</revision>
-      <lastModified>
-        <time>1509462347992</time>
-        <timezone>America/New_York</timezone>
-      </lastModified>
-      <description>Custom code templates created and imported by Catalyze</description>
-      <includeNewChannels>true</includeNewChannels>
-      <enabledChannelIds>
-        <string>5785db67-9f1b-449f-be01-ae8451828732</string>
-        <string>46214349-f697-4c7b-8d26-44fd409efc53</string>
-        <string>8b69b2e3-4cb0-40f9-93e4-b56c33ba112d</string>
-        <string>14fd925a-eaab-457c-9d8b-18803350fb1a</string>
-        <string>387d5d3a-f04b-40fe-b658-2c2b66d80a06</string>
-        <string>f19cd2f0-ffcf-4004-b23c-0553ab70b87e</string>
-        <string>48a6a0cb-4790-431d-8070-558a8adc8b49</string>
-        <string>70d1e94a-bc04-413e-8510-f534075deb79</string>
-        <string>fcf9e704-cebd-4897-8ae3-8909af2a4f7c</string>
-        <string>98d6cd83-c049-44d8-ad48-1c44d95ce6f2</string>
-        <string>c5927328-a543-4242-83da-fcf96f3bf80e</string>
-        <string>2edfb44b-d53e-43c0-9cee-dfb8c5d28c80</string>
-        <string>d4999fca-ca91-46f8-b6f5-c292dc987b18</string>
-        <string>c8f5ba67-7d41-4abf-b4f5-dd122b441f36</string>
-        <string>98f83c38-c1c4-47ed-ba61-67033814b02c</string>
-        <string>4b7b461d-8246-4797-a8f3-06f07d9efee4</string>
-        <string>60254522-dc8c-43d6-bb41-ac66897c0d43</string>
-        <string>daf56b1b-5fc0-4ff0-a0fc-af4ddc7c4154</string>
-        <string>d3f0926e-599f-431e-9699-ea8c063df9e1</string>
-        <string>94425afd-e2ec-4279-81e3-fdcdcc3f5aa3</string>
-        <string>1341f9af-f405-42ee-a3b1-75f6d4428726</string>
-        <string>2a852e27-e54c-4181-af04-2450fde45ad6</string>
-        <string>140bc813-825a-4bc5-a9fc-fd0e533d9da0</string>
-        <string>ca365ea6-ed99-40e5-8d62-a97a1ce5e39d</string>
-        <string>201f789f-5c38-450b-97a8-4da54ba5e164</string>
-        <string>c506e942-d25a-4f5c-bcd9-7e685514d8cb</string>
-        <string>3680a599-b062-4f3d-8425-e62da50685c3</string>
-      </enabledChannelIds>
-      <disabledChannelIds>
-        <string>1192bb86-1f4d-4ca0-9343-e1b87d790154</string>
-        <string>44ade9e2-d2ec-40f0-99cd-c2518f1aef0a</string>
-        <string>12832ab3-cdac-485f-bf81-4c525359af88</string>
-        <string>6546423b-30d4-46dc-92d7-3e651a542a42</string>
-        <string>0d245f0f-1239-46cb-96db-b6c03ee91b18</string>
-        <string>515eb748-bcc9-4b46-a086-be3174f3df41</string>
-        <string>6a27e181-4776-46d7-b862-5cc4968ec8e7</string>
-        <string>f6ba16ce-08cf-499f-8dac-143646aadd51</string>
-        <string>647fa65c-d0bb-4f32-a1f6-b218136ebdb8</string>
-      </disabledChannelIds>
-      <codeTemplates>
-        <codeTemplate version="3.4.1">
-          <id>d303042c-372b-41c7-b0aa-d9e4f43ab184</id>
-          <name>Convert HL7 Date</name>
-          <revision>1</revision>
-          <lastModified>
-            <time>1459785257827</time>
-            <timezone>America/New_York</timezone>
-          </lastModified>
-          <type>FUNCTION</type>
-          <contextSet>
-            <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-            </delegate>
-          </contextSet>
-          <code>/**
-	Converts standard HL7 v2.x date format to human-readable ISO date format
-*/
-/* author: abakken */
-
-function convertHL7Date( date ) {
- 
-	/*  Check that the date string is
-		1) not null
-		2) a positive integer or timestamp
-		4) valid length	*/
-	var dateString;
-	if ( date != null &amp;&amp; !isNaN(date.substring(0,13)) &amp;&amp; date.length &gt; 14 ) {
-		try {
-			dateString = new String(DateUtil.convertDate(&quot;yyyyMMddHHmmssz&quot;, &quot;yyyy-MM-dd&apos;T&apos;HH:mm:ssZ&quot;, date));
-		} catch (err) {
-			dateString = date;
-		} finally {
-			return dateString;
-		}
-	} 
-	else if ( date != null &amp;&amp; !isNaN(date) &amp;&amp; date &gt; 0 &amp;&amp; date.length == 14 ) {
-		try {
-			dateString = new String(DateUtil.convertDate(&quot;yyyyMMddHHmmss&quot;, &quot;yyyy-MM-dd HH:mm:ss&quot;, date));
-		} catch (err) {
-			dateString = date;
-		} finally {
-			return dateString;
-		}
-	} 
-	else if ( date != null &amp;&amp; !isNaN(date) &amp;&amp; date &gt; 0 &amp;&amp; date.length == 12 ) {
-		try {
-			dateString = new String(DateUtil.convertDate(&quot;yyyyMMddHHmm&quot;, &quot;yyyy-MM-dd HH:mm&quot;, date));
-		} catch (err) {
-			dateString = date;
-		} finally {
-			return dateString;
-		}
-	} 
-	else if ( date != null &amp;&amp; !isNaN(date) &amp;&amp; date &gt; 0 &amp;&amp; date.length == 8 ) {
-		try {
-			dateString = new String(DateUtil.convertDate(&quot;yyyyMMdd&quot;, &quot;yyyy-MM-dd&quot;, date));
-		} catch (err) {
-			dateString = date;
-		} finally {
-			return dateString;
-		}
-	} 
-	else return date;
-}</code>
-        </codeTemplate>
-        <codeTemplate version="3.4.1">
-          <id>c6e14fd4-f69b-458c-a10f-e82c93940604</id>
-          <name>Convert HL7 Date Format to ISO</name>
-          <revision>1</revision>
-          <lastModified>
-            <time>1481215900324</time>
-            <timezone>America/New_York</timezone>
-          </lastModified>
-          <type>FUNCTION</type>
-          <contextSet>
-            <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-            </delegate>
-          </contextSet>
-          <code>/**
-	Converts standard HL7 v2.x date format to human-readable ISO date format
-*/
-
-/* author: abakken */
-
-function toISODate( hl7DateString, timezone ) {
-	var isoDate;
-	var dateString;
-	var hl7Formatter;
-	var isoFormatter = new Packages.java.text.SimpleDateFormat(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:ssZ&quot;);
-
-	if (timezone) {
-		isoFormatter.setTimeZone(Packages.java.util.TimeZone.getTimeZone(timezone));
-	}
-	
-	if ( hl7DateString != null &amp;&amp; !isNaN(hl7DateString.substring(0,13)) &amp;&amp; hl7DateString.length &gt; 14 ) {
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMddHHmmssZ&quot;);
-	}
-	else if ( hl7DateString != null &amp;&amp; !isNaN(hl7DateString) &amp;&amp; hl7DateString &gt; 0 &amp;&amp; hl7DateString.length == 14 ) {
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMddHHmmss&quot;);
-	} 
-	else if ( hl7DateString != null &amp;&amp; !isNaN(hl7DateString) &amp;&amp; hl7DateString &gt; 0 &amp;&amp; hl7DateString.length == 12 ) {
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMddHHmm&quot;);
-	} 
-	else if ( hl7DateString != null &amp;&amp; !isNaN(hl7DateString) &amp;&amp; hl7DateString &gt; 0 &amp;&amp; hl7DateString.length == 8 ) {
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMdd&quot;);
-	} 
-	else dateString = hl7DateString;
-	
-	try {
-		if (hl7Formatter) {
-			isoDate = hl7Formatter.parse(hl7DateString);
-			isoDate = isoFormatter.format(isoDate);
-			dateString = new String(isoDate);
-		}
-	} catch (err) {
-		dateString = hl7DateString;
-	} finally {
-		return dateString;
-	}
-}</code>
-        </codeTemplate>
-        <codeTemplate version="3.4.1">
-          <id>73df1375-6c07-485f-a344-4b9a38bf53b2</id>
-          <name>Convert ISO Date</name>
-          <revision>1</revision>
-          <lastModified>
-            <time>1459785257690</time>
-            <timezone>America/New_York</timezone>
-          </lastModified>
-          <type>FUNCTION</type>
-          <contextSet>
-            <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-            </delegate>
-          </contextSet>
-          <code>/**
-	Converts ISO date format to HL7 v2 format
-*/
-/* author: abakken */
-
-function convertISODate( date ) 
-{
-	var dateString;
-	// yyyy-MM-dd HH:mm:ss
-	if ( date != null &amp;&amp; date.length == 19
-			&amp;&amp; !isNaN(date.substring(0,3)) &amp;&amp; date.charAt(4) == &quot;-&quot;
-			&amp;&amp; !isNaN(date.substring(5,6)) &amp;&amp; date.charAt(7) == &quot;-&quot;
-			&amp;&amp; !isNaN(date.substring(8,9)) &amp;&amp; date.charAt(10) == &quot; &quot;
-			&amp;&amp; !isNaN(date.substring(11,12)) &amp;&amp; date.charAt(13) == &quot;:&quot;
-			&amp;&amp; !isNaN(date.substring(14,15)) &amp;&amp; date.charAt(16) == &quot;:&quot;
-			&amp;&amp; !isNaN(date.substring(17,18)) ) {
-		try {
-			dateString = new String(DateUtil.convertDate(&quot;yyyy-MM-dd HH:mm:ss&quot;, &quot;yyyyMMddHHmmss&quot;, date));
-		} catch (err) {
-			dateString = date;
-		} finally {
-			return dateString;
-		}
-	} 
-	// yyyy-MM-dd HH:mm
-	else if ( date != null &amp;&amp; date.length == 16
-			&amp;&amp; !isNaN(date.substring(0,3)) &amp;&amp; date.charAt(4) == &quot;-&quot;
-			&amp;&amp; !isNaN(date.substring(5,6)) &amp;&amp; date.charAt(7) == &quot;-&quot;
-			&amp;&amp; !isNaN(date.substring(8,9)) &amp;&amp; date.charAt(10) == &apos; &apos;
-			&amp;&amp; !isNaN(date.substring(11,12)) &amp;&amp; date.charAt(13) == &quot;:&quot;
-			&amp;&amp; !isNaN(date.substring(14,15)) ) {
-		try {
-			dateString = new String(DateUtil.convertDate(&quot;yyyy-MM-dd HH:mm&quot;, &quot;yyyyMMddHHmm&quot;, date));
-		} catch (err) {
-			dateString = date;
-		} finally {
-			return dateString;
-		}	
-	} 
-	// yyyy-MM-dd
-	else if ( date != null &amp;&amp; date.length == 10
-			&amp;&amp; !isNaN(date.substring(0,3)) &amp;&amp; date.charAt(4) == &quot;-&quot;
-			&amp;&amp; !isNaN(date.substring(5,6)) &amp;&amp; date.charAt(7) == &quot;-&quot;
-			&amp;&amp; !isNaN(date.substring(8,9)) ) {
-		try {
-			dateString = new String(DateUtil.convertDate(&quot;yyyy-MM-dd&quot;, &quot;yyyyMMdd&quot;, date));
-		} catch (err) {
-			dateString = date;
-		} finally {
-			return dateString;
-		}	
-	}
-	// Timestamp
-	else if ( date != null &amp;&amp; date.length &lt;= 25 &amp;&amp; date.length &gt;= 22 
-			&amp;&amp; !isNaN(date.substring(0,3)) &amp;&amp; date.charAt(4) == &quot;-&quot;
-			&amp;&amp; !isNaN(date.substring(5,6)) &amp;&amp; date.charAt(7) == &quot;-&quot;
-			&amp;&amp; !isNaN(date.substring(8,9)) &amp;&amp; date.charAt(10) == &quot; &quot;
-			&amp;&amp; !isNaN(date.substring(11,12)) &amp;&amp; date.charAt(13) == &quot;:&quot;
-			&amp;&amp; !isNaN(date.substring(14,15)) &amp;&amp; date.charAt(16) == &quot;:&quot;
-			&amp;&amp; !isNaN(date.substring(17,18)) &amp;&amp; date.charAt(19) == &quot; &quot;) {
-		try {
-			dateString = new String(DateUtil.convertDate(&quot;yyyy-MM-dd HH:mm:ss&quot;, &quot;yyyyMMddHHmmss&quot;, date.substring(0,19)));
-		} catch (err) {
-			dateString = date;
-		} finally {
-			return dateString;
-		}
-	} 
-	// ISO-8601
-	else if ( date != null &amp;&amp; date.length &lt;= 25 &amp;&amp; date.length &gt;= 20 
-			&amp;&amp; !isNaN(date.substring(0,3)) &amp;&amp; date.charAt(4) == &quot;-&quot;
-			&amp;&amp; !isNaN(date.substring(5,6)) &amp;&amp; date.charAt(7) == &quot;-&quot;
-			&amp;&amp; !isNaN(date.substring(8,9)) &amp;&amp; date.charAt(10) == &quot;T&quot;
-			&amp;&amp; !isNaN(date.substring(11,12)) &amp;&amp; date.charAt(13) == &quot;:&quot;
-			&amp;&amp; !isNaN(date.substring(14,15)) &amp;&amp; date.charAt(16) == &quot;:&quot;
-			&amp;&amp; !isNaN(date.substring(17,18)) ) {
-		try {
-			dateString = new String(DateUtil.convertDate(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss&quot;, &quot;yyyyMMddHHmmss&quot;, date.substring(0,19)));
-		} catch (err) {
-			dateString = date;
-		} finally {
-			return dateString;
-		}
-	}
-	else return date;
-}</code>
-        </codeTemplate>
-        <codeTemplate version="3.4.1">
-          <id>d7f6a834-7bdf-436b-b10e-c9e636a7d7ee</id>
-          <name>Convert ISO Date Format to HL7</name>
-          <revision>1</revision>
-          <lastModified>
-            <time>1481215900874</time>
-            <timezone>America/New_York</timezone>
-          </lastModified>
-          <type>FUNCTION</type>
-          <contextSet>
-            <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-            </delegate>
-          </contextSet>
-          <code>/**
-	Converts ISO date format to HL7 v2 format
-*/
-
-/* author: abakken */
-
-function toHL7Date( isoDateString, timezone ) 
-{
-	var hl7Date;
-	var dateString;
-	var isoFormatter;
-	var hl7Formatter;
-
-	// ISO Date Format: yyyy-MM-dd&apos;T&apos;HH:mm:ss&apos;Z&apos;
-	if ( isoDateString != null &amp;&amp; isoDateString.length &lt;= 25 &amp;&amp; isoDateString.length &gt;= 22) {
-		isoFormatter = new Packages.java.text.SimpleDateFormat(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:ssZ&quot;);
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMddHHmmssZ&quot;);
-		if (timezone) {
-			hl7Formatter.setTimeZone(Packages.java.util.TimeZone.getTimeZone(timezone));
-		}
-	}
-	// ISO Date Format: yyyy-MM-dd HH:mm:ss
-	else if ( isoDateString != null &amp;&amp; isoDateString.length == 19 ) {
-		isoFormatter = new Packages.java.text.SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMddHHmmss&quot;);
-	}
-	// ISO Date Format: yyyy-MM-dd HH:mm
-	else if ( isoDateString != null &amp;&amp; isoDateString.length == 16 ) {
-		isoFormatter = new Packages.java.text.SimpleDateFormat(&quot;yyyy-MM-dd HH:mm&quot;);
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMddHHmm&quot;);	
-	} 
-	// ISO Date Format: yyyy-MM-dd
-	else if ( isoDateString != null &amp;&amp; isoDateString.length == 10 ) {
-		isoFormatter = new Packages.java.text.SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMdd&quot;);	
-	}
-	// None of the above, return original date string.
-	else dateString = isoDateString;
-
-	try {
-		if (isoFormatter) {
-			hl7Date = isoFormatter.parse(isoDateString);
-			hl7Date = hl7Formatter.format(hl7Date);
-			dateString = new String(hl7Date);
-		}
-	} catch (err) {
-		dateString = isoDateString;
-	} finally {
-		return dateString;
-	}
-}</code>
-        </codeTemplate>
-        <codeTemplate version="3.4.1">
-          <id>bec5e095-ec50-4a57-9d99-2e875d158367</id>
-          <name>Get array of FHIR Resources</name>
-          <revision>1</revision>
-          <lastModified>
-            <time>1481215900624</time>
-            <timezone>America/New_York</timezone>
-          </lastModified>
-          <type>FUNCTION</type>
-          <contextSet>
-            <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-            </delegate>
-          </contextSet>
-          <code>/**
-	Returns an array of resource objects of specified type.
-*/
-
-/* author: abakken */
-
-function getResourceType(type, bundle) {
-	var resourceGroup = [];
-	if (bundle.entry) {
-		for each (item in bundle.entry) 
-		{
-			if (item.resource.resourceType == type) 
-			{
-				resourceGroup.push(item.resource);
-			}
-		}
-	}
-	return resourceGroup;
-}</code>
-        </codeTemplate>
-        <codeTemplate version="3.4.1">
-          <id>0d4687a4-31fe-4a9c-8627-6f3f64f45bb2</id>
-          <name>Get HTTP Response Status Code</name>
-          <revision>1</revision>
-          <lastModified>
-            <time>1481215900728</time>
-            <timezone>America/New_York</timezone>
-          </lastModified>
-          <type>FUNCTION</type>
-          <contextSet>
-            <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-            </delegate>
-          </contextSet>
-          <code>/**
-	Returns the HTTP status code of the response.
-*/
-
-function getResponseCode() {
-	var httpResult = $(&apos;responseStatusLine&apos;).split(&apos; &apos;);
-	for each (item in httpResult) {
-		if (!isNaN(item)) {
-			return item;
-			
-		}
-	}
-}</code>
-        </codeTemplate>
-        <codeTemplate version="3.4.1">
-          <id>af00dee6-baae-4903-8e78-5bdcc7404352</id>
-          <name>Get Segments After a Particular Segment</name>
-          <revision>1</revision>
-          <lastModified>
-            <time>1481215901000</time>
-            <timezone>America/New_York</timezone>
-          </lastModified>
-          <type>FUNCTION</type>
-          <contextSet>
-            <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-            </delegate>
-          </contextSet>
-          <code>/**
-	Returns an array of segments with the specified name that come after a given segment in the message.
-*/
-
-/*
-	Author: Nick Rupley
-	Date Modified: 2/13/2013
-	getSegmentsAfter: Returns an array of segments with the specified name that come after a given segment in the message.
-
-	Arguments
-	---------
-		Required
-		--------
-			root:			The root HL7Message node of the message, or the parent of the segment node.
-			startSeg:		The segment AFTER which to start collecting segments.
-			segName:		The name (String or RegExp) of the segments you want to collect.
-
-		Optional
-		--------
-			consecutiveInd:	If true, indicates that the segments are expected to come directly after startSeg. 
-							If false, segments are collected until another segment with the same name as startSeg is encountered.
-							Defaults to false.
-			stopSegNames:	An array of segment names that, when encountered, stop the collection of segments.
-*/
-
-function getSegmentsAfter(root, startSeg, segName, consecutiveInd, stopSegNames) {
-	function test(str) {
-		return segName instanceof RegExp ? segName.test(str) : segName === str;
-	}
-
-	// The index to start collection is the next one up from the starting segment
-	var index = startSeg.childIndex()+1;
-	// The return array
-	var out = [];
-	// Boolean placeholder to stop iteration
-	var done = false;
-	// Object that will contain all of the stopSegNames strings, bound to a truthy value (1)
-	var stopNames = {};
-	// Indicates whether we have any stop segments
-	var stopNamesInd = false;
-	// If stopSegNames is defined
-	if (stopSegNames !== undefined &amp;&amp; stopSegNames !== null) {
-		// Set our indicator to true
-		stopNamesInd = true;
-		// Add each string in the array to our object
-		for each (name in stopSegNames)
-			stopNames[name] = 1;
-	}
-
-	// Iterate through each child in the root, starting at the segment after startSeg, and
-	// ending at the final segment, or when the done flag is set to true.
-	while (index &lt; root.children().length() &amp;&amp; !done) {
-		// If a stop segment is encountered, stop iteration
-		if (stopNamesInd &amp;&amp; root.children()[index].name().toString() in stopNames)
-			done = true;
-		// If a segment with the same name as startSeg is encountered, stop iteration
-		else if (root.children()[index].name().toString() == startSeg.name().toString() &amp;&amp; !consecutiveInd)
-			done = true;
-		// If we&apos;re only collecting consecutive segments and we encounter a segment with a name other than segName, stop iteration
-		else if (!test(root.children()[index].name().toString()) &amp;&amp; consecutiveInd)
-			done = true;
-		// If all previous tests passed, and the current segment has a name of segName, then add it to our array
-		else if (test(root.children()[index].name().toString()))
-			out.push(root.children()[index]);
-		// Increment our index counter
-		index++;
-	}
-
-	// Return the output array
-	return out;
-}</code>
-        </codeTemplate>
-      </codeTemplates>
-    </codeTemplateLibrary>
-    <codeTemplateLibrary version="3.4.1">
       <id>10e63131-3e24-4419-a268-ed823aba5790</id>
       <name>Datica Mirth OCI Code Template Library</name>
       <revision>7</revision>
@@ -5089,10 +4259,10 @@ function getSegmentsAfter(root, startSeg, segName, consecutiveInd, stopSegNames)
           <type>FUNCTION</type>
           <contextSet>
             <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
+              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+              <contextType>DESTINATION_DISPATCHER</contextType>
               <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
             </delegate>
           </contextSet>
@@ -5163,10 +4333,10 @@ function toISODate( hl7DateString, timezone ) {
           <type>FUNCTION</type>
           <contextSet>
             <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
+              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+              <contextType>DESTINATION_DISPATCHER</contextType>
               <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
             </delegate>
           </contextSet>
@@ -5246,10 +4416,10 @@ function toHL7Date( isoDateString, timezone )
           <type>FUNCTION</type>
           <contextSet>
             <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
+              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+              <contextType>DESTINATION_DISPATCHER</contextType>
               <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
             </delegate>
           </contextSet>
@@ -5322,577 +4492,6 @@ function getSegmentsAfter(root, startSeg, segName, consecutiveInd, stopSegNames)
 
 	// Return the output array
 	return out;
-}</code>
-        </codeTemplate>
-      </codeTemplates>
-    </codeTemplateLibrary>
-    <codeTemplateLibrary version="3.4.1">
-      <id>fd811497-89bd-4d9e-91e2-0fefbdf53671</id>
-      <name>Library 1</name>
-      <revision>24</revision>
-      <lastModified>
-        <time>1509462347981</time>
-        <timezone>America/New_York</timezone>
-      </lastModified>
-      <description>This library was added upon migration to version 3.3.0. It includes all pre-existing
-code templates, and is set to be included on all pre-existing and new channels.
-
-You should create your own new libraries and assign code templates to them as you
-see fit. You should also link libraries to specific channels, so that you&apos;re not
-necessarily including all code templates on all channels all the time.</description>
-      <includeNewChannels>true</includeNewChannels>
-      <enabledChannelIds>
-        <string>5785db67-9f1b-449f-be01-ae8451828732</string>
-        <string>8b69b2e3-4cb0-40f9-93e4-b56c33ba112d</string>
-        <string>03fbd8a8-0215-47fb-8077-bdfea025f8be</string>
-        <string>e7c2be6b-fba1-4fa6-8960-0fe4e997b5bd</string>
-        <string>52e9904e-a3ec-44fa-ae8a-d660a6e10a42</string>
-        <string>4c14f245-2cd7-4e51-9401-6a941fa948f5</string>
-        <string>7a7a1307-a695-490f-9755-46ada428c159</string>
-        <string>4108bf57-50de-4347-8719-64f582334aa0</string>
-        <string>638e0505-abd0-405d-8422-8b6e0e84e238</string>
-        <string>9ff5bb6e-6c76-4b3a-9e87-033a11dad4f6</string>
-        <string>27b614a4-fbd6-41bc-b37f-d9454a0b73eb</string>
-        <string>2edfb44b-d53e-43c0-9cee-dfb8c5d28c80</string>
-        <string>8f7a81c6-ab97-4335-b731-f3d2c715cada</string>
-        <string>583732e9-1fa3-44ea-bd80-ee669a3e3a40</string>
-        <string>053386c8-3182-4620-bc1b-9d3974d34be8</string>
-        <string>4b7b461d-8246-4797-a8f3-06f07d9efee4</string>
-        <string>76e2dd55-419b-4f78-8cb4-b8eb687499f5</string>
-        <string>866fbd5b-63a2-4211-b13f-dabd5601de7c</string>
-        <string>dce6c65a-511c-4d06-909e-6e9553281842</string>
-        <string>2871fbcf-66da-4bae-9fd2-642917a42c23</string>
-        <string>651d65e5-1460-44d9-8b9d-ee983797f36e</string>
-        <string>424319ec-4d06-44ae-b395-b0e0e3c161e5</string>
-        <string>b9e4ec1b-3666-4a7c-a6e5-d44bf4acb58b</string>
-        <string>0c10c226-d42a-460d-ba91-fdbee7ec4e56</string>
-        <string>423968eb-01ad-465f-891a-250444e65d13</string>
-        <string>fc6b053f-f078-477d-b317-e55aa12e8d1a</string>
-        <string>0a73e2f2-ef41-4e08-afde-3f0a445106eb</string>
-        <string>14fd925a-eaab-457c-9d8b-18803350fb1a</string>
-        <string>ae2cac45-d0d6-404f-9530-3fc44e2369cc</string>
-        <string>6a029d79-d96f-4437-b9ef-10b2f345dd5d</string>
-        <string>70d1e94a-bc04-413e-8510-f534075deb79</string>
-        <string>f2231b87-3c49-498a-962d-03503bc04147</string>
-        <string>6d5edbe0-3c33-4a60-b78b-08e32afdb880</string>
-        <string>af777014-3696-4fad-8f98-293e7d65a90c</string>
-        <string>17f3958e-1207-47ba-aab9-5aab3ef15476</string>
-        <string>8729b803-b38a-46f6-be11-5169facc2632</string>
-        <string>015db3f7-825c-484e-86b2-33b9e79b727c</string>
-        <string>5cf9787f-3969-4261-ab3b-d80ddad81df4</string>
-        <string>2a032710-3d63-450a-b0bf-c0099bb29aab</string>
-        <string>4bf5438f-232a-487a-9581-c796f605654d</string>
-        <string>60254522-dc8c-43d6-bb41-ac66897c0d43</string>
-        <string>1f7adc36-6fa0-47f3-9228-d55c8a988ac0</string>
-        <string>5c88d795-4958-4147-b151-b84111a83d89</string>
-        <string>d94f8c71-b05b-4446-813d-be17058a6480</string>
-        <string>a48610e7-1f18-467b-bb69-b3ac5c2b8c04</string>
-        <string>83eb8d17-1892-4bfd-b19b-e28e0ca03b69</string>
-        <string>ab1f0813-77a3-4b4e-90be-a472e999a047</string>
-        <string>07b13575-8803-4340-92e8-40bc9f160fc8</string>
-        <string>6f4013b1-cbc4-412b-9984-2204fe7746da</string>
-        <string>30573bec-3215-4dc8-becb-091ab5485be0</string>
-        <string>46214349-f697-4c7b-8d26-44fd409efc53</string>
-        <string>f6b6cbe4-cdca-42f0-ac74-dfa7e49a27c6</string>
-        <string>abf6afe4-de93-44e8-b59c-1c967d045b38</string>
-        <string>9966294e-7c31-4f52-9d2f-2fd705e583a9</string>
-        <string>f1246189-09ae-4ecb-b73e-35d9d4a21876</string>
-        <string>0fa23c6d-b057-44bc-a4b3-f4019fea0c5e</string>
-        <string>e00c4162-2e90-440a-8e99-1543a0d8472d</string>
-        <string>9901adbe-50a3-431f-8b18-b93375093c6f</string>
-        <string>3c90fc7c-1aa1-4381-83a1-116e3e6bdd61</string>
-        <string>f590b560-ca56-45de-8716-1432f7b6efc5</string>
-        <string>a7091b52-5045-47d3-84ae-e5a6579e2943</string>
-        <string>aa0e5130-6ffd-4960-a1f4-a9cefd1af050</string>
-        <string>3511e706-3d3c-4174-a65f-0905688e9f22</string>
-        <string>325398d5-6c4a-4675-abcc-a7a7f35ede0b</string>
-        <string>9977e3d2-2184-4e4f-8815-f9b42830dd51</string>
-        <string>3fc61612-3fc3-4a64-b42f-2975a71f66b7</string>
-        <string>f47f2edc-2a29-4fc4-9de6-a9efa9fcbb38</string>
-        <string>08bcf88e-2114-4b4c-a8bc-624bae22d315</string>
-        <string>b1e2fe6b-4991-40ff-a9f4-4ce5abed0109</string>
-        <string>6c07f763-a93a-47ae-a1d8-2580fc0f5ccc</string>
-        <string>c8f5ba67-7d41-4abf-b4f5-dd122b441f36</string>
-        <string>2dcc02c1-0e50-44e2-aa63-46b5bbb6d31c</string>
-        <string>ffb443fd-6038-4525-a1df-3165e6d53c2d</string>
-        <string>698bc4ea-c9c7-4af3-9cbc-0ae9f27665bd</string>
-        <string>20ebe877-0a55-4589-8daa-bbc66f8c1746</string>
-        <string>104680bd-a293-4edc-a33a-ecfeec069da5</string>
-        <string>99beb09b-6d76-4fc1-aa07-8e53472b7036</string>
-        <string>782cfee5-4ca6-49c3-ae7f-dd76a5e4df48</string>
-        <string>d0b3a0e3-01ff-4ce5-a4a7-748c7413e51f</string>
-        <string>993fe87c-697f-4259-b59f-ebd7e3913ac8</string>
-        <string>640344b6-2d0e-4858-bd43-ef58d9329f75</string>
-        <string>ca365ea6-ed99-40e5-8d62-a97a1ce5e39d</string>
-        <string>93aa0bb7-a3e4-488d-98ec-d14ba49d1c9c</string>
-        <string>d51e8dea-3e2a-49d4-9475-21db46ed1559</string>
-        <string>c67da354-57e3-401f-b684-2190b92335ac</string>
-        <string>e8667ddb-063e-48cf-a163-f2d50944296b</string>
-        <string>220aeb9b-3050-43ff-bd41-7e38cec5010e</string>
-        <string>2de6bc63-2d0c-4891-8662-05331cdbc135</string>
-        <string>e340c788-a921-4bab-92d9-ff8e0a640575</string>
-        <string>7223dcc0-41c9-4cba-872f-3cb8ca724ea3</string>
-        <string>a74ae7d3-b6c3-49b5-840f-0aafbac3fa6b</string>
-        <string>b340b685-f8f8-4df2-a03e-82efe8d9afcf</string>
-        <string>a28c3693-9934-421c-b9f1-a152f7428d69</string>
-        <string>a8454dfe-aa8e-469f-a5bc-fe30fd3d3033</string>
-        <string>fd282052-cae0-4b01-9f4a-2a68f8d4fd8a</string>
-        <string>cadedffd-7184-4c62-9ed9-5cf36ccb32b8</string>
-        <string>98d6cd83-c049-44d8-ad48-1c44d95ce6f2</string>
-        <string>fc7fa005-2346-4dc2-9fb2-faaa090c556f</string>
-        <string>1045246c-704d-445d-8733-86aa16205994</string>
-        <string>0d6774d6-8663-4513-8a78-fea5ebe69bbc</string>
-        <string>b56f9561-3659-4e4d-a03c-723b2daf9f49</string>
-        <string>76656822-9750-4ba0-8b42-8efc01f75230</string>
-        <string>1cb576e1-6c80-457b-a7d7-9406113157a3</string>
-        <string>78723f4c-af0d-45cd-b7d7-76a4cf2e791f</string>
-        <string>86e5d119-ef36-4eb6-852e-701228076b51</string>
-        <string>748de96b-9101-47d0-88aa-c18344c194ca</string>
-        <string>6704e9fc-7f6f-4e67-bfd4-527ba1a8b186</string>
-        <string>749d6b73-ced6-4638-a7ad-4049c811a35c</string>
-        <string>412610bb-4ac3-4229-8929-f7969018a9dd</string>
-        <string>04ef8a88-576f-42ab-a637-5383776a0b60</string>
-        <string>8cfa82cc-ee8a-428a-9fff-e32b2439b9c8</string>
-        <string>6d6a6667-6c83-476a-a0f6-dd8d524dd887</string>
-        <string>fbd5a175-ad41-44f6-95d3-bd898a3f3fb8</string>
-        <string>2a852e27-e54c-4181-af04-2450fde45ad6</string>
-        <string>a6bb0a27-6db8-4218-9478-a1600bae3a7b</string>
-        <string>2d2c762c-2f17-482e-af65-1b979c758250</string>
-        <string>4dcf348b-f385-4889-8e10-580092be907f</string>
-        <string>201f789f-5c38-450b-97a8-4da54ba5e164</string>
-        <string>fd891108-6b82-4ca9-a0ac-0d163926ae0a</string>
-        <string>55de7d91-8e2e-473b-9ca1-09aa47254a75</string>
-        <string>ce9ebf65-8647-46bb-83aa-f1acb687c877</string>
-        <string>add3dd62-61ff-4c63-a4a5-59b97c22c830</string>
-      </enabledChannelIds>
-      <disabledChannelIds>
-        <string>1192bb86-1f4d-4ca0-9343-e1b87d790154</string>
-        <string>44ade9e2-d2ec-40f0-99cd-c2518f1aef0a</string>
-        <string>12832ab3-cdac-485f-bf81-4c525359af88</string>
-        <string>6546423b-30d4-46dc-92d7-3e651a542a42</string>
-        <string>0d245f0f-1239-46cb-96db-b6c03ee91b18</string>
-        <string>515eb748-bcc9-4b46-a086-be3174f3df41</string>
-        <string>6a27e181-4776-46d7-b862-5cc4968ec8e7</string>
-        <string>f6ba16ce-08cf-499f-8dac-143646aadd51</string>
-        <string>647fa65c-d0bb-4f32-a1f6-b218136ebdb8</string>
-      </disabledChannelIds>
-      <codeTemplates>
-        <codeTemplate version="3.4.1">
-          <id>46a3f8ff-94e1-4dae-9e6d-cf7db2968603</id>
-          <name>Convert HL7 Date Format to ISO</name>
-          <revision>7</revision>
-          <lastModified>
-            <time>1484077436914</time>
-            <timezone>America/New_York</timezone>
-          </lastModified>
-          <type>FUNCTION</type>
-          <contextSet>
-            <delegate>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>CHANNEL_PREPROCESSOR</contextType>
-              <contextType>CHANNEL_DEPLOY</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-              <contextType>GLOBAL_UNDEPLOY</contextType>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>CHANNEL_ATTACHMENT</contextType>
-              <contextType>GLOBAL_DEPLOY</contextType>
-              <contextType>GLOBAL_POSTPROCESSOR</contextType>
-              <contextType>CHANNEL_BATCH</contextType>
-              <contextType>CHANNEL_POSTPROCESSOR</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>CHANNEL_UNDEPLOY</contextType>
-              <contextType>GLOBAL_PREPROCESSOR</contextType>
-            </delegate>
-          </contextSet>
-          <code>/**
-	Converts standard HL7 v2.x date format to human-readable ISO date format
-*/
-/* author: abakken */
-
-function toISODate( hl7DateString, timezone ) {
-	var isoDate;
-	var dateString;
-	var hl7Formatter;
-	var isoFormatter = new Packages.java.text.SimpleDateFormat(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:ssZ&quot;);
-
-	if (timezone) {
-		isoFormatter.setTimeZone(Packages.java.util.TimeZone.getTimeZone(timezone));
-	}
-	
-	if ( hl7DateString != null &amp;&amp; !isNaN(hl7DateString.substring(0,13)) &amp;&amp; hl7DateString.length &gt; 14 ) {
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMddHHmmssZ&quot;);
-	}
-	else if ( hl7DateString != null &amp;&amp; !isNaN(hl7DateString) &amp;&amp; hl7DateString &gt; 0 &amp;&amp; hl7DateString.length == 14 ) {
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMddHHmmss&quot;);
-	} 
-	else if ( hl7DateString != null &amp;&amp; !isNaN(hl7DateString) &amp;&amp; hl7DateString &gt; 0 &amp;&amp; hl7DateString.length == 12 ) {
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMddHHmm&quot;);
-	} 
-	else if ( hl7DateString != null &amp;&amp; !isNaN(hl7DateString) &amp;&amp; hl7DateString &gt; 0 &amp;&amp; hl7DateString.length == 8 ) {
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMdd&quot;);
-	} 
-	else dateString = hl7DateString;
-	
-	try {
-		if (hl7Formatter) {
-			isoDate = hl7Formatter.parse(hl7DateString);
-			isoDate = isoFormatter.format(isoDate);
-			dateString = new String(isoDate);
-		}
-	} catch (err) {
-		dateString = hl7DateString;
-	} finally {
-		return dateString;
-	}
-}</code>
-        </codeTemplate>
-        <codeTemplate version="3.4.1">
-          <id>95e5d0a6-8db2-4cc0-8bf8-21c3dc8a2162</id>
-          <name>Convert ISO Date Format to HL7</name>
-          <revision>7</revision>
-          <lastModified>
-            <time>1458929664208</time>
-            <timezone>America/New_York</timezone>
-          </lastModified>
-          <type>FUNCTION</type>
-          <contextSet>
-            <delegate>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>CHANNEL_PREPROCESSOR</contextType>
-              <contextType>CHANNEL_DEPLOY</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-              <contextType>GLOBAL_UNDEPLOY</contextType>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>CHANNEL_ATTACHMENT</contextType>
-              <contextType>GLOBAL_DEPLOY</contextType>
-              <contextType>GLOBAL_POSTPROCESSOR</contextType>
-              <contextType>CHANNEL_BATCH</contextType>
-              <contextType>CHANNEL_POSTPROCESSOR</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>CHANNEL_UNDEPLOY</contextType>
-              <contextType>GLOBAL_PREPROCESSOR</contextType>
-            </delegate>
-          </contextSet>
-          <code>/**
-	Converts ISO date format to HL7 v2 format
-*/
-/* author: abakken */
-
-function toHL7Date( isoDateString, timezone ) 
-{
-	var hl7Date;
-	var dateString;
-	var isoFormatter;
-	var hl7Formatter;
-
-	// ISO Date Format: yyyy-MM-dd&apos;T&apos;HH:mm:ss&apos;Z&apos;
-	if ( isoDateString != null &amp;&amp; isoDateString.length &gt;= 19 &amp;&amp; isoDateString.substring(10,11) == &apos;T&apos;) {
-		isoFormatter = new Packages.java.text.SimpleDateFormat(&quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss&quot;);
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMddHHmmssZ&quot;);
-		if (timezone) {
-			hl7Formatter.setTimeZone(Packages.java.util.TimeZone.getTimeZone(timezone));
-		}
-	}
-	// ISO Date Format: yyyy-MM-dd HH:mm:ss
-	else if ( isoDateString != null &amp;&amp; isoDateString.length == 19 ) {
-		isoFormatter = new Packages.java.text.SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMddHHmmss&quot;);
-	}
-	// ISO Date Format: yyyy-MM-dd HH:mm
-	else if ( isoDateString != null &amp;&amp; isoDateString.length == 16 ) {
-		isoFormatter = new Packages.java.text.SimpleDateFormat(&quot;yyyy-MM-dd HH:mm&quot;);
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMddHHmm&quot;);	
-	} 
-	// ISO Date Format: yyyy-MM-dd
-	else if ( isoDateString != null &amp;&amp; isoDateString.length == 10 ) {
-		isoFormatter = new Packages.java.text.SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;yyyyMMdd&quot;);	
-	}
-	// ISO Time Format: HH:mm:ss
-	else if ( isoDateString != null &amp;&amp; isoDateString.length == 8 ) {
-		isoFormatter = new Packages.java.text.SimpleDateFormat(&quot;HH:mm:ss&quot;);
-		hl7Formatter = new Packages.java.text.SimpleDateFormat(&quot;HHmmss&quot;);
-	}
-	// None of the above, return original date string.
-	else dateString = isoDateString;
-
-	try {
-		if (isoFormatter) {
-			hl7Date = isoFormatter.parse(isoDateString);
-			hl7Date = hl7Formatter.format(hl7Date);
-			dateString = new String(hl7Date);
-		}
-	} catch (err) {
-		dateString = isoDateString;
-	} finally {
-		return dateString;
-	}
-}</code>
-        </codeTemplate>
-        <codeTemplate version="3.4.1">
-          <id>2bf752bd-f5a5-422b-a460-545894735e53</id>
-          <name>Get array of FHIR Resources</name>
-          <revision>1</revision>
-          <lastModified>
-            <time>1450820001205</time>
-            <timezone>America/New_York</timezone>
-          </lastModified>
-          <type>FUNCTION</type>
-          <contextSet>
-            <delegate>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>CHANNEL_PREPROCESSOR</contextType>
-              <contextType>CHANNEL_DEPLOY</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-              <contextType>GLOBAL_UNDEPLOY</contextType>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>CHANNEL_ATTACHMENT</contextType>
-              <contextType>GLOBAL_DEPLOY</contextType>
-              <contextType>GLOBAL_POSTPROCESSOR</contextType>
-              <contextType>CHANNEL_BATCH</contextType>
-              <contextType>CHANNEL_POSTPROCESSOR</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>CHANNEL_UNDEPLOY</contextType>
-              <contextType>GLOBAL_PREPROCESSOR</contextType>
-            </delegate>
-          </contextSet>
-          <code>/**
-	Returns an array of resource objects of specified type.
-*/
-/* author: abakken */
-
-function getResourceType(type, bundle) {
-	var resourceGroup = [];
-	if (bundle.entry) {
-		for each (item in bundle.entry) 
-		{
-			if (item.resource.resourceType == type) 
-			{
-				resourceGroup.push(item.resource);
-			}
-		}
-	}
-	return resourceGroup;
-}</code>
-        </codeTemplate>
-        <codeTemplate version="3.4.1">
-          <id>d50e0aac-120b-42b4-ac50-f145b2378f2e</id>
-          <name>Get HTTP Response Status Code</name>
-          <revision>1</revision>
-          <lastModified>
-            <time>1450820001223</time>
-            <timezone>America/New_York</timezone>
-          </lastModified>
-          <type>FUNCTION</type>
-          <contextSet>
-            <delegate>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>CHANNEL_PREPROCESSOR</contextType>
-              <contextType>CHANNEL_DEPLOY</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-              <contextType>GLOBAL_UNDEPLOY</contextType>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>CHANNEL_ATTACHMENT</contextType>
-              <contextType>GLOBAL_DEPLOY</contextType>
-              <contextType>GLOBAL_POSTPROCESSOR</contextType>
-              <contextType>CHANNEL_BATCH</contextType>
-              <contextType>CHANNEL_POSTPROCESSOR</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>CHANNEL_UNDEPLOY</contextType>
-              <contextType>GLOBAL_PREPROCESSOR</contextType>
-            </delegate>
-          </contextSet>
-          <code>/**
-	Returns the HTTP status code of the response.
-*/
-function getResponseCode() {
-	var httpResult = $(&apos;responseStatusLine&apos;).split(&apos; &apos;);
-	for each (item in httpResult) {
-		if (!isNaN(item)) {
-			return item;
-			
-		}
-	}
-}</code>
-        </codeTemplate>
-        <codeTemplate version="3.4.1">
-          <id>270003aa-9350-45a7-9397-58679320cb9d</id>
-          <name>Get Segments After a Particular Segment</name>
-          <revision>1</revision>
-          <lastModified>
-            <time>1450820001220</time>
-            <timezone>America/New_York</timezone>
-          </lastModified>
-          <type>FUNCTION</type>
-          <contextSet>
-            <delegate>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>CHANNEL_PREPROCESSOR</contextType>
-              <contextType>CHANNEL_DEPLOY</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-              <contextType>GLOBAL_UNDEPLOY</contextType>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>CHANNEL_ATTACHMENT</contextType>
-              <contextType>GLOBAL_DEPLOY</contextType>
-              <contextType>GLOBAL_POSTPROCESSOR</contextType>
-              <contextType>CHANNEL_BATCH</contextType>
-              <contextType>CHANNEL_POSTPROCESSOR</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>CHANNEL_UNDEPLOY</contextType>
-              <contextType>GLOBAL_PREPROCESSOR</contextType>
-            </delegate>
-          </contextSet>
-          <code>/**
-	Returns an array of segments with the specified name that come after a given segment in the message.
-*/
-/*
-	Author: Nick Rupley
-	Date Modified: 2/13/2013
-	getSegmentsAfter: Returns an array of segments with the specified name that come after a given segment in the message.
-
-	Arguments
-	---------
-		Required
-		--------
-			root:			The root HL7Message node of the message, or the parent of the segment node.
-			startSeg:		The segment AFTER which to start collecting segments.
-			segName:		The name (String or RegExp) of the segments you want to collect.
-
-		Optional
-		--------
-			consecutiveInd:	If true, indicates that the segments are expected to come directly after startSeg. 
-							If false, segments are collected until another segment with the same name as startSeg is encountered.
-							Defaults to false.
-			stopSegNames:	An array of segment names that, when encountered, stop the collection of segments.
-*/
-
-function getSegmentsAfter(root, startSeg, segName, consecutiveInd, stopSegNames) {
-	function test(str) {
-		return segName instanceof RegExp ? segName.test(str) : segName === str;
-	}
-
-	// The index to start collection is the next one up from the starting segment
-	var index = startSeg.childIndex()+1;
-	// The return array
-	var out = [];
-	// Boolean placeholder to stop iteration
-	var done = false;
-	// Object that will contain all of the stopSegNames strings, bound to a truthy value (1)
-	var stopNames = {};
-	// Indicates whether we have any stop segments
-	var stopNamesInd = false;
-	// If stopSegNames is defined
-	if (stopSegNames !== undefined &amp;&amp; stopSegNames !== null) {
-		// Set our indicator to true
-		stopNamesInd = true;
-		// Add each string in the array to our object
-		for each (name in stopSegNames)
-			stopNames[name] = 1;
-	}
-
-	// Iterate through each child in the root, starting at the segment after startSeg, and
-	// ending at the final segment, or when the done flag is set to true.
-	while (index &lt; root.children().length() &amp;&amp; !done) {
-		// If a stop segment is encountered, stop iteration
-		if (stopNamesInd &amp;&amp; root.children()[index].name().toString() in stopNames)
-			done = true;
-		// If a segment with the same name as startSeg is encountered, stop iteration
-		else if (root.children()[index].name().toString() == startSeg.name().toString() &amp;&amp; !consecutiveInd)
-			done = true;
-		// If we&apos;re only collecting consecutive segments and we encounter a segment with a name other than segName, stop iteration
-		else if (!test(root.children()[index].name().toString()) &amp;&amp; consecutiveInd)
-			done = true;
-		// If all previous tests passed, and the current segment has a name of segName, then add it to our array
-		else if (test(root.children()[index].name().toString()))
-			out.push(root.children()[index]);
-		// Increment our index counter
-		index++;
-	}
-
-	// Return the output array
-	return out;
-}</code>
-        </codeTemplate>
-      </codeTemplates>
-    </codeTemplateLibrary>
-    <codeTemplateLibrary version="3.4.1">
-      <id>3dea3828-39a8-448b-acb3-5b064c746a98</id>
-      <name>Other functions</name>
-      <revision>16</revision>
-      <lastModified>
-        <time>1509462347988</time>
-        <timezone>America/New_York</timezone>
-      </lastModified>
-      <description></description>
-      <includeNewChannels>true</includeNewChannels>
-      <enabledChannelIds>
-        <string>daf56b1b-5fc0-4ff0-a0fc-af4ddc7c4154</string>
-        <string>5785db67-9f1b-449f-be01-ae8451828732</string>
-        <string>d3f0926e-599f-431e-9699-ea8c063df9e1</string>
-        <string>8b69b2e3-4cb0-40f9-93e4-b56c33ba112d</string>
-        <string>14fd925a-eaab-457c-9d8b-18803350fb1a</string>
-        <string>387d5d3a-f04b-40fe-b658-2c2b66d80a06</string>
-        <string>48a6a0cb-4790-431d-8070-558a8adc8b49</string>
-        <string>94425afd-e2ec-4279-81e3-fdcdcc3f5aa3</string>
-        <string>1341f9af-f405-42ee-a3b1-75f6d4428726</string>
-        <string>70d1e94a-bc04-413e-8510-f534075deb79</string>
-        <string>fcf9e704-cebd-4897-8ae3-8909af2a4f7c</string>
-        <string>2a852e27-e54c-4181-af04-2450fde45ad6</string>
-        <string>c5927328-a543-4242-83da-fcf96f3bf80e</string>
-        <string>140bc813-825a-4bc5-a9fc-fd0e533d9da0</string>
-        <string>2edfb44b-d53e-43c0-9cee-dfb8c5d28c80</string>
-        <string>201f789f-5c38-450b-97a8-4da54ba5e164</string>
-        <string>c8f5ba67-7d41-4abf-b4f5-dd122b441f36</string>
-        <string>4b7b461d-8246-4797-a8f3-06f07d9efee4</string>
-        <string>60254522-dc8c-43d6-bb41-ac66897c0d43</string>
-        <string>c506e942-d25a-4f5c-bcd9-7e685514d8cb</string>
-      </enabledChannelIds>
-      <disabledChannelIds>
-        <string>1192bb86-1f4d-4ca0-9343-e1b87d790154</string>
-        <string>44ade9e2-d2ec-40f0-99cd-c2518f1aef0a</string>
-        <string>12832ab3-cdac-485f-bf81-4c525359af88</string>
-        <string>6546423b-30d4-46dc-92d7-3e651a542a42</string>
-        <string>0d245f0f-1239-46cb-96db-b6c03ee91b18</string>
-        <string>515eb748-bcc9-4b46-a086-be3174f3df41</string>
-        <string>6a27e181-4776-46d7-b862-5cc4968ec8e7</string>
-        <string>f6ba16ce-08cf-499f-8dac-143646aadd51</string>
-        <string>647fa65c-d0bb-4f32-a1f6-b218136ebdb8</string>
-      </disabledChannelIds>
-      <codeTemplates>
-        <codeTemplate version="3.4.1">
-          <id>f25c3a38-7919-4d85-8d40-bc042d888b52</id>
-          <name>Get day of week</name>
-          <revision>1</revision>
-          <lastModified>
-            <time>1481215900537</time>
-            <timezone>America/New_York</timezone>
-          </lastModified>
-          <type>FUNCTION</type>
-          <contextSet>
-            <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-            </delegate>
-          </contextSet>
-          <code>/**
-	Get current day of week in number form (0 = Sunday, 6 = Saturday)
-
-	@param {String} arg1 - arg1 description
-	@return {String} return description
-*/
-function getDayOfWeek() {
-	var curDate = new Date();
-	var dayNum = curDate.getDay();
-
-	return dayNum;
 }</code>
         </codeTemplate>
       </codeTemplates>
