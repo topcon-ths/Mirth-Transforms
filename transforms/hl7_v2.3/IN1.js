@@ -271,7 +271,7 @@ if (msg['IN1'].length() > 0) {
 		if (seg['IN1.15']['IN1.15.1'].toString() != "") { in1[index].planType = seg['IN1.15']['IN1.15.1']; }
 		
 		// IN1.16, insuredName
-		in1[index].companyContactPerson = [];
+		in1[index].insuredName = [];
 		for each (field in seg['IN1.16']) {
 			var block = {};
 			if (field['IN1.16.1'].toString() != "") { block.lastName = field['IN1.16.1']; }
@@ -282,11 +282,11 @@ if (msg['IN1'].length() > 0) {
 			if (field['IN1.16.6'].toString() != "") { block.degree = field['IN1.16.6']; }
 			if (field['IN1.16.7'].toString() != "") { block.nameTypeCode = field['IN1.16.7']; }
 			if (Object.keys(block).length > 0) {
-				in1[index].companyContactPerson.push(block);
+				in1[index].insuredName.push(block);
 			}	
 		}
-		if (in1[index].companyContactPerson.length == 0) {
-			delete in1[index].companyContactPerson;
+		if (in1[index].insuredName.length == 0) {
+			delete in1[index].insuredName;
 		}
 
 		// IN1.17, insuredRelationshipToPatient

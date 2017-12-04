@@ -5,10 +5,10 @@
   <description>Transform ADT HL7 to JSON</description>
   <enabled>true</enabled>
   <lastModified>
-    <time>1509400539198</time>
+    <time>1512397528199</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>116</revision>
+  <revision>2</revision>
   <sourceConnector version="3.4.1">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
@@ -979,15 +979,15 @@ if (msg[&apos;PID&apos;].length() &gt; 0) {
 				}
 
 				// PD1.11, publicityIndicator
-				pid[index].PD1[indexPD1].universalServiceID = {};
-				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.1&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].universalServiceID.id = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.1&apos;]; }
-				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.2&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].universalServiceID.text = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.2&apos;]; }
-				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.3&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].universalServiceID.codingSystem = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.3&apos;]; }
-				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.4&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].universalServiceID.altId = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.4&apos;]; }
-				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.5&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].universalServiceID.altText = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.5&apos;]; }
-				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.6&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].universalServiceID.altCodingSystem = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.6&apos;]; }
-				if (Object.keys(pid[index].PD1[indexPD1].universalServiceID).length == 0) {
-					delete pid[index].PD1[indexPD1].universalServiceID;
+				pid[index].PD1[indexPD1].publicityIndicator = {};
+				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.1&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].publicityIndicator.id = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.1&apos;]; }
+				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.2&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].publicityIndicator.text = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.2&apos;]; }
+				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.3&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].publicityIndicator.codingSystem = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.3&apos;]; }
+				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.4&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].publicityIndicator.altId = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.4&apos;]; }
+				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.5&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].publicityIndicator.altText = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.5&apos;]; }
+				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.6&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].publicityIndicator.altCodingSystem = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.6&apos;]; }
+				if (Object.keys(pid[index].PD1[indexPD1].publicityIndicator).length == 0) {
+					delete pid[index].PD1[indexPD1].publicityIndicator;
 				}
 				
 				// PD1.12, protectionIndicator
@@ -1572,15 +1572,15 @@ if (msg[&apos;PID&apos;].length() &gt; 0) {
 				}
 
 				// PD1.11, publicityIndicator
-				pid[index].PD1[indexPD1].universalServiceID = {};
-				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.1&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].universalServiceID.id = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.1&apos;]; }
-				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.2&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].universalServiceID.text = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.2&apos;]; }
-				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.3&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].universalServiceID.codingSystem = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.3&apos;]; }
-				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.4&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].universalServiceID.altId = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.4&apos;]; }
-				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.5&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].universalServiceID.altText = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.5&apos;]; }
-				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.6&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].universalServiceID.altCodingSystem = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.6&apos;]; }
-				if (Object.keys(pid[index].PD1[indexPD1].universalServiceID).length == 0) {
-					delete pid[index].PD1[indexPD1].universalServiceID;
+				pid[index].PD1[indexPD1].publicityIndicator = {};
+				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.1&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].publicityIndicator.id = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.1&apos;]; }
+				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.2&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].publicityIndicator.text = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.2&apos;]; }
+				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.3&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].publicityIndicator.codingSystem = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.3&apos;]; }
+				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.4&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].publicityIndicator.altId = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.4&apos;]; }
+				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.5&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].publicityIndicator.altText = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.5&apos;]; }
+				if (pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.6&apos;].toString() != &quot;&quot;) { pid[index].PD1[indexPD1].publicityIndicator.altCodingSystem = pd1Seg[&apos;PD1.11&apos;][&apos;PD1.11.6&apos;]; }
+				if (Object.keys(pid[index].PD1[indexPD1].publicityIndicator).length == 0) {
+					delete pid[index].PD1[indexPD1].publicityIndicator;
 				}
 				
 				// PD1.12, protectionIndicator
@@ -7702,7 +7702,7 @@ if (msg[&apos;IN1&apos;].length() &gt; 0) {
 		if (seg[&apos;IN1.15&apos;][&apos;IN1.15.1&apos;].toString() != &quot;&quot;) { in1[index].planType = seg[&apos;IN1.15&apos;][&apos;IN1.15.1&apos;]; }
 		
 		// IN1.16, insuredName
-		in1[index].companyContactPerson = [];
+		in1[index].insuredName = [];
 		for each (field in seg[&apos;IN1.16&apos;]) {
 			var block = {};
 			if (field[&apos;IN1.16.1&apos;].toString() != &quot;&quot;) { block.lastName = field[&apos;IN1.16.1&apos;]; }
@@ -7713,11 +7713,11 @@ if (msg[&apos;IN1&apos;].length() &gt; 0) {
 			if (field[&apos;IN1.16.6&apos;].toString() != &quot;&quot;) { block.degree = field[&apos;IN1.16.6&apos;]; }
 			if (field[&apos;IN1.16.7&apos;].toString() != &quot;&quot;) { block.nameTypeCode = field[&apos;IN1.16.7&apos;]; }
 			if (Object.keys(block).length &gt; 0) {
-				in1[index].companyContactPerson.push(block);
+				in1[index].insuredName.push(block);
 			}	
 		}
-		if (in1[index].companyContactPerson.length == 0) {
-			delete in1[index].companyContactPerson;
+		if (in1[index].insuredName.length == 0) {
+			delete in1[index].insuredName;
 		}
 
 		// IN1.17, insuredRelationshipToPatient
@@ -8320,7 +8320,7 @@ if (msg[&apos;IN1&apos;].length() &gt; 0) {
 		if (seg[&apos;IN1.15&apos;][&apos;IN1.15.1&apos;].toString() != &quot;&quot;) { in1[index].planType = seg[&apos;IN1.15&apos;][&apos;IN1.15.1&apos;]; }
 		
 		// IN1.16, insuredName
-		in1[index].companyContactPerson = [];
+		in1[index].insuredName = [];
 		for each (field in seg[&apos;IN1.16&apos;]) {
 			var block = {};
 			if (field[&apos;IN1.16.1&apos;].toString() != &quot;&quot;) { block.lastName = field[&apos;IN1.16.1&apos;]; }
@@ -8331,11 +8331,11 @@ if (msg[&apos;IN1&apos;].length() &gt; 0) {
 			if (field[&apos;IN1.16.6&apos;].toString() != &quot;&quot;) { block.degree = field[&apos;IN1.16.6&apos;]; }
 			if (field[&apos;IN1.16.7&apos;].toString() != &quot;&quot;) { block.nameTypeCode = field[&apos;IN1.16.7&apos;]; }
 			if (Object.keys(block).length &gt; 0) {
-				in1[index].companyContactPerson.push(block);
+				in1[index].insuredName.push(block);
 			}	
 		}
-		if (in1[index].companyContactPerson.length == 0) {
-			delete in1[index].companyContactPerson;
+		if (in1[index].insuredName.length == 0) {
+			delete in1[index].insuredName;
 		}
 
 		// IN1.17, insuredRelationshipToPatient
@@ -12095,21 +12095,24 @@ return;</undeployScript>
     <codeTemplateLibrary version="3.4.1">
       <id>10e63131-3e24-4419-a268-ed823aba5790</id>
       <name>Datica Mirth OCI Code Template Library</name>
-      <revision>4</revision>
+      <revision>1</revision>
       <lastModified>
-        <time>1508796653302</time>
+        <time>1512397292259</time>
         <timezone>America/New_York</timezone>
       </lastModified>
       <description>This library contains code templates used by the Datica Mirth OCI channels</description>
       <includeNewChannels>true</includeNewChannels>
       <enabledChannelIds>
+        <string>1192bb86-1f4d-4ca0-9343-e1b87d790154</string>
         <string>44ade9e2-d2ec-40f0-99cd-c2518f1aef0a</string>
+        <string>2edfb44b-d53e-43c0-9cee-dfb8c5d28c80</string>
         <string>12832ab3-cdac-485f-bf81-4c525359af88</string>
         <string>6546423b-30d4-46dc-92d7-3e651a542a42</string>
         <string>0d245f0f-1239-46cb-96db-b6c03ee91b18</string>
         <string>515eb748-bcc9-4b46-a086-be3174f3df41</string>
         <string>f6ba16ce-08cf-499f-8dac-143646aadd51</string>
         <string>6a27e181-4776-46d7-b862-5cc4968ec8e7</string>
+        <string>647fa65c-d0bb-4f32-a1f6-b218136ebdb8</string>
       </enabledChannelIds>
       <disabledChannelIds>
         <string>8b69b2e3-4cb0-40f9-93e4-b56c33ba112d</string>
@@ -12256,19 +12259,19 @@ return;</undeployScript>
         <codeTemplate version="3.4.1">
           <id>b9651842-7ccb-4761-aedf-a9a1461dd5f7</id>
           <name>Convert HL7 Date Format to ISO</name>
-          <revision>2</revision>
+          <revision>1</revision>
           <lastModified>
-            <time>1508796641140</time>
+            <time>1512397292449</time>
             <timezone>America/New_York</timezone>
           </lastModified>
           <type>FUNCTION</type>
           <contextSet>
             <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
               <contextType>DESTINATION_DISPATCHER</contextType>
+              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
               <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+              <contextType>SOURCE_RECEIVER</contextType>
             </delegate>
           </contextSet>
           <code>/**
@@ -12330,19 +12333,19 @@ function toISODate( hl7DateString, timezone ) {
         <codeTemplate version="3.4.1">
           <id>95e528b7-1e7f-490e-86da-7c14b23ee4f3</id>
           <name>Convert ISO Date Format to HL7</name>
-          <revision>2</revision>
+          <revision>1</revision>
           <lastModified>
-            <time>1508796641299</time>
+            <time>1512397292549</time>
             <timezone>America/New_York</timezone>
           </lastModified>
           <type>FUNCTION</type>
           <contextSet>
             <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
               <contextType>DESTINATION_DISPATCHER</contextType>
+              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
               <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+              <contextType>SOURCE_RECEIVER</contextType>
             </delegate>
           </contextSet>
           <code>/**
@@ -12415,17 +12418,17 @@ function toHL7Date( isoDateString, timezone )
           <name>Get Segments After a Particular Segment</name>
           <revision>1</revision>
           <lastModified>
-            <time>1508796287930</time>
+            <time>1512397292339</time>
             <timezone>America/New_York</timezone>
           </lastModified>
           <type>FUNCTION</type>
           <contextSet>
             <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_RECEIVER</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
               <contextType>DESTINATION_DISPATCHER</contextType>
+              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
               <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+              <contextType>SOURCE_RECEIVER</contextType>
             </delegate>
           </contextSet>
           <code>/**
