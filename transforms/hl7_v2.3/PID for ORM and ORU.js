@@ -495,15 +495,15 @@ if (msg['PID'].length() > 0) {
 				}
 
 				// PD1.11, publicityIndicator
-				pid[index].PD1[indexPD1].universalServiceID = {};
-				if (pd1Seg['PD1.11']['PD1.11.1'].toString() != "") { pid[index].PD1[indexPD1].universalServiceID.id = pd1Seg['PD1.11']['PD1.11.1']; }
-				if (pd1Seg['PD1.11']['PD1.11.2'].toString() != "") { pid[index].PD1[indexPD1].universalServiceID.text = pd1Seg['PD1.11']['PD1.11.2']; }
-				if (pd1Seg['PD1.11']['PD1.11.3'].toString() != "") { pid[index].PD1[indexPD1].universalServiceID.codingSystem = pd1Seg['PD1.11']['PD1.11.3']; }
-				if (pd1Seg['PD1.11']['PD1.11.4'].toString() != "") { pid[index].PD1[indexPD1].universalServiceID.altId = pd1Seg['PD1.11']['PD1.11.4']; }
-				if (pd1Seg['PD1.11']['PD1.11.5'].toString() != "") { pid[index].PD1[indexPD1].universalServiceID.altText = pd1Seg['PD1.11']['PD1.11.5']; }
-				if (pd1Seg['PD1.11']['PD1.11.6'].toString() != "") { pid[index].PD1[indexPD1].universalServiceID.altCodingSystem = pd1Seg['PD1.11']['PD1.11.6']; }
-				if (Object.keys(pid[index].PD1[indexPD1].universalServiceID).length == 0) {
-					delete pid[index].PD1[indexPD1].universalServiceID;
+				pid[index].PD1[indexPD1].publicityIndicator = {};
+				if (pd1Seg['PD1.11']['PD1.11.1'].toString() != "") { pid[index].PD1[indexPD1].publicityIndicator.id = pd1Seg['PD1.11']['PD1.11.1']; }
+				if (pd1Seg['PD1.11']['PD1.11.2'].toString() != "") { pid[index].PD1[indexPD1].publicityIndicator.text = pd1Seg['PD1.11']['PD1.11.2']; }
+				if (pd1Seg['PD1.11']['PD1.11.3'].toString() != "") { pid[index].PD1[indexPD1].publicityIndicator.codingSystem = pd1Seg['PD1.11']['PD1.11.3']; }
+				if (pd1Seg['PD1.11']['PD1.11.4'].toString() != "") { pid[index].PD1[indexPD1].publicityIndicator.altId = pd1Seg['PD1.11']['PD1.11.4']; }
+				if (pd1Seg['PD1.11']['PD1.11.5'].toString() != "") { pid[index].PD1[indexPD1].publicityIndicator.altText = pd1Seg['PD1.11']['PD1.11.5']; }
+				if (pd1Seg['PD1.11']['PD1.11.6'].toString() != "") { pid[index].PD1[indexPD1].publicityIndicator.altCodingSystem = pd1Seg['PD1.11']['PD1.11.6']; }
+				if (Object.keys(pid[index].PD1[indexPD1].publicityIndicator).length == 0) {
+					delete pid[index].PD1[indexPD1].publicityIndicator;
 				}
 				
 				// PD1.12, protectionIndicator
