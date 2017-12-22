@@ -5,10 +5,10 @@
   <description>Transform ADT HL7 to JSON</description>
   <enabled>true</enabled>
   <lastModified>
-    <time>1512397528199</time>
+    <time>1513183837217</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>2</revision>
+  <revision>3</revision>
   <sourceConnector version="3.4.1">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
@@ -5433,7 +5433,7 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 		if (seg[&apos;DRG.10&apos;][&apos;DRG.10.1&apos;].toString() != &quot;&quot;) { drg[index].confidentialIndicator =  seg[&apos;DRG.10&apos;][&apos;DRG.10.1&apos;]; }
 
 		// PR1 (DRG)
-		var pr1Group = getSegmentsAfter(msg,seg,&apos;PR1&apos;,true);
+		var pr1Group = getSegmentsAfter(msg,seg,&apos;PR1&apos;,false);
 		if (pr1Group.length &gt; 0) {
 			drg[index].PR1 = [];
 			var indexPR1 = 0;
@@ -5441,10 +5441,10 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 				drg[index].PR1[indexPR1] = {};
 
 				// PR1.1, setId
-				if (pr1Seg[&apos;PR1.1&apos;][&apos;PR1.1.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].setId = pr1Seg[&apos;PR1.1.1&apos;][&apos;PR1.1.1&apos;]; }
+				if (pr1Seg[&apos;PR1.1&apos;][&apos;PR1.1.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].setId = pr1Seg[&apos;PR1.1&apos;][&apos;PR1.1.1&apos;]; }
 
 				// PR1.2, procedureCodingMethod
-				if (pr1Seg[&apos;PR1.2&apos;][&apos;PR1.2.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureCodingMethod = pr1Seg[&apos;PR1.2.1&apos;][&apos;PR1.2.1&apos;]; }
+				if (pr1Seg[&apos;PR1.2&apos;][&apos;PR1.2.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureCodingMethod = pr1Seg[&apos;PR1.2&apos;][&apos;PR1.2.1&apos;]; }
 
 				// PR1.3, procedureCode
 				drg[index].PR1[indexPR1].procedureCode = {};
@@ -5459,16 +5459,16 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 				}
 
 				// PR1.4, procedureDescription
-				if (pr1Seg[&apos;PR1.4&apos;][&apos;PR1.4.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureDescription = pr1Seg[&apos;PR1.4.1&apos;][&apos;PR1.4.1&apos;]; }
+				if (pr1Seg[&apos;PR1.4&apos;][&apos;PR1.4.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureDescription = pr1Seg[&apos;PR1.4&apos;][&apos;PR1.4.1&apos;]; }
 
 				// PR1.5, procedureDateTime
-				if (pr1Seg[&apos;PR1.5&apos;][&apos;PR1.5.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureDateTime = pr1Seg[&apos;PR1.5.1&apos;][&apos;PR1.5.1&apos;]; }
+				if (pr1Seg[&apos;PR1.5&apos;][&apos;PR1.5.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureDateTime = pr1Seg[&apos;PR1.5&apos;][&apos;PR1.5.1&apos;]; }
 
 				// PR1.6, procedureFunctionalType
-				if (pr1Seg[&apos;PR1.6&apos;][&apos;PR1.6.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureFunctionalType = pr1Seg[&apos;PR1.6.1&apos;][&apos;PR1.6.1&apos;]; }
+				if (pr1Seg[&apos;PR1.6&apos;][&apos;PR1.6.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureFunctionalType = pr1Seg[&apos;PR1.6&apos;][&apos;PR1.6.1&apos;]; }
 
 				// PR1.7, procedureMinutes
-				if (pr1Seg[&apos;PR1.7&apos;][&apos;PR1.7.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureMinutes = pr1Seg[&apos;PR1.7.1&apos;][&apos;PR1.7.1&apos;]; }
+				if (pr1Seg[&apos;PR1.7&apos;][&apos;PR1.7.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureMinutes = pr1Seg[&apos;PR1.7&apos;][&apos;PR1.7.1&apos;]; }
 
 				// PR1.8, anesthesiologist
 				drg[index].PR1[indexPR1].anesthesiologist = [];
@@ -5511,10 +5511,10 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 				}
 
 				// PR1.9, anesthesiaCode
-				if (pr1Seg[&apos;PR1.9&apos;][&apos;PR1.9.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].anesthesiaCode = pr1Seg[&apos;PR1.9.1&apos;][&apos;PR1.9.1&apos;]; }
+				if (pr1Seg[&apos;PR1.9&apos;][&apos;PR1.9.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].anesthesiaCode = pr1Seg[&apos;PR1.9&apos;][&apos;PR1.9.1&apos;]; }
 
 				// PR1.10, anesthesiaMinutes
-				if (pr1Seg[&apos;PR1.10&apos;][&apos;PR1.10.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].anesthesiaMinutes = pr1Seg[&apos;PR1.10.1&apos;][&apos;PR1.10.1&apos;]; }
+				if (pr1Seg[&apos;PR1.10&apos;][&apos;PR1.10.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].anesthesiaMinutes = pr1Seg[&apos;PR1.10&apos;][&apos;PR1.10.1&apos;]; }
 
 				// PR1.11, surgeon
 				drg[index].PR1[indexPR1].surgeon = [];
@@ -5609,7 +5609,7 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 				}
 
 				// PR1.14, procedurePriority
-				if (pr1Seg[&apos;PR1.14&apos;][&apos;PR1.14.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedurePriority = pr1Seg[&apos;PR1.14.1&apos;][&apos;PR1.14.1&apos;]; }
+				if (pr1Seg[&apos;PR1.14&apos;][&apos;PR1.14.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedurePriority = pr1Seg[&apos;PR1.14&apos;][&apos;PR1.14.1&apos;]; }
 
 				// PR1.15, associatedDiagnosisCode
 				drg[index].PR1[indexPR1].associatedDiagnosisCode = {};
@@ -5624,7 +5624,7 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 				}
 
 				// ROL (PR1)
-				var rolGroup = getSegmentsAfter(msg,seg,&apos;ROL&apos;,true);
+				var rolGroup = getSegmentsAfter(msg,seg,&apos;ROL&apos;,false);
 				if (rolGroup.length &gt; 0) {
 					drg[index].PR1[indexPR1].ROL = [];
 					var indexROL = 0;
@@ -5642,7 +5642,7 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 						}
 
 						// ROL.2, actionCode
-						if (rolSeg[&apos;ROL.2&apos;][&apos;ROL.2.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].ROL[indexROL].actionCode = rolSeg[&apos;ROL.2.1&apos;][&apos;ROL.2.1&apos;]; }
+						if (rolSeg[&apos;ROL.2&apos;][&apos;ROL.2.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].ROL[indexROL].actionCode = rolSeg[&apos;ROL.2&apos;][&apos;ROL.2.1&apos;]; }
 
 						// ROL.3, role
 						drg[index].PR1[indexPR1].ROL[indexROL].role = {};
@@ -5691,10 +5691,10 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 						}
 
 						// ROL.5, roleBeginDateTime
-						if (rolSeg[&apos;ROL.5&apos;][&apos;ROL.5.1&apos;].toString() != &quot;&quot;) { pr1[indexPR1].roleBeginDateTime = rolSeg[&apos;ROL.5.1&apos;][&apos;ROL.5.1&apos;]; }
+						if (rolSeg[&apos;ROL.5&apos;][&apos;ROL.5.1&apos;].toString() != &quot;&quot;) { pr1[indexPR1].roleBeginDateTime = rolSeg[&apos;ROL.5&apos;][&apos;ROL.5.1&apos;]; }
 
 						// ROL.6, roleEndDateTime
-						if (rolSeg[&apos;ROL.6&apos;][&apos;ROL.6.1&apos;].toString() != &quot;&quot;) { pr1[indexPR1].roleEndDateTime = rolSeg[&apos;ROL.6.1&apos;][&apos;ROL.6.1&apos;]; }
+						if (rolSeg[&apos;ROL.6&apos;][&apos;ROL.6.1&apos;].toString() != &quot;&quot;) { pr1[indexPR1].roleEndDateTime = rolSeg[&apos;ROL.6&apos;][&apos;ROL.6.1&apos;]; }
 
 						// ROL.7, roleDuration
 						drg[index].PR1[indexPR1].ROL[indexROL].roleDuration = {};
@@ -5867,7 +5867,7 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 		if (seg[&apos;DRG.10&apos;][&apos;DRG.10.1&apos;].toString() != &quot;&quot;) { drg[index].confidentialIndicator =  seg[&apos;DRG.10&apos;][&apos;DRG.10.1&apos;]; }
 
 		// PR1 (DRG)
-		var pr1Group = getSegmentsAfter(msg,seg,&apos;PR1&apos;,true);
+		var pr1Group = getSegmentsAfter(msg,seg,&apos;PR1&apos;,false);
 		if (pr1Group.length &gt; 0) {
 			drg[index].PR1 = [];
 			var indexPR1 = 0;
@@ -5875,10 +5875,10 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 				drg[index].PR1[indexPR1] = {};
 
 				// PR1.1, setId
-				if (pr1Seg[&apos;PR1.1&apos;][&apos;PR1.1.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].setId = pr1Seg[&apos;PR1.1.1&apos;][&apos;PR1.1.1&apos;]; }
+				if (pr1Seg[&apos;PR1.1&apos;][&apos;PR1.1.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].setId = pr1Seg[&apos;PR1.1&apos;][&apos;PR1.1.1&apos;]; }
 
 				// PR1.2, procedureCodingMethod
-				if (pr1Seg[&apos;PR1.2&apos;][&apos;PR1.2.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureCodingMethod = pr1Seg[&apos;PR1.2.1&apos;][&apos;PR1.2.1&apos;]; }
+				if (pr1Seg[&apos;PR1.2&apos;][&apos;PR1.2.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureCodingMethod = pr1Seg[&apos;PR1.2&apos;][&apos;PR1.2.1&apos;]; }
 
 				// PR1.3, procedureCode
 				drg[index].PR1[indexPR1].procedureCode = {};
@@ -5893,16 +5893,16 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 				}
 
 				// PR1.4, procedureDescription
-				if (pr1Seg[&apos;PR1.4&apos;][&apos;PR1.4.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureDescription = pr1Seg[&apos;PR1.4.1&apos;][&apos;PR1.4.1&apos;]; }
+				if (pr1Seg[&apos;PR1.4&apos;][&apos;PR1.4.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureDescription = pr1Seg[&apos;PR1.4&apos;][&apos;PR1.4.1&apos;]; }
 
 				// PR1.5, procedureDateTime
-				if (pr1Seg[&apos;PR1.5&apos;][&apos;PR1.5.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureDateTime = pr1Seg[&apos;PR1.5.1&apos;][&apos;PR1.5.1&apos;]; }
+				if (pr1Seg[&apos;PR1.5&apos;][&apos;PR1.5.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureDateTime = pr1Seg[&apos;PR1.5&apos;][&apos;PR1.5.1&apos;]; }
 
 				// PR1.6, procedureFunctionalType
-				if (pr1Seg[&apos;PR1.6&apos;][&apos;PR1.6.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureFunctionalType = pr1Seg[&apos;PR1.6.1&apos;][&apos;PR1.6.1&apos;]; }
+				if (pr1Seg[&apos;PR1.6&apos;][&apos;PR1.6.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureFunctionalType = pr1Seg[&apos;PR1.6&apos;][&apos;PR1.6.1&apos;]; }
 
 				// PR1.7, procedureMinutes
-				if (pr1Seg[&apos;PR1.7&apos;][&apos;PR1.7.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureMinutes = pr1Seg[&apos;PR1.7.1&apos;][&apos;PR1.7.1&apos;]; }
+				if (pr1Seg[&apos;PR1.7&apos;][&apos;PR1.7.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedureMinutes = pr1Seg[&apos;PR1.7&apos;][&apos;PR1.7.1&apos;]; }
 
 				// PR1.8, anesthesiologist
 				drg[index].PR1[indexPR1].anesthesiologist = [];
@@ -5945,10 +5945,10 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 				}
 
 				// PR1.9, anesthesiaCode
-				if (pr1Seg[&apos;PR1.9&apos;][&apos;PR1.9.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].anesthesiaCode = pr1Seg[&apos;PR1.9.1&apos;][&apos;PR1.9.1&apos;]; }
+				if (pr1Seg[&apos;PR1.9&apos;][&apos;PR1.9.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].anesthesiaCode = pr1Seg[&apos;PR1.9&apos;][&apos;PR1.9.1&apos;]; }
 
 				// PR1.10, anesthesiaMinutes
-				if (pr1Seg[&apos;PR1.10&apos;][&apos;PR1.10.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].anesthesiaMinutes = pr1Seg[&apos;PR1.10.1&apos;][&apos;PR1.10.1&apos;]; }
+				if (pr1Seg[&apos;PR1.10&apos;][&apos;PR1.10.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].anesthesiaMinutes = pr1Seg[&apos;PR1.10&apos;][&apos;PR1.10.1&apos;]; }
 
 				// PR1.11, surgeon
 				drg[index].PR1[indexPR1].surgeon = [];
@@ -6043,7 +6043,7 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 				}
 
 				// PR1.14, procedurePriority
-				if (pr1Seg[&apos;PR1.14&apos;][&apos;PR1.14.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedurePriority = pr1Seg[&apos;PR1.14.1&apos;][&apos;PR1.14.1&apos;]; }
+				if (pr1Seg[&apos;PR1.14&apos;][&apos;PR1.14.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].procedurePriority = pr1Seg[&apos;PR1.14&apos;][&apos;PR1.14.1&apos;]; }
 
 				// PR1.15, associatedDiagnosisCode
 				drg[index].PR1[indexPR1].associatedDiagnosisCode = {};
@@ -6058,7 +6058,7 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 				}
 
 				// ROL (PR1)
-				var rolGroup = getSegmentsAfter(msg,seg,&apos;ROL&apos;,true);
+				var rolGroup = getSegmentsAfter(msg,seg,&apos;ROL&apos;,false);
 				if (rolGroup.length &gt; 0) {
 					drg[index].PR1[indexPR1].ROL = [];
 					var indexROL = 0;
@@ -6076,7 +6076,7 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 						}
 
 						// ROL.2, actionCode
-						if (rolSeg[&apos;ROL.2&apos;][&apos;ROL.2.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].ROL[indexROL].actionCode = rolSeg[&apos;ROL.2.1&apos;][&apos;ROL.2.1&apos;]; }
+						if (rolSeg[&apos;ROL.2&apos;][&apos;ROL.2.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].ROL[indexROL].actionCode = rolSeg[&apos;ROL.2&apos;][&apos;ROL.2.1&apos;]; }
 
 						// ROL.3, role
 						drg[index].PR1[indexPR1].ROL[indexROL].role = {};
@@ -6125,10 +6125,10 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 						}
 
 						// ROL.5, roleBeginDateTime
-						if (rolSeg[&apos;ROL.5&apos;][&apos;ROL.5.1&apos;].toString() != &quot;&quot;) { pr1[indexPR1].roleBeginDateTime = rolSeg[&apos;ROL.5.1&apos;][&apos;ROL.5.1&apos;]; }
+						if (rolSeg[&apos;ROL.5&apos;][&apos;ROL.5.1&apos;].toString() != &quot;&quot;) { pr1[indexPR1].roleBeginDateTime = rolSeg[&apos;ROL.5&apos;][&apos;ROL.5.1&apos;]; }
 
 						// ROL.6, roleEndDateTime
-						if (rolSeg[&apos;ROL.6&apos;][&apos;ROL.6.1&apos;].toString() != &quot;&quot;) { pr1[indexPR1].roleEndDateTime = rolSeg[&apos;ROL.6.1&apos;][&apos;ROL.6.1&apos;]; }
+						if (rolSeg[&apos;ROL.6&apos;][&apos;ROL.6.1&apos;].toString() != &quot;&quot;) { pr1[indexPR1].roleEndDateTime = rolSeg[&apos;ROL.6&apos;][&apos;ROL.6.1&apos;]; }
 
 						// ROL.7, roleDuration
 						drg[index].PR1[indexPR1].ROL[indexROL].roleDuration = {};
@@ -12267,11 +12267,11 @@ return;</undeployScript>
           <type>FUNCTION</type>
           <contextSet>
             <delegate>
-              <contextType>DESTINATION_DISPATCHER</contextType>
               <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
               <contextType>SOURCE_RECEIVER</contextType>
+              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+              <contextType>DESTINATION_DISPATCHER</contextType>
+              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
             </delegate>
           </contextSet>
           <code>/**
@@ -12341,11 +12341,11 @@ function toISODate( hl7DateString, timezone ) {
           <type>FUNCTION</type>
           <contextSet>
             <delegate>
-              <contextType>DESTINATION_DISPATCHER</contextType>
               <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
               <contextType>SOURCE_RECEIVER</contextType>
+              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+              <contextType>DESTINATION_DISPATCHER</contextType>
+              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
             </delegate>
           </contextSet>
           <code>/**
@@ -12424,11 +12424,11 @@ function toHL7Date( isoDateString, timezone )
           <type>FUNCTION</type>
           <contextSet>
             <delegate>
-              <contextType>DESTINATION_DISPATCHER</contextType>
               <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
               <contextType>SOURCE_RECEIVER</contextType>
+              <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+              <contextType>DESTINATION_DISPATCHER</contextType>
+              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
             </delegate>
           </contextSet>
           <code>/**

@@ -7,10 +7,10 @@ if (msg['PR1'].length() > 0) {
 		pr1[index] = {};
 
 		// PR1.1, setId
-		if (seg['PR1.1']['PR1.1.1'].toString() != "") { pr1[index].setId = seg['PR1.1.1']['PR1.1.1']; }
+		if (seg['PR1.1']['PR1.1.1'].toString() != "") { pr1[index].setId = seg['PR1.1']['PR1.1.1']; }
 
 		// PR1.2, procedureCodingMethod
-		if (seg['PR1.2']['PR1.2.1'].toString() != "") { pr1[index].procedureCodingMethod = seg['PR1.2.1']['PR1.2.1']; }
+		if (seg['PR1.2']['PR1.2.1'].toString() != "") { pr1[index].procedureCodingMethod = seg['PR1.2']['PR1.2.1']; }
 
 		// PR1.3, procedureCode
 		pr1[index].procedureCode = {};
@@ -25,16 +25,16 @@ if (msg['PR1'].length() > 0) {
 		}
 
 		// PR1.4, procedureDescription
-		if (seg['PR1.4']['PR1.4.1'].toString() != "") { pr1[index].procedureDescription = seg['PR1.4.1']['PR1.4.1']; }
+		if (seg['PR1.4']['PR1.4.1'].toString() != "") { pr1[index].procedureDescription = seg['PR1.4']['PR1.4.1']; }
 
 		// PR1.5, procedureDateTime
-		if (seg['PR1.5']['PR1.5.1'].toString() != "") { pr1[index].procedureDateTime = seg['PR1.5.1']['PR1.5.1']; }
+		if (seg['PR1.5']['PR1.5.1'].toString() != "") { pr1[index].procedureDateTime = seg['PR1.5']['PR1.5.1']; }
 
 		// PR1.6, procedureFunctionalType
-		if (seg['PR1.6']['PR1.6.1'].toString() != "") { pr1[index].procedureFunctionalType = seg['PR1.6.1']['PR1.6.1']; }
+		if (seg['PR1.6']['PR1.6.1'].toString() != "") { pr1[index].procedureFunctionalType = seg['PR1.6']['PR1.6.1']; }
 
 		// PR1.7, procedureMinutes
-		if (seg['PR1.7']['PR1.7.1'].toString() != "") { pr1[index].procedureMinutes = seg['PR1.7.1']['PR1.7.1']; }
+		if (seg['PR1.7']['PR1.7.1'].toString() != "") { pr1[index].procedureMinutes = seg['PR1.7']['PR1.7.1']; }
 
 		// PR1.8, anesthesiologist
 		pr1[index].anesthesiologist = [];
@@ -75,10 +75,10 @@ if (msg['PR1'].length() > 0) {
 		}
 
 		// PR1.9, anesthesiaCode
-		if (seg['PR1.9']['PR1.9.1'].toString() != "") { pr1[index].anesthesiaCode = seg['PR1.9.1']['PR1.9.1']; }
+		if (seg['PR1.9']['PR1.9.1'].toString() != "") { pr1[index].anesthesiaCode = seg['PR1.9']['PR1.9.1']; }
 
 		// PR1.10, anesthesiaMinutes
-		if (seg['PR1.10']['PR1.10.1'].toString() != "") { pr1[index].anesthesiaMinutes = seg['PR1.10.1']['PR1.10.1']; }
+		if (seg['PR1.10']['PR1.10.1'].toString() != "") { pr1[index].anesthesiaMinutes = seg['PR1.10']['PR1.10.1']; }
 
 		// PR1.11, surgeon
 		pr1[index].surgeon = [];
@@ -169,7 +169,7 @@ if (msg['PR1'].length() > 0) {
 		}
 
 		// PR1.14, procedurePriority
-		if (seg['PR1.14']['PR1.14.1'].toString() != "") { pr1[index].procedurePriority = seg['PR1.14.1']['PR1.14.1']; }
+		if (seg['PR1.14']['PR1.14.1'].toString() != "") { pr1[index].procedurePriority = seg['PR1.14']['PR1.14.1']; }
 
 		// PR1.15, associatedDiagnosisCode
 		pr1[index].associatedDiagnosisCode = {};
@@ -202,7 +202,7 @@ if (msg['PR1'].length() > 0) {
 				}
 
 				// ROL.2, actionCode
-				if (rolSeg['ROL.2']['ROL.2.1'].toString() != "") { pr1[indexPR1].actionCode = rolSeg['ROL.2.1']['ROL.2.1']; }
+				if (rolSeg['ROL.2']['ROL.2.1'].toString() != "") { pr1[indexPR1].actionCode = rolSeg['ROL.2']['ROL.2.1']; }
 
 				// ROL.3, role
 				pr1[index].rol[indexROL].role = {};
@@ -249,10 +249,10 @@ if (msg['PR1'].length() > 0) {
 				}
 
 				// ROL.5, roleBeginDateTime
-				if (rolSeg['ROL.5']['ROL.5.1'].toString() != "") { pr1[indexPR1].roleBeginDateTime = rolSeg['ROL.5.1']['ROL.5.1']; }
+				if (rolSeg['ROL.5']['ROL.5.1'].toString() != "") { pr1[indexPR1].roleBeginDateTime = rolSeg['ROL.5']['ROL.5.1']; }
 
 				// ROL.6, roleEndDateTime
-				if (rolSeg['ROL.6']['ROL.6.1'].toString() != "") { pr1[indexPR1].roleEndDateTime = rolSeg['ROL.6.1']['ROL.6.1']; }
+				if (rolSeg['ROL.6']['ROL.6.1'].toString() != "") { pr1[indexPR1].roleEndDateTime = rolSeg['ROL.6']['ROL.6.1']; }
 
 				// ROL.7, roleDuration
 				pr1[index].rol[indexROL].roleDuration = {};

@@ -17,7 +17,7 @@ if (msg['ROL'].length() > 0) {
 		}
 
 		// ROL.2, actionCode
-		if (seg['ROL.2']['ROL.2.1'].toString() != "") { rol[index].actionCode = seg['ROL.2.1']['ROL.2.1']; }
+		if (seg['ROL.2']['ROL.2.1'].toString() != "") { rol[index].actionCode = seg['ROL.2']['ROL.2.1']; }
 
 		// ROL.3, role
 		rol[index].role = {};
@@ -66,10 +66,10 @@ if (msg['ROL'].length() > 0) {
 		}
 
 		// ROL.5, roleBeginDateTime
-		if (seg['ROL.5']['ROL.5.1'].toString() != "") { pr1[indexPR1].roleBeginDateTime = seg['ROL.5.1']['ROL.5.1']; }
+		if (seg['ROL.5']['ROL.5.1'].toString() != "") { pr1[indexPR1].roleBeginDateTime = seg['ROL.5']['ROL.5.1']; }
 
 		// ROL.6, roleEndDateTime
-		if (seg['ROL.6']['ROL.6.1'].toString() != "") { pr1[indexPR1].roleEndDateTime = seg['ROL.6.1']['ROL.6.1']; }
+		if (seg['ROL.6']['ROL.6.1'].toString() != "") { pr1[indexPR1].roleEndDateTime = seg['ROL.6']['ROL.6.1']; }
 
 		// ROL.7, roleDuration
 		rol[index].roleDuration = {};

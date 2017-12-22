@@ -109,10 +109,10 @@ if (msg['DRG'].length() > 0) {
 				drg[index].PR1[indexPR1] = {};
 
 				// PR1.1, setId
-				if (pr1Seg['PR1.1']['PR1.1.1'].toString() != "") { drg[index].PR1[indexPR1].setId = pr1Seg['PR1.1.1']['PR1.1.1']; }
+				if (pr1Seg['PR1.1']['PR1.1.1'].toString() != "") { drg[index].PR1[indexPR1].setId = pr1Seg['PR1.1']['PR1.1.1']; }
 
 				// PR1.2, procedureCodingMethod
-				if (pr1Seg['PR1.2']['PR1.2.1'].toString() != "") { drg[index].PR1[indexPR1].procedureCodingMethod = pr1Seg['PR1.2.1']['PR1.2.1']; }
+				if (pr1Seg['PR1.2']['PR1.2.1'].toString() != "") { drg[index].PR1[indexPR1].procedureCodingMethod = pr1Seg['PR1.2']['PR1.2.1']; }
 
 				// PR1.3, procedureCode
 				drg[index].PR1[indexPR1].procedureCode = {};
@@ -127,16 +127,16 @@ if (msg['DRG'].length() > 0) {
 				}
 
 				// PR1.4, procedureDescription
-				if (pr1Seg['PR1.4']['PR1.4.1'].toString() != "") { drg[index].PR1[indexPR1].procedureDescription = pr1Seg['PR1.4.1']['PR1.4.1']; }
+				if (pr1Seg['PR1.4']['PR1.4.1'].toString() != "") { drg[index].PR1[indexPR1].procedureDescription = pr1Seg['PR1.4']['PR1.4.1']; }
 
 				// PR1.5, procedureDateTime
-				if (pr1Seg['PR1.5']['PR1.5.1'].toString() != "") { drg[index].PR1[indexPR1].procedureDateTime = pr1Seg['PR1.5.1']['PR1.5.1']; }
+				if (pr1Seg['PR1.5']['PR1.5.1'].toString() != "") { drg[index].PR1[indexPR1].procedureDateTime = pr1Seg['PR1.5']['PR1.5.1']; }
 
 				// PR1.6, procedureFunctionalType
-				if (pr1Seg['PR1.6']['PR1.6.1'].toString() != "") { drg[index].PR1[indexPR1].procedureFunctionalType = pr1Seg['PR1.6.1']['PR1.6.1']; }
+				if (pr1Seg['PR1.6']['PR1.6.1'].toString() != "") { drg[index].PR1[indexPR1].procedureFunctionalType = pr1Seg['PR1.6']['PR1.6.1']; }
 
 				// PR1.7, procedureMinutes
-				if (pr1Seg['PR1.7']['PR1.7.1'].toString() != "") { drg[index].PR1[indexPR1].procedureMinutes = pr1Seg['PR1.7.1']['PR1.7.1']; }
+				if (pr1Seg['PR1.7']['PR1.7.1'].toString() != "") { drg[index].PR1[indexPR1].procedureMinutes = pr1Seg['PR1.7']['PR1.7.1']; }
 
 				// PR1.8, anesthesiologist
 				drg[index].PR1[indexPR1].anesthesiologist = [];
@@ -177,10 +177,10 @@ if (msg['DRG'].length() > 0) {
 				}
 
 				// PR1.9, anesthesiaCode
-				if (pr1Seg['PR1.9']['PR1.9.1'].toString() != "") { drg[index].PR1[indexPR1].anesthesiaCode = pr1Seg['PR1.9.1']['PR1.9.1']; }
+				if (pr1Seg['PR1.9']['PR1.9.1'].toString() != "") { drg[index].PR1[indexPR1].anesthesiaCode = pr1Seg['PR1.9']['PR1.9.1']; }
 
 				// PR1.10, anesthesiaMinutes
-				if (pr1Seg['PR1.10']['PR1.10.1'].toString() != "") { drg[index].PR1[indexPR1].anesthesiaMinutes = pr1Seg['PR1.10.1']['PR1.10.1']; }
+				if (pr1Seg['PR1.10']['PR1.10.1'].toString() != "") { drg[index].PR1[indexPR1].anesthesiaMinutes = pr1Seg['PR1.10']['PR1.10.1']; }
 
 				// PR1.11, surgeon
 				drg[index].PR1[indexPR1].surgeon = [];
@@ -271,7 +271,7 @@ if (msg['DRG'].length() > 0) {
 				}
 
 				// PR1.14, procedurePriority
-				if (pr1Seg['PR1.14']['PR1.14.1'].toString() != "") { drg[index].PR1[indexPR1].procedurePriority = pr1Seg['PR1.14.1']['PR1.14.1']; }
+				if (pr1Seg['PR1.14']['PR1.14.1'].toString() != "") { drg[index].PR1[indexPR1].procedurePriority = pr1Seg['PR1.14']['PR1.14.1']; }
 
 				// PR1.15, associatedDiagnosisCode
 				drg[index].PR1[indexPR1].associatedDiagnosisCode = {};
@@ -304,7 +304,7 @@ if (msg['DRG'].length() > 0) {
 						}
 
 						// ROL.2, actionCode
-						if (rolSeg['ROL.2']['ROL.2.1'].toString() != "") { drg[index].PR1[indexPR1].ROL[indexROL].actionCode = rolSeg['ROL.2.1']['ROL.2.1']; }
+						if (rolSeg['ROL.2']['ROL.2.1'].toString() != "") { drg[index].PR1[indexPR1].ROL[indexROL].actionCode = rolSeg['ROL.2']['ROL.2.1']; }
 
 						// ROL.3, role
 						drg[index].PR1[indexPR1].ROL[indexROL].role = {};
@@ -351,10 +351,10 @@ if (msg['DRG'].length() > 0) {
 						}
 
 						// ROL.5, roleBeginDateTime
-						if (rolSeg['ROL.5']['ROL.5.1'].toString() != "") { pr1[indexPR1].roleBeginDateTime = rolSeg['ROL.5.1']['ROL.5.1']; }
+						if (rolSeg['ROL.5']['ROL.5.1'].toString() != "") { pr1[indexPR1].roleBeginDateTime = rolSeg['ROL.5']['ROL.5.1']; }
 
 						// ROL.6, roleEndDateTime
-						if (rolSeg['ROL.6']['ROL.6.1'].toString() != "") { pr1[indexPR1].roleEndDateTime = rolSeg['ROL.6.1']['ROL.6.1']; }
+						if (rolSeg['ROL.6']['ROL.6.1'].toString() != "") { pr1[indexPR1].roleEndDateTime = rolSeg['ROL.6']['ROL.6.1']; }
 
 						// ROL.7, roleDuration
 						drg[index].PR1[indexPR1].ROL[indexROL].roleDuration = {};
