@@ -1,5 +1,5 @@
 <channel version="3.4.1">
-  <id>2edfb44b-d53e-43c0-9cee-dfb8c5d28c80</id>
+  <id>7349e404-71ed-4ac2-acae-4d0d50b03487</id>
   <nextMetaDataId>2</nextMetaDataId>
   <name>Generate HL7 Samples</name>
   <description>This channel is a tool for generating sample HL7 messages. These messages contain the segments and data elements that are commonly sent in the supported message types. Messages from production systems will typically omit many data elements that are not required; the optional elements included in these sample messages will help you test and validate your interface configuration.
@@ -43,10 +43,10 @@ ORU^R01 - Observation Message
 ORM^O01 - Order Message</description>
   <enabled>true</enabled>
   <lastModified>
-    <time>1510954743699</time>
+    <time>1513288839110</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>37</revision>
+  <revision>4</revision>
   <sourceConnector version="3.4.1">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
@@ -65,27 +65,27 @@ ORM^O01 - Order Message</description>
         <respondAfterProcessing>true</respondAfterProcessing>
         <processBatch>false</processBatch>
         <firstResponse>false</firstResponse>
-        <processingThreads>1</processingThreads>
+        <processingThreads>0</processingThreads>
         <resourceIds class="linked-hash-map">
           <entry>
             <string>Default Resource</string>
             <string>[Default Resource]</string>
           </entry>
         </resourceIds>
-        <queueBufferSize>1000</queueBufferSize>
+        <queueBufferSize>0</queueBufferSize>
       </sourceConnectorProperties>
       <xmlBody>false</xmlBody>
-      <parseMultipart>true</parseMultipart>
+      <parseMultipart>false</parseMultipart>
       <includeMetadata>false</includeMetadata>
-      <binaryMimeTypes>application/.*(?&lt;!json|xml)$|image/.*|video/.*|audio/.*</binaryMimeTypes>
-      <binaryMimeTypesRegex>true</binaryMimeTypesRegex>
-      <responseContentType>text/plain</responseContentType>
+      <binaryMimeTypes></binaryMimeTypes>
+      <binaryMimeTypesRegex>false</binaryMimeTypesRegex>
+      <responseContentType></responseContentType>
       <responseDataTypeBinary>false</responseDataTypeBinary>
-      <responseStatusCode>${respCode}</responseStatusCode>
+      <responseStatusCode></responseStatusCode>
       <responseHeaders class="linked-hash-map"/>
-      <charset>UTF-8</charset>
+      <charset>DEFAULT_ENCODING</charset>
       <contextPath></contextPath>
-      <timeout>0</timeout>
+      <timeout></timeout>
       <staticResources/>
     </properties>
     <transformer version="3.4.1">
@@ -189,7 +189,7 @@ function ORM(eventType){
 	PID(pat)+PD1(pat)+NTE(2)+
 	PV1(pat)+PV2(pat)+
 	IN1(ins)+IN2(ins)+IN3(ins)+GT1(rel)+AL1()+
-	ORC(ord)+NTE(3)+DG1()+OBR(ord)+OBX(obs)+NTE(3);
+	ORC(ord)+NTE(3)+OBR(ord)+DG1()+OBX(obs)+NTE(3);
 	return msg.toUpperCase();
 }
 function ADT(eventType){
@@ -225,7 +225,7 @@ function ADT(eventType){
 	var ins = insurance(pat);
 	var msg = &quot;&quot;;
 	msg = MSH(&quot;ADT&quot;,eventType) + EVN(&quot;ADT&quot;,eventType) + PID(pat) + PD1(pat) + NK1(rel) + PV1(pat) + 
-	PV2(pat) + DB1(pat) + OBX(obs) +AL1() + DG1() + //no DRG right now
+	PV2(pat) + DB1(pat) + OBX(obs) +AL1() + DG1() + DRG() + 
 	PR1() + ROL(prov) + GT1(rel) + IN1(ins) + IN2(ins) + IN3(ins)+ ACC();
 	return msg.toUpperCase();
 }
@@ -766,6 +766,10 @@ function DG1(){
 			&quot;F|&quot; + //type = final
 			&quot;\n&quot;;
 	return dg1.toUpperCase();
+}
+function DRG(){
+	var drg = &quot;DRG|\n&quot;; // TODO: finish configuring example DRG segment
+	return drg.toUpperCase();
 }
 function PR1(){
 	var proc = procedure();
@@ -2101,7 +2105,7 @@ function ORM(eventType){
 	PID(pat)+PD1(pat)+NTE(2)+
 	PV1(pat)+PV2(pat)+
 	IN1(ins)+IN2(ins)+IN3(ins)+GT1(rel)+AL1()+
-	ORC(ord)+NTE(3)+DG1()+OBR(ord)+OBX(obs)+NTE(3);
+	ORC(ord)+NTE(3)+OBR(ord)+DG1()+OBX(obs)+NTE(3);
 	return msg.toUpperCase();
 }
 function ADT(eventType){
@@ -2137,7 +2141,7 @@ function ADT(eventType){
 	var ins = insurance(pat);
 	var msg = &quot;&quot;;
 	msg = MSH(&quot;ADT&quot;,eventType) + EVN(&quot;ADT&quot;,eventType) + PID(pat) + PD1(pat) + NK1(rel) + PV1(pat) + 
-	PV2(pat) + DB1(pat) + OBX(obs) +AL1() + DG1() + //no DRG right now
+	PV2(pat) + DB1(pat) + OBX(obs) +AL1() + DG1() + DRG() + 
 	PR1() + ROL(prov) + GT1(rel) + IN1(ins) + IN2(ins) + IN3(ins)+ ACC();
 	return msg.toUpperCase();
 }
@@ -2678,6 +2682,10 @@ function DG1(){
 			&quot;F|&quot; + //type = final
 			&quot;\n&quot;;
 	return dg1.toUpperCase();
+}
+function DRG(){
+	var drg = &quot;DRG|\n&quot;; // TODO: finish configuring example DRG segment
+	return drg.toUpperCase();
 }
 function PR1(){
 	var proc = procedure();
@@ -3917,7 +3925,7 @@ function price(digits){
           </data>
         </step>
       </steps>
-      <inboundTemplate encoding="base64">TVNHXkVWRU5U</inboundTemplate>
+      <inboundTemplate encoding="base64"></inboundTemplate>
       <outboundTemplate encoding="base64"></outboundTemplate>
       <inboundDataType>DELIMITED</inboundDataType>
       <outboundDataType>RAW</outboundDataType>
@@ -4035,10 +4043,6 @@ function price(digits){
     </connector>
   </destinationConnectors>
   <preprocessingScript>// Modify the message variable below to pre process data
-//return message;
-//responseMap.put(&quot;tmp&quot;,500);getResponseCode()
-
-channelMap.put(&quot;respCode&quot;,&quot;500&quot;);
 return message;</preprocessingScript>
   <postprocessingScript>// This script executes once after a message has been processed
 // Responses returned from here will be stored as &quot;Postprocessor&quot; in the response map
@@ -4087,9 +4091,9 @@ return;</undeployScript>
     <codeTemplateLibrary version="3.4.1">
       <id>10e63131-3e24-4419-a268-ed823aba5790</id>
       <name>Datica Mirth OCI Code Template Library</name>
-      <revision>7</revision>
+      <revision>1</revision>
       <lastModified>
-        <time>1509462347998</time>
+        <time>1512397292259</time>
         <timezone>America/New_York</timezone>
       </lastModified>
       <description>This library contains code templates used by the Datica Mirth OCI channels</description>
@@ -4251,9 +4255,9 @@ return;</undeployScript>
         <codeTemplate version="3.4.1">
           <id>b9651842-7ccb-4761-aedf-a9a1461dd5f7</id>
           <name>Convert HL7 Date Format to ISO</name>
-          <revision>2</revision>
+          <revision>1</revision>
           <lastModified>
-            <time>1508796641140</time>
+            <time>1512397292449</time>
             <timezone>America/New_York</timezone>
           </lastModified>
           <type>FUNCTION</type>
@@ -4261,9 +4265,9 @@ return;</undeployScript>
             <delegate>
               <contextType>SOURCE_RECEIVER</contextType>
               <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
               <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
               <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
             </delegate>
           </contextSet>
           <code>/**
@@ -4325,9 +4329,9 @@ function toISODate( hl7DateString, timezone ) {
         <codeTemplate version="3.4.1">
           <id>95e528b7-1e7f-490e-86da-7c14b23ee4f3</id>
           <name>Convert ISO Date Format to HL7</name>
-          <revision>2</revision>
+          <revision>1</revision>
           <lastModified>
-            <time>1508796641299</time>
+            <time>1512397292549</time>
             <timezone>America/New_York</timezone>
           </lastModified>
           <type>FUNCTION</type>
@@ -4335,9 +4339,9 @@ function toISODate( hl7DateString, timezone ) {
             <delegate>
               <contextType>SOURCE_RECEIVER</contextType>
               <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
               <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
               <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
             </delegate>
           </contextSet>
           <code>/**
@@ -4410,7 +4414,7 @@ function toHL7Date( isoDateString, timezone )
           <name>Get Segments After a Particular Segment</name>
           <revision>1</revision>
           <lastModified>
-            <time>1508796287930</time>
+            <time>1512397292339</time>
             <timezone>America/New_York</timezone>
           </lastModified>
           <type>FUNCTION</type>
@@ -4418,9 +4422,9 @@ function toHL7Date( isoDateString, timezone )
             <delegate>
               <contextType>SOURCE_RECEIVER</contextType>
               <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
               <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
               <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
             </delegate>
           </contextSet>
           <code>/**

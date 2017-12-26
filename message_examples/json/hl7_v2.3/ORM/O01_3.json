@@ -15,14 +15,14 @@
       "receivingFacility": {
         "namespaceId": "EXTERNAL CLINIC"
       },
-      "dateTimeOfMessage": "20171031",
+      "dateTimeOfMessage": "20171222",
       "messageType": {
         "messageType": "ORM",
         "triggerEvent": "O01"
       },
-      "messageControlID": "2052624",
+      "messageControlID": "1232888",
       "processingID": {
-        "processingID": "T"
+        "processingID": "D"
       },
       "versionID": "2.3"
     },
@@ -31,7 +31,7 @@
         "setId": "1",
         "sourceOfComment": "TX",
         "comment": [
-          "SOME NOTES ABOUT THE PATIENT GO HERE."
+          "THE PATIENT CAN'T SEE WHAT I TYPED IN THE CHART"
         ]
       }
     ],
@@ -39,70 +39,70 @@
       {
         "setId": "1",
         "externalId": {
-          "id": "2063344"
+          "id": "39087788"
         },
         "internalId": [
           {
-            "id": "46935667"
+            "id": "72396515"
           }
         ],
         "alternateId": [
           {
-            "id": "4515703"
+            "id": "72467282"
           }
         ],
         "patientName": [
           {
-            "lastName": "MELENDEZ",
-            "firstName": "JULIE"
+            "lastName": "RUIZ",
+            "firstName": "DEBRA"
           }
         ],
         "mothersMaidenName": {
-          "lastName": "MORRIS"
+          "lastName": "PATTERSON"
         },
-        "dateTimeBirth": "19531017",
+        "dateTimeBirth": "19480731",
         "sex": "F",
         "alias": [
           {
             "lastName": "BOOMER"
           }
         ],
-        "race": "U",
+        "race": "A",
         "address": [
           {
-            "streetAddress": "2130 MAPLE WAY",
+            "streetAddress": "2286 HAWTHORN DR",
             "city": "MADISON",
-            "stateOrProvince": "MN",
-            "zip": "91130"
+            "stateOrProvince": "KS",
+            "zip": "97807"
           }
         ],
-        "countyCode": "91130",
+        "countyCode": "97807",
         "homePhone": [
           {
-            "number": "8238532116"
+            "number": "8679531161"
           }
         ],
         "businessPhone": [
           {
-            "number": "8379569530"
+            "number": "8585074965"
           }
         ],
         "primaryLanguage": {
-          "id": "JA"
+          "id": "NI"
         },
-        "maritalStatus": "Y",
-        "religion": "SAA",
+        "maritalStatus": "W",
+        "religion": "NAM",
         "patientAccountNumber": {
-          "id": "465544"
+          "id": "411139"
         },
-        "ssn": "978622241",
+        "ssn": "949386229",
         "driversLicenseNumber": {
-          "licenseNumber": "S452706482670939"
+          "licenseNumber": "S256714941457800"
         },
         "ethnicGroup": "N",
         "birthPlace": "MADISON",
-        "multipleBirthIndicator": "Y",
-        "birthOrder": "5",
+        "multipleBirthIndicator": "N",
+        "birthOrder": "4",
         "citizenship": [
           "US"
         ],
@@ -114,13 +114,13 @@
         "PD1": [
           {
             "livingDependency": [
-              "W"
+              "U"
             ],
             "livingArrangement": "F",
             "patientPrimaryFacility": [
               {
-                "organizationName": "DATICA HOSPITAL",
-                "idNumber": "12345",
+                "organizationName": "DATICA CLINIC",
+                "idNumber": "23456",
                 "assigningAuthority": {
                   "namespaceId": "DATICA HEALTHCARE"
                 }
@@ -128,21 +128,21 @@
             ],
             "primaryCareProvider": [
               {
-                "id": "84257520",
-                "lastName": "HOUSTON",
-                "firstName": "RANDY",
-                "middleInitOrName": "E",
+                "id": "82534776",
+                "lastName": "HARPER",
+                "firstName": "MARK",
+                "middleInitOrName": "F",
                 "prefix": "CRNA"
               }
             ],
             "studentIndicator": "F",
-            "livingWillCode": "N",
-            "organDonorCode": "Y",
-            "separateBill": "Y",
+            "livingWillCode": "I",
+            "organDonorCode": "F",
+            "separateBill": "N",
             "publicityIndicator": {
               "id": "N"
             },
-            "protectionIndicator": "Y"
+            "protectionIndicator": "N"
           }
         ],
         "NTE": [
@@ -150,87 +150,87 @@
             "setId": "2",
             "sourceOfComment": "TX",
             "comment": [
-              "I LIKED THE OLD PAPER CHARTS BETTER"
+              "THIS ONE SEEMS KIND OF SICK. MAYBE WE SHOULD CHECK THEM OUT? "
             ]
           }
         ],
         "PV1": [
           {
             "setId": "1",
-            "patientClass": "R",
+            "patientClass": "E",
             "assignedPatientLocation": {
               "pointOfCare": "XXPOC",
-              "room": "926",
-              "bed": "0",
+              "room": "880",
+              "bed": "3",
               "facility": {
                 "nameSpaceId": "DATICA HOSPITAL A"
               }
             },
-            "admissionType": "E",
+            "admissionType": "A",
             "preadmitNumber": {
-              "id": "207949"
+              "id": "603188"
             },
             "priorPatientLocation": {
               "pointOfCare": "XXPOC",
-              "room": "52",
-              "bed": "3",
+              "room": "20",
+              "bed": "0",
               "facility": {
                 "nameSpaceId": "DATICA HOSPITAL B"
               }
             },
             "attendingDoctor": [
               {
-                "id": "99964434",
-                "lastName": "JENKINS",
-                "firstName": "JANET",
-                "middleInitOrName": "L",
+                "id": "42288705",
+                "lastName": "BOYLE",
+                "firstName": "LARRY",
+                "middleInitOrName": "S",
                 "prefix": "CRNA"
               }
             ],
             "referringDoctor": [
               {
-                "id": "62466018",
-                "lastName": "LYNN",
-                "firstName": "THOMAS",
-                "middleInitOrName": "J",
-                "prefix": "NP"
+                "id": "43383661",
+                "lastName": "BELTRAN",
+                "firstName": "JANICE",
+                "middleInitOrName": "S",
+                "prefix": "MD"
               }
             ],
             "consultingDoctor": [
               {
-                "id": "22038729",
-                "lastName": "HANEY",
-                "firstName": "ALEXANDER",
-                "middleInitOrName": "Z",
-                "prefix": "RN"
+                "id": "21809371",
+                "lastName": "HARPER",
+                "firstName": "DIANE",
+                "middleInitOrName": "H",
+                "prefix": "CRNA"
               }
             ],
-            "hospitalService": "URO",
+            "hospitalService": "PUL",
             "temporaryLocation": {
               "pointOfCare": "XXPOC",
-              "room": "562",
+              "room": "984",
               "bed": "3",
               "facility": {
                 "nameSpaceId": "DATICA HOSPITAL A"
               }
             },
             "preadmitTestIndicator": "N",
-            "admitSource": "2",
+            "admitSource": "1",
             "ambulatoryStatus": [
-              "B5"
+              "A7"
             ],
             "admittingDoctor": [
               {
-                "id": "47058943",
-                "lastName": "RUIZ",
-                "firstName": "BOBBY",
-                "middleInitOrName": "T",
-                "prefix": "PA"
+                "id": "17058332",
+                "lastName": "PUGH",
+                "firstName": "DONNA",
+                "middleInitOrName": "H",
+                "prefix": "NP"
               }
             ],
             "patientType": "U",
             "visitNumber": {
-              "id": "523681"
+              "id": "906320"
             },
             "financialClass": {
               "financialClass": "A23"
@@ -242,13 +242,13 @@
               "44"
             ],
             "contractEffectiveDate": [
-              "20151213"
+              "20150127"
             ],
             "contractAmount": [
-              "857.22"
+              "355.84"
             ],
             "contractPeriod": [
-              "8"
+              "5"
             ],
             "interestCode": "C",
             "transferToBadDebtCode": "B",
@@ -256,8 +256,8 @@
               {
                 "priorPendingLocation": {
                   "pointOfCare": "XXPOC",
-                  "room": "416",
-                  "bed": "0",
+                  "room": "467",
+                  "bed": "1",
                   "facility": {
                     "nameSpaceId": "DATICA HOSPITAL D"
                   }
@@ -266,12 +266,12 @@
                   "id": "ZD"
                 },
                 "admitReason": {
-                  "id": "S82.9",
-                  "text": "UNSPECIFIED FRACTURE OF LOWER LEG",
+                  "id": "M25.531",
+                  "text": "PAIN IN RIGHT WRIST",
                   "codingSystem": "ICD-10"
                 },
                 "patientValuables": [
-                  "WATCH"
+                  "RING"
                 ],
                 "patientValuablesLocation": "FRONTDESK A"
               }
@@ -284,11 +284,11 @@
       {
         "setId": "1",
         "planId": {
-          "id": "W78907609"
+          "id": "6766252"
         },
         "companyId": [
           {
-            "id": "1874718"
+            "id": "61826082"
           }
         ],
         "companyName": [
@@ -298,26 +298,26 @@
         ],
         "companyAddress": [
           {
-            "streetAddress": "1748 ASH TER",
+            "streetAddress": "4079 JUNIPER WAY",
             "city": "MADISON",
-            "stateOrProvince": "HI",
-            "zip": "93493"
+            "stateOrProvince": "MT",
+            "zip": "90322"
           }
         ],
         "companyPhoneNumber": [
           {
-            "number": "8777454652"
+            "number": "8529496242"
           }
         ],
-        "groupNumber": "264648",
+        "groupNumber": "595095",
         "groupName": [
           {
-            "organizationName": "INSURANCE GROUP Q"
+            "organizationName": "INSURANCE GROUP U"
           }
         ],
         "groupEmpId": [
           {
-            "id": "572435640"
+            "id": "321909535"
           }
         ],
         "groupEmpName": [
@@ -325,41 +325,40 @@
             "organizationName": "THE HUMAN FUND"
           }
         ],
-        "planEffectiveDate": "20161025",
-        "planExpirationDate": "20191126",
+        "planEffectiveDate": "20161001",
         "authorizationInformation": {
-          "authorizationNumber": "A80856480804"
+          "authorizationNumber": "A76420450346"
         },
-        "planType": "EPO",
+        "planType": "HDHP",
         "insuredName": [
           {
-            "lastName": "MELENDEZ",
-            "firstName": "JULIE",
-            "middleInitOrName": "P"
+            "lastName": "RUIZ",
+            "firstName": "DEBRA",
+            "middleInitOrName": "X"
           }
         ],
         "insuredRelationshipToPatient": "SELF",
-        "insuredDob": "19531017",
+        "insuredDob": "19480731",
         "insuredAddress": [
           {
-            "streetAddress": "2130 MAPLE WAY",
+            "streetAddress": "2286 HAWTHORN DR",
             "city": "MADISON",
-            "stateOrProvince": "MN",
-            "zip": "91130"
+            "stateOrProvince": "KS",
+            "zip": "97807"
           }
         ],
         "assignmentOfBenefits": "Y",
-        "coordinationOfBenefits": "IN",
+        "coordinationOfBenefits": "CO",
         "coordinationOfBenefitsPriority": "1",
         "noticeOfAdmissionFlag": "N",
         "reportOfEligibilityFlag": "N",
         "releaseInformationCode": "N",
-        "verificationDateTime": "20160808",
+        "verificationDateTime": "20160616",
         "typeOfAgreementCode": "S",
-        "policyNumber": "I39174176",
+        "policyNumber": "L527898692",
         "policyDeductible": {
           "price": {
-            "quantity": "1000"
+            "quantity": "0"
           }
         },
         "insuredEmploymentStatus": {
@@ -368,102 +367,165 @@
         "insuredSex": "F",
         "insuredEmployerAddress": [
           {
-            "streetAddress": "6401 MAPLE DR",
+            "streetAddress": "7675 OAK TER",
             "city": "MADISON",
-            "stateOrProvince": "NM",
-            "zip": "90206"
+            "stateOrProvince": "IA",
+            "zip": "98499"
           }
         ],
-        "priorInsurancePlanId": "A79887607",
-        "coverageType": "B",
+        "priorInsurancePlanId": "85976514",
+        "coverageType": "P",
         "insuredIdNumber": [
           {
-            "id": "2063344"
+            "id": "39087788"
           }
         ],
         "IN2": [
           {
             "insuredEmployeeId": [
               {
-                "id": "1558349"
+                "id": "4944479"
               }
             ],
-            "insuredSSN": "978622241",
+            "insuredSSN": "949386229",
             "insuredEmployerName": [
               {
                 "id": "THE HUMAN FUND"
               }
             ],
             "mailClaimParty": [
-              "P"
+              "I"
             ],
             "babyCoverage": "N",
             "combineBabyBill": "N",
             "payorId": [
               {
-                "id": "1874718"
+                "id": "61826082"
               }
             ],
             "payorSubscriberId": [
               {
-                "id": "I39174176"
+                "id": "L527898692"
               }
             ],
             "eligibilitySource": "1",
             "dailyDeductible": {
               "delayDays": "3",
-              "amount": "1000",
-              "numberOfDays": "79"
+              "amount": "0",
+              "numberOfDays": "15"
             },
             "livingDependency": "U",
-            "ambulatoryStatus": "B5",
+            "ambulatoryStatus": "A7",
             "citizenship": "US",
             "primaryLanguage": {
-              "id": "JA"
+              "id": "NI"
             },
             "livingArrangement": "F",
             "publicityIndicator": {
               "id": "N"
             },
-            "protectionIndicator": "Y",
+            "protectionIndicator": "N",
             "studentIndicator": "F",
-            "religion": "SAA",
+            "religion": "NAM",
             "motherMaidenName": {
-              "lastName": "MORRIS"
+              "lastName": "PATTERSON"
             },
             "nationality": {
               "id": "USA"
             },
             "ethnicGroup": "N",
             "maritalStatus": [
-              "Y"
+              "W"
             ],
-            "insuredEmploymentStartDate": "20150510",
+            "insuredEmploymentStartDate": "20150517",
             "jobTitle": "PAINTER",
             "jobStatus": "O",
             "patientMemberNumber": [
               {
-                "id": "I39174176"
+                "id": "L527898692"
               }
             ],
             "guarantorRelationshipToInsured": "SEL",
             "insuredHomePhone": [
               {
-                "number": "8238532116"
+                "number": "8679531161"
               }
             ],
             "insuredEmployerPhone": [
               {
-                "number": "8379569530"
+                "number": "8585074965"
               }
             ],
             "suspendFlag": "Y",
             "copayLimitFlag": "N",
             "stoplossLimitFlag": "N",
-            "race": "U",
+            "race": "A",
             "hcfaPatientRelationshipToInsured": {
               "id": "SEL"
             }
+          }
+        ],
+        "IN3": [
+          {
+            "setID": "1",
+            "certificationNumber": {
+              "id": "227974975199"
+            },
+            "certifiedBy": [
+              {
+                "id": "UNDEFINED"
+              }
+            ],
+            "certificationRequired": "Y",
+            "certificationDateTime": "20161016",
+            "operator": [
+              {
+                "id": "69899048",
+                "lastName": "FROST",
+                "firstName": "REBECCA",
+                "middleInitOrName": "X",
+                "prefix": "MD"
+              }
+            ],
+            "certificationBeginDate": "20161016",
+            "physicianReviewer": [
+              {
+                "id": "75142410",
+                "lastName": "SHERMAN",
+                "firstName": "ROGER",
+                "middleInitOrName": "I",
+                "prefix": "CRNA"
+              }
+            ],
+            "certificationContact": "69899048",
+            "certificationContactPhoneNumber": [
+              {
+                "number": "8995870751"
+              }
+            ],
+            "certificationAgency": {
+              "id": "DATICA CERTIFICATION GROUP"
+            },
+            "certificationAgencyPhoneNumber": [
+              {
+                "number": "8575891585"
+              }
+            ],
+            "preCertificationReqWindow": [
+              {
+                "preCertificationPatientType": "IPE"
+              }
+            ],
+            "caseManager": "41296878",
+            "secondOpinionPhysician": [
+              {
+                "id": "9603775",
+                "lastName": "SAWYER",
+                "firstName": "MADISON",
+                "middleInitOrName": "S",
+                "prefix": "PA"
+              }
+            ]
           }
         ]
       }
@@ -473,70 +535,70 @@
         "setId": "1",
         "guarantorNumber": [
           {
-            "id": "50431049"
+            "id": "99027841"
           }
         ],
         "guarantorName": [
           {
-            "lastName": "MORTON",
-            "firstName": "TYLER",
-            "middleInitOrName": "J"
+            "lastName": "WRIGHT",
+            "firstName": "JACOB",
+            "middleInitOrName": "M"
           }
         ],
         "guarantorAddress": [
           {
-            "streetAddress": "7812 ASH WAY",
+            "streetAddress": "1223 WALNUT TER",
             "city": "MADISON",
-            "stateOrProvince": "ND",
-            "zip": "95404"
+            "stateOrProvince": "TX",
+            "zip": "98070"
           }
         ],
         "guarantorPhNumHome": [
           {
-            "number": "8978535919"
+            "number": "8531933414"
           }
         ],
         "guarantorPhNumBusiness": [
           {
-            "number": "8795044212"
+            "number": "8371109573"
           }
         ],
-        "guarantorDatetimeOfBirth": "19390515",
+        "guarantorDatetimeOfBirth": "19500302",
         "guarantorSex": "M",
-        "guarantorSSN": "943953741",
-        "guarantorDateBegin": "20120508",
+        "guarantorSSN": "925326015",
+        "guarantorDateBegin": "20120831",
         "guarantorPriority": "1",
         "guarantorEmployeeIDNumber": [
           {
-            "id": "816966"
+            "id": "838475"
           }
         ],
-        "guarantorEmploymentStatus": "O",
-        "guarantorBillingHoldFlag": "N",
+        "guarantorEmploymentStatus": "P",
+        "guarantorBillingHoldFlag": "Y",
         "guarantorDeathFlag": "N",
         "guarantorEmployerIDNumber": [
           {
-            "id": "3395885331"
+            "id": "6846306397"
           }
         ],
-        "guarantorMaritalStatusCode": "Y",
+        "guarantorMaritalStatusCode": "I",
         "primaryLanguage": {
-          "id": "FA"
+          "id": "EN"
         },
-        "livingArrangement": "F",
+        "livingArrangement": "R",
         "protectionIndicator": "N",
         "studentIndicator": "F",
-        "religion": "MOT",
+        "religion": "PEN",
         "mothersMaidenName": {
-          "lastName": "WILCOX"
+          "lastName": "MONTES"
         },
         "nationality": {
           "id": "USA"
         },
-        "ethnicGroup": "H",
-        "jobTitle": "CEO",
-        "jobStatus": "O",
-        "guarantorRace": "O"
+        "ethnicGroup": "N",
+        "jobTitle": "PAINTER",
+        "jobStatus": "P",
+        "guarantorRace": "B"
       }
     ],
     "AL1": [
@@ -544,26 +606,26 @@
         "setId": "1",
         "allergyType": "DA",
         "allergyCodeMnemonicDescription": {
-          "id": "F827476967",
-          "text": "UMECLIDINIUM",
-          "altId": "FROM ANORO ELLIPTA"
+          "id": "F561421359",
+          "text": "ADHESIVE",
+          "altId": "ADHESIVE"
         },
-        "allergySeverity": "SV",
-        "allergyReaction": "RASH",
-        "identificationDate": "20140710"
+        "allergySeverity": "MI",
+        "allergyReaction": "LIGHT SENSITIVITY",
+        "identificationDate": "20150808"
       }
     ],
     "ORC": [
       {
         "orderControl": "RE",
         "placerOrderNumber": {
-          "id": "76648232"
+          "id": "654067685"
         },
         "fillerOrderNumber": {
-          "id": "76648232"
+          "id": "654067685"
         },
         "placerGroupNumber": {
-          "id": "76648232"
+          "id": "654067685"
         },
         "orderStatus": "CM",
         "NTE": [
@@ -579,41 +641,53 @@
           {
             "setId": "1",
             "placerOrderNumber": {
-              "id": "379116261",
+              "id": "710238093",
               "namespaceId": "DATICAORD"
             },
             "fillerOrderNumber": {
-              "id": "700402958",
+              "id": "538567991",
               "namespaceId": "DATICAORD"
             },
             "universalServiceID": {
-              "id": "196583",
+              "id": "75322",
               "text": "GEN SCREENING"
             },
-            "observationDateTime": "20160307",
-            "observationEndDateTime": "20160307",
+            "observationDateTime": "20160818",
+            "observationEndDateTime": "20160818",
             "collectorIdentifier": [
               {
-                "id": "13940742",
-                "lastName": "NOBLE",
-                "firstName": "BILLY",
-                "middleInitOrName": "Q",
-                "prefix": "RN"
+                "id": "27710744",
+                "lastName": "MOORE",
+                "firstName": "JEFFREY",
+                "middleInitOrName": "U",
+                "prefix": "MD"
               }
             ],
             "specimenActionCode": "L",
             "orderingProvider": [
               {
-                "id": "13940742",
-                "lastName": "NOBLE",
-                "firstName": "BILLY",
-                "middleInitOrName": "Q",
-                "prefix": "RN"
+                "id": "27710744",
+                "lastName": "MOORE",
+                "firstName": "JEFFREY",
+                "middleInitOrName": "U",
+                "prefix": "MD"
               }
             ],
             "orderCallbackPhoneNumber": [
               {
-                "number": "8142850490"
+                "number": "8581422210"
+              }
+            ],
+            "DG1": [
+              {
+                "setId": "1",
+                "diagnosisCode": {
+                  "id": "E11.42",
+                  "text": "TYPE 2 DIABETES MELLITUS WITH DIABETIC POLYNEUROPATHY",
+                  "codingSystem": "ICD-10"
+                },
+                "diagnosisDateTime": "20160915",
+                "diagnosisType": "F"
               }
             ],
             "OBX": [
@@ -621,15 +695,15 @@
                 "setId": "1",
                 "valueType": "NM",
                 "identifier": {
-                  "id": "265768",
-                  "text": "NEUTROPHILS",
+                  "id": "198598",
+                  "text": "IMMATURE GRANULOCYTES",
                   "codingSystem": "L",
-                  "altId": "770-8",
-                  "altText": "NEUTROPHILS/100 LEUKOCYTES",
+                  "altId": "38518-7",
+                  "altText": "GRANULOCYTES.IMMATURE/100 LEUKOCYTES",
                   "altCodingSystem": "LN"
                 },
                 "observationValue": [
-                  "61"
+                  "0"
                 ],
                 "units": {
                   "id": "%"
@@ -638,8 +712,8 @@
                   "N"
                 ],
                 "observeResultStatus": "F",
-                "effectiveDateLastNormalValue": "20160305",
-                "observationDateTime": "20160307",
+                "effectiveDateLastNormalValue": "20160814",
+                "observationDateTime": "20160818",
                 "producersId": {
                   "id": "CB",
                   "text": "PATHOLOGY LAB X"
@@ -649,7 +723,7 @@
                     "setId": "3",
                     "sourceOfComment": "TX",
                     "comment": [
-                      "THE PATIENT CAN'T SEE WHAT I TYPED IN THE CHART"
+                      "THIS ONE SEEMS KIND OF SICK. MAYBE WE SHOULD CHECK THEM OUT?"
                     ]
                   }
                 ]
