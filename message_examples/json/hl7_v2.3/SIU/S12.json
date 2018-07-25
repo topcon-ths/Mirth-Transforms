@@ -49,6 +49,11 @@
       "appointmentDurationUnits": {
         "id": "MIN"
       },
+      "appointmentTimingQuantity": [
+        {
+          "startDateTime": "201711011000"
+        }
+      ],
       "placerContactPerson": {
         "id": "73045493",
         "lastName": "FROST",

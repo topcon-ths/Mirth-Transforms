@@ -5,10 +5,10 @@
   <description>Transform SIU HL7 to JSON</description>
   <enabled>true</enabled>
   <lastModified>
-    <time>1512398425575</time>
+    <time>1532550446443</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>2</revision>
+  <revision>3</revision>
   <sourceConnector version="3.4.1">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
@@ -409,16 +409,16 @@ if (Object.keys(sch.appointmentDurationUnits).length == 0) {
 sch.appointmentTimingQuantity = [];
 for each (field in msg[&apos;SCH&apos;][&apos;SCH.11&apos;]) {
 	var block = {};
-	if (field[&apos;SCH.11.1&apos;].toString() != &quot;&quot;) { sch.quantity = field[&apos;SCH.11.1&apos;]; }
-	if (field[&apos;SCH.11.2&apos;].toString() != &quot;&quot;) { sch.interval = field[&apos;SCH.11.2&apos;]; }
-	if (field[&apos;SCH.11.3&apos;].toString() != &quot;&quot;) { sch.duration = field[&apos;SCH.11.3&apos;]; }
-	if (field[&apos;SCH.11.4&apos;].toString() != &quot;&quot;) { sch.startDateTime = field[&apos;SCH.11.4&apos;]; }
-	if (field[&apos;SCH.11.5&apos;].toString() != &quot;&quot;) { sch.endDateTime = field[&apos;SCH.11.5&apos;]; }
-	if (field[&apos;SCH.11.6&apos;].toString() != &quot;&quot;) { sch.priority = field[&apos;SCH.11.6&apos;]; }
-	if (field[&apos;SCH.11.7&apos;].toString() != &quot;&quot;) { sch.condition = field[&apos;SCH.11.7&apos;]; }
-	if (field[&apos;SCH.11.8&apos;].toString() != &quot;&quot;) { sch.text = field[&apos;SCH.11.8&apos;]; }
-	if (field[&apos;SCH.11.9&apos;].toString() != &quot;&quot;) { sch.conjunction = field[&apos;SCH.11.9&apos;]; }
-	if (field[&apos;SCH.11.10&apos;].toString() != &quot;&quot;) { sch.orderSequencing = field[&apos;SCH.11.10&apos;]; }
+	if (field[&apos;SCH.11.1&apos;].toString() != &quot;&quot;) { block.quantity = field[&apos;SCH.11.1&apos;]; }
+	if (field[&apos;SCH.11.2&apos;].toString() != &quot;&quot;) { block.interval = field[&apos;SCH.11.2&apos;]; }
+	if (field[&apos;SCH.11.3&apos;].toString() != &quot;&quot;) { block.duration = field[&apos;SCH.11.3&apos;]; }
+	if (field[&apos;SCH.11.4&apos;].toString() != &quot;&quot;) { block.startDateTime = field[&apos;SCH.11.4&apos;]; }
+	if (field[&apos;SCH.11.5&apos;].toString() != &quot;&quot;) { block.endDateTime = field[&apos;SCH.11.5&apos;]; }
+	if (field[&apos;SCH.11.6&apos;].toString() != &quot;&quot;) { block.priority = field[&apos;SCH.11.6&apos;]; }
+	if (field[&apos;SCH.11.7&apos;].toString() != &quot;&quot;) { block.condition = field[&apos;SCH.11.7&apos;]; }
+	if (field[&apos;SCH.11.8&apos;].toString() != &quot;&quot;) { block.text = field[&apos;SCH.11.8&apos;]; }
+	if (field[&apos;SCH.11.9&apos;].toString() != &quot;&quot;) { block.conjunction = field[&apos;SCH.11.9&apos;]; }
+	if (field[&apos;SCH.11.10&apos;].toString() != &quot;&quot;) { block.orderSequencing = field[&apos;SCH.11.10&apos;]; }
 	if (Object.keys(block).length &gt; 0) {
 		sch.appointmentTimingQuantity.push(block)
 	}
@@ -639,15 +639,15 @@ if (Object.keys(sch.enteredByPerson).length == 0) {
 sch.enteredByPhoneNumber = [];
 for each (field in msg[&apos;SCH&apos;][&apos;SCH.21&apos;]) {
 	var block = {};
-	if (field[&apos;SCH.21.1&apos;].toString() != &quot;&quot;) { sch.number = field[&apos;SCH.21.1&apos;]; }
-	if (field[&apos;SCH.21.2&apos;].toString() != &quot;&quot;) { sch.telecommunicationUseCode = field[&apos;SCH.21.2&apos;]; }
-	if (field[&apos;SCH.21.3&apos;].toString() != &quot;&quot;) { sch.telecommunicationEquipmentType = field[&apos;SCH.21.3&apos;]; }
-	if (field[&apos;SCH.21.4&apos;].toString() != &quot;&quot;) { sch.emailAddress = field[&apos;SCH.21.4&apos;]; }
-	if (field[&apos;SCH.21.5&apos;].toString() != &quot;&quot;) { sch.countryCode = field[&apos;SCH.21.5&apos;]; }
-	if (field[&apos;SCH.21.6&apos;].toString() != &quot;&quot;) { sch.areaCityCode = field[&apos;SCH.21.6&apos;]; }
-	if (field[&apos;SCH.21.7&apos;].toString() != &quot;&quot;) { sch.phoneNumber = field[&apos;SCH.21.7&apos;]; }
-	if (field[&apos;SCH.21.8&apos;].toString() != &quot;&quot;) { sch.extension = field[&apos;SCH.21.8&apos;]; }
-	if (field[&apos;SCH.21.9&apos;].toString() != &quot;&quot;) { sch.text = field[&apos;SCH.21.9&apos;]; }
+	if (field[&apos;SCH.21.1&apos;].toString() != &quot;&quot;) { block.number = field[&apos;SCH.21.1&apos;]; }
+	if (field[&apos;SCH.21.2&apos;].toString() != &quot;&quot;) { block.telecommunicationUseCode = field[&apos;SCH.21.2&apos;]; }
+	if (field[&apos;SCH.21.3&apos;].toString() != &quot;&quot;) { block.telecommunicationEquipmentType = field[&apos;SCH.21.3&apos;]; }
+	if (field[&apos;SCH.21.4&apos;].toString() != &quot;&quot;) { block.emailAddress = field[&apos;SCH.21.4&apos;]; }
+	if (field[&apos;SCH.21.5&apos;].toString() != &quot;&quot;) { block.countryCode = field[&apos;SCH.21.5&apos;]; }
+	if (field[&apos;SCH.21.6&apos;].toString() != &quot;&quot;) { block.areaCityCode = field[&apos;SCH.21.6&apos;]; }
+	if (field[&apos;SCH.21.7&apos;].toString() != &quot;&quot;) { block.phoneNumber = field[&apos;SCH.21.7&apos;]; }
+	if (field[&apos;SCH.21.8&apos;].toString() != &quot;&quot;) { block.extension = field[&apos;SCH.21.8&apos;]; }
+	if (field[&apos;SCH.21.9&apos;].toString() != &quot;&quot;) { block.text = field[&apos;SCH.21.9&apos;]; }
 	if (Object.keys(block).length &gt; 0) {
 		sch.enteredByPhoneNumber.push(block);
 	}
@@ -823,16 +823,16 @@ if (Object.keys(sch.appointmentDurationUnits).length == 0) {
 sch.appointmentTimingQuantity = [];
 for each (field in msg[&apos;SCH&apos;][&apos;SCH.11&apos;]) {
 	var block = {};
-	if (field[&apos;SCH.11.1&apos;].toString() != &quot;&quot;) { sch.quantity = field[&apos;SCH.11.1&apos;]; }
-	if (field[&apos;SCH.11.2&apos;].toString() != &quot;&quot;) { sch.interval = field[&apos;SCH.11.2&apos;]; }
-	if (field[&apos;SCH.11.3&apos;].toString() != &quot;&quot;) { sch.duration = field[&apos;SCH.11.3&apos;]; }
-	if (field[&apos;SCH.11.4&apos;].toString() != &quot;&quot;) { sch.startDateTime = field[&apos;SCH.11.4&apos;]; }
-	if (field[&apos;SCH.11.5&apos;].toString() != &quot;&quot;) { sch.endDateTime = field[&apos;SCH.11.5&apos;]; }
-	if (field[&apos;SCH.11.6&apos;].toString() != &quot;&quot;) { sch.priority = field[&apos;SCH.11.6&apos;]; }
-	if (field[&apos;SCH.11.7&apos;].toString() != &quot;&quot;) { sch.condition = field[&apos;SCH.11.7&apos;]; }
-	if (field[&apos;SCH.11.8&apos;].toString() != &quot;&quot;) { sch.text = field[&apos;SCH.11.8&apos;]; }
-	if (field[&apos;SCH.11.9&apos;].toString() != &quot;&quot;) { sch.conjunction = field[&apos;SCH.11.9&apos;]; }
-	if (field[&apos;SCH.11.10&apos;].toString() != &quot;&quot;) { sch.orderSequencing = field[&apos;SCH.11.10&apos;]; }
+	if (field[&apos;SCH.11.1&apos;].toString() != &quot;&quot;) { block.quantity = field[&apos;SCH.11.1&apos;]; }
+	if (field[&apos;SCH.11.2&apos;].toString() != &quot;&quot;) { block.interval = field[&apos;SCH.11.2&apos;]; }
+	if (field[&apos;SCH.11.3&apos;].toString() != &quot;&quot;) { block.duration = field[&apos;SCH.11.3&apos;]; }
+	if (field[&apos;SCH.11.4&apos;].toString() != &quot;&quot;) { block.startDateTime = field[&apos;SCH.11.4&apos;]; }
+	if (field[&apos;SCH.11.5&apos;].toString() != &quot;&quot;) { block.endDateTime = field[&apos;SCH.11.5&apos;]; }
+	if (field[&apos;SCH.11.6&apos;].toString() != &quot;&quot;) { block.priority = field[&apos;SCH.11.6&apos;]; }
+	if (field[&apos;SCH.11.7&apos;].toString() != &quot;&quot;) { block.condition = field[&apos;SCH.11.7&apos;]; }
+	if (field[&apos;SCH.11.8&apos;].toString() != &quot;&quot;) { block.text = field[&apos;SCH.11.8&apos;]; }
+	if (field[&apos;SCH.11.9&apos;].toString() != &quot;&quot;) { block.conjunction = field[&apos;SCH.11.9&apos;]; }
+	if (field[&apos;SCH.11.10&apos;].toString() != &quot;&quot;) { block.orderSequencing = field[&apos;SCH.11.10&apos;]; }
 	if (Object.keys(block).length &gt; 0) {
 		sch.appointmentTimingQuantity.push(block)
 	}
@@ -1053,15 +1053,15 @@ if (Object.keys(sch.enteredByPerson).length == 0) {
 sch.enteredByPhoneNumber = [];
 for each (field in msg[&apos;SCH&apos;][&apos;SCH.21&apos;]) {
 	var block = {};
-	if (field[&apos;SCH.21.1&apos;].toString() != &quot;&quot;) { sch.number = field[&apos;SCH.21.1&apos;]; }
-	if (field[&apos;SCH.21.2&apos;].toString() != &quot;&quot;) { sch.telecommunicationUseCode = field[&apos;SCH.21.2&apos;]; }
-	if (field[&apos;SCH.21.3&apos;].toString() != &quot;&quot;) { sch.telecommunicationEquipmentType = field[&apos;SCH.21.3&apos;]; }
-	if (field[&apos;SCH.21.4&apos;].toString() != &quot;&quot;) { sch.emailAddress = field[&apos;SCH.21.4&apos;]; }
-	if (field[&apos;SCH.21.5&apos;].toString() != &quot;&quot;) { sch.countryCode = field[&apos;SCH.21.5&apos;]; }
-	if (field[&apos;SCH.21.6&apos;].toString() != &quot;&quot;) { sch.areaCityCode = field[&apos;SCH.21.6&apos;]; }
-	if (field[&apos;SCH.21.7&apos;].toString() != &quot;&quot;) { sch.phoneNumber = field[&apos;SCH.21.7&apos;]; }
-	if (field[&apos;SCH.21.8&apos;].toString() != &quot;&quot;) { sch.extension = field[&apos;SCH.21.8&apos;]; }
-	if (field[&apos;SCH.21.9&apos;].toString() != &quot;&quot;) { sch.text = field[&apos;SCH.21.9&apos;]; }
+	if (field[&apos;SCH.21.1&apos;].toString() != &quot;&quot;) { block.number = field[&apos;SCH.21.1&apos;]; }
+	if (field[&apos;SCH.21.2&apos;].toString() != &quot;&quot;) { block.telecommunicationUseCode = field[&apos;SCH.21.2&apos;]; }
+	if (field[&apos;SCH.21.3&apos;].toString() != &quot;&quot;) { block.telecommunicationEquipmentType = field[&apos;SCH.21.3&apos;]; }
+	if (field[&apos;SCH.21.4&apos;].toString() != &quot;&quot;) { block.emailAddress = field[&apos;SCH.21.4&apos;]; }
+	if (field[&apos;SCH.21.5&apos;].toString() != &quot;&quot;) { block.countryCode = field[&apos;SCH.21.5&apos;]; }
+	if (field[&apos;SCH.21.6&apos;].toString() != &quot;&quot;) { block.areaCityCode = field[&apos;SCH.21.6&apos;]; }
+	if (field[&apos;SCH.21.7&apos;].toString() != &quot;&quot;) { block.phoneNumber = field[&apos;SCH.21.7&apos;]; }
+	if (field[&apos;SCH.21.8&apos;].toString() != &quot;&quot;) { block.extension = field[&apos;SCH.21.8&apos;]; }
+	if (field[&apos;SCH.21.9&apos;].toString() != &quot;&quot;) { block.text = field[&apos;SCH.21.9&apos;]; }
 	if (Object.keys(block).length &gt; 0) {
 		sch.enteredByPhoneNumber.push(block);
 	}
@@ -6909,24 +6909,27 @@ return;</undeployScript>
     <codeTemplateLibrary version="3.4.1">
       <id>10e63131-3e24-4419-a268-ed823aba5790</id>
       <name>Datica Mirth OCI Code Template Library</name>
-      <revision>1</revision>
+      <revision>5</revision>
       <lastModified>
-        <time>1512397292259</time>
+        <time>1520543329083</time>
         <timezone>America/New_York</timezone>
       </lastModified>
       <description>This library contains code templates used by the Datica Mirth OCI channels</description>
       <includeNewChannels>true</includeNewChannels>
       <enabledChannelIds>
+        <string>faeb3e6d-952b-4fb2-a03c-d96ea463d493</string>
+        <string>515eb748-bcc9-4b46-a086-be3174f3df41</string>
+        <string>647fa65c-d0bb-4f32-a1f6-b218136ebdb8</string>
         <string>1192bb86-1f4d-4ca0-9343-e1b87d790154</string>
         <string>44ade9e2-d2ec-40f0-99cd-c2518f1aef0a</string>
         <string>2edfb44b-d53e-43c0-9cee-dfb8c5d28c80</string>
+        <string>88f01b2f-8886-4b1e-907a-10671248c9c8</string>
         <string>12832ab3-cdac-485f-bf81-4c525359af88</string>
         <string>6546423b-30d4-46dc-92d7-3e651a542a42</string>
         <string>0d245f0f-1239-46cb-96db-b6c03ee91b18</string>
-        <string>515eb748-bcc9-4b46-a086-be3174f3df41</string>
         <string>f6ba16ce-08cf-499f-8dac-143646aadd51</string>
         <string>6a27e181-4776-46d7-b862-5cc4968ec8e7</string>
-        <string>647fa65c-d0bb-4f32-a1f6-b218136ebdb8</string>
+        <string>95daa2cf-34cc-4cf1-9b8f-a84e37558ed5</string>
       </enabledChannelIds>
       <disabledChannelIds>
         <string>8b69b2e3-4cb0-40f9-93e4-b56c33ba112d</string>
@@ -7081,11 +7084,11 @@ return;</undeployScript>
           <type>FUNCTION</type>
           <contextSet>
             <delegate>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
               <contextType>SOURCE_RECEIVER</contextType>
+              <contextType>DESTINATION_DISPATCHER</contextType>
             </delegate>
           </contextSet>
           <code>/**
@@ -7155,11 +7158,11 @@ function toISODate( hl7DateString, timezone ) {
           <type>FUNCTION</type>
           <contextSet>
             <delegate>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
               <contextType>SOURCE_RECEIVER</contextType>
+              <contextType>DESTINATION_DISPATCHER</contextType>
             </delegate>
           </contextSet>
           <code>/**
@@ -7238,11 +7241,11 @@ function toHL7Date( isoDateString, timezone )
           <type>FUNCTION</type>
           <contextSet>
             <delegate>
-              <contextType>DESTINATION_DISPATCHER</contextType>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
               <contextType>SOURCE_RECEIVER</contextType>
+              <contextType>DESTINATION_DISPATCHER</contextType>
             </delegate>
           </contextSet>
           <code>/**
