@@ -5,10 +5,10 @@
   <description>Transform ADT HL7 to JSON</description>
   <enabled>true</enabled>
   <lastModified>
-    <time>1513183837217</time>
+    <time>1532549672671</time>
     <timezone>America/New_York</timezone>
   </lastModified>
-  <revision>3</revision>
+  <revision>10</revision>
   <sourceConnector version="3.4.1">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
@@ -11156,141 +11156,141 @@ if (acc &amp;&amp; Object.keys(acc).length != 0) {
 var ub1;
 if (msg[&apos;UB1&apos;].length() &gt; 0) {
 	ub1 = [];
-	var hl7JSON = 0;
+	var index = 0;
 	for each (seg in msg.UB1) {
-		ub1[hl7JSON] = {};
+		ub1[index] = {};
 
 		// UB1.1, setId
-		if (seg[&apos;UB1.1&apos;][&apos;UB1.1.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].setId = seg[&apos;UB1.1&apos;][&apos;UB1.1.1&apos;]; }
+		if (seg[&apos;UB1.1&apos;][&apos;UB1.1.1&apos;].toString() != &quot;&quot;) { ub1[index].setId = seg[&apos;UB1.1&apos;][&apos;UB1.1.1&apos;]; }
 
 	    // UB1.2, bloodDeductible
-	    if (seg[&apos;UB1.2&apos;][&apos;UB1.2.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].bloodDeductible = seg[&apos;UB1.2&apos;][&apos;UB1.2.1&apos;]; }
+	    if (seg[&apos;UB1.2&apos;][&apos;UB1.2.1&apos;].toString() != &quot;&quot;) { ub1[index].bloodDeductible = seg[&apos;UB1.2&apos;][&apos;UB1.2.1&apos;]; }
 
 	    // UB1.3, bloodFurnishedPints
-	    if (seg[&apos;UB1.3&apos;][&apos;UB1.3.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].bloodFurnishedPints = seg[&apos;UB1.3&apos;][&apos;UB1.3.1&apos;]; }
+	    if (seg[&apos;UB1.3&apos;][&apos;UB1.3.1&apos;].toString() != &quot;&quot;) { ub1[index].bloodFurnishedPints = seg[&apos;UB1.3&apos;][&apos;UB1.3.1&apos;]; }
 
 	    // UB1.4, bloodReplacedPints
-	    if (seg[&apos;UB1.4&apos;][&apos;UB1.4.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].bloodReplacedPints = seg[&apos;UB1.4&apos;][&apos;UB1.4.1&apos;]; }
+	    if (seg[&apos;UB1.4&apos;][&apos;UB1.4.1&apos;].toString() != &quot;&quot;) { ub1[index].bloodReplacedPints = seg[&apos;UB1.4&apos;][&apos;UB1.4.1&apos;]; }
 
 	    // UB1.5, bloodNotReplacedPints
-	    if (seg[&apos;UB1.5&apos;][&apos;UB1.5.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].bloodNotReplacedPints = seg[&apos;UB1.5&apos;][&apos;UB1.5.1&apos;]; }
+	    if (seg[&apos;UB1.5&apos;][&apos;UB1.5.1&apos;].toString() != &quot;&quot;) { ub1[index].bloodNotReplacedPints = seg[&apos;UB1.5&apos;][&apos;UB1.5.1&apos;]; }
 
 	    // UB1.6, coinsuranceDates
-	    if (seg[&apos;UB1.6&apos;][&apos;UB1.6.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].coinsuranceDates = seg[&apos;UB1.6&apos;][&apos;UB1.6.1&apos;]; }
+	    if (seg[&apos;UB1.6&apos;][&apos;UB1.6.1&apos;].toString() != &quot;&quot;) { ub1[index].coinsuranceDates = seg[&apos;UB1.6&apos;][&apos;UB1.6.1&apos;]; }
 
 	    // UB1.7, conditionCode
-	    ub1[hl7JSON].conditionCode = [];
+	    ub1[index].conditionCode = [];
 	    for each (field in seg[&apos;UB1.7&apos;]) {
 	    	if (field[&apos;UB1.8.1&apos;].toString() != &quot;&quot;) {
-	    		ub1[hl7JSON].conditionCode.push(field[&apos;UB1.7.1&apos;]);
+	    		ub1[index].conditionCode.push(field[&apos;UB1.7.1&apos;]);
 	    	}
 	    }
-	    if (ub1[hl7JSON].conditionCode.length == 0) {
-	    	delete ub1[hl7JSON].conditionCode;
+	    if (ub1[index].conditionCode.length == 0) {
+	    	delete ub1[index].conditionCode;
 	    }
 	    
 	    // UB1.8, coveredDays
-	    if (seg[&apos;UB1.8&apos;][&apos;UB1.8.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].coveredDays = seg[&apos;UB1.8&apos;][&apos;UB1.8.1&apos;]; }
+	    if (seg[&apos;UB1.8&apos;][&apos;UB1.8.1&apos;].toString() != &quot;&quot;) { ub1[index].coveredDays = seg[&apos;UB1.8&apos;][&apos;UB1.8.1&apos;]; }
 
 	    // UB1.9, nonCoveredDays
-	    if (seg[&apos;UB1.9&apos;][&apos;UB1.9.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].nonCoveredDays = seg[&apos;UB1.9&apos;][&apos;UB1.9.1&apos;]; }
+	    if (seg[&apos;UB1.9&apos;][&apos;UB1.9.1&apos;].toString() != &quot;&quot;) { ub1[index].nonCoveredDays = seg[&apos;UB1.9&apos;][&apos;UB1.9.1&apos;]; }
 
 	    // UB1.10, valueAmountAndCode
-	    ub1[hl7JSON].valueAmountAndCode = [];
+	    ub1[index].valueAmountAndCode = [];
 	    for each (field in seg[&apos;UB1.10&apos;]) {
 	    	var block = {};
 	    	if (field[&apos;UB1.10.1&apos;].toString() != &quot;&quot;) { block.valueCode = field[&apos;UB1.10.1&apos;]; }
 	    	if (field[&apos;UB1.10.2&apos;].toString() != &quot;&quot;) { block.valueAmount = field[&apos;UB1.10.2&apos;]; }
 	    	if (Object.keys(block).length &gt; 0) {
-	    		ub1[hl7JSON].valueAmountAndCode.push(block);
+	    		ub1[index].valueAmountAndCode.push(block);
 	    	}
 	    }
-	    if (ub1[hl7JSON].valueAmountAndCode.length == 0) {
-	    	delete ub1[hl7JSON].valueAmountAndCode;
+	    if (ub1[index].valueAmountAndCode.length == 0) {
+	    	delete ub1[index].valueAmountAndCode;
 	    }
 
 	    // UB1.11, numberOfGraceDays
-	    if (seg[&apos;UB1.11&apos;][&apos;UB1.11.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].numberOfGraceDays = seg[&apos;UB1.11&apos;][&apos;UB1.11.1&apos;]; }
+	    if (seg[&apos;UB1.11&apos;][&apos;UB1.11.1&apos;].toString() != &quot;&quot;) { ub1[index].numberOfGraceDays = seg[&apos;UB1.11&apos;][&apos;UB1.11.1&apos;]; }
 
 	    // UB1.12, specProgramIndicator
-	    ub1[hl7JSON].specProgramIndicator = {};
-		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].specProgramIndicator.id = seg[&apos;UB1.12&apos;][&apos;UB1.12.1&apos;]; }
-		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.2&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].specProgramIndicator.text = seg[&apos;UB1.12&apos;][&apos;UB1.12.2&apos;]; }
-		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.3&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].specProgramIndicator.codingSystem = seg[&apos;UB1.12&apos;][&apos;UB1.12.3&apos;]; }
-		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.4&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].specProgramIndicator.altId = seg[&apos;UB1.12&apos;][&apos;UB1.12.4&apos;]; }
-		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.5&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].specProgramIndicator.altText = seg[&apos;UB1.12&apos;][&apos;UB1.12.5&apos;]; }
-		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.6&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].specProgramIndicator.altCodingSystem = seg[&apos;UB1.12&apos;][&apos;UB1.12.6&apos;]; }
-		if (Object.keys(ub1[hl7JSON].specProgramIndicator).length == 0) {
-			delete ub1[hl7JSON].specProgramIndicator;
+	    ub1[index].specProgramIndicator = {};
+		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.1&apos;].toString() != &quot;&quot;) { ub1[index].specProgramIndicator.id = seg[&apos;UB1.12&apos;][&apos;UB1.12.1&apos;]; }
+		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.2&apos;].toString() != &quot;&quot;) { ub1[index].specProgramIndicator.text = seg[&apos;UB1.12&apos;][&apos;UB1.12.2&apos;]; }
+		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.3&apos;].toString() != &quot;&quot;) { ub1[index].specProgramIndicator.codingSystem = seg[&apos;UB1.12&apos;][&apos;UB1.12.3&apos;]; }
+		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.4&apos;].toString() != &quot;&quot;) { ub1[index].specProgramIndicator.altId = seg[&apos;UB1.12&apos;][&apos;UB1.12.4&apos;]; }
+		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.5&apos;].toString() != &quot;&quot;) { ub1[index].specProgramIndicator.altText = seg[&apos;UB1.12&apos;][&apos;UB1.12.5&apos;]; }
+		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.6&apos;].toString() != &quot;&quot;) { ub1[index].specProgramIndicator.altCodingSystem = seg[&apos;UB1.12&apos;][&apos;UB1.12.6&apos;]; }
+		if (Object.keys(ub1[index].specProgramIndicator).length == 0) {
+			delete ub1[index].specProgramIndicator;
 		}
 
 	    // UB1.13, PSROURapprovalIndicator
-	    ub1[hl7JSON].PSROURapprovalIndicator = {};
-		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].PSROURapprovalIndicator.id = seg[&apos;UB1.13&apos;][&apos;UB1.13.1&apos;]; }
-		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.2&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].PSROURapprovalIndicator.text = seg[&apos;UB1.13&apos;][&apos;UB1.13.2&apos;]; }
-		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.3&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].PSROURapprovalIndicator.codingSystem = seg[&apos;UB1.13&apos;][&apos;UB1.13.3&apos;]; }
-		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.4&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].PSROURapprovalIndicator.altId = seg[&apos;UB1.13&apos;][&apos;UB1.13.4&apos;]; }
-		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.5&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].PSROURapprovalIndicator.altText = seg[&apos;UB1.13&apos;][&apos;UB1.13.5&apos;]; }
-		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.6&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].PSROURapprovalIndicator.altCodingSystem = seg[&apos;UB1.13&apos;][&apos;UB1.13.6&apos;]; }
-		if (Object.keys(ub1[hl7JSON].PSROURapprovalIndicator).length == 0) {
-			delete ub1[hl7JSON].PSROURapprovalIndicator;
+	    ub1[index].PSROURapprovalIndicator = {};
+		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.1&apos;].toString() != &quot;&quot;) { ub1[index].PSROURapprovalIndicator.id = seg[&apos;UB1.13&apos;][&apos;UB1.13.1&apos;]; }
+		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.2&apos;].toString() != &quot;&quot;) { ub1[index].PSROURapprovalIndicator.text = seg[&apos;UB1.13&apos;][&apos;UB1.13.2&apos;]; }
+		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.3&apos;].toString() != &quot;&quot;) { ub1[index].PSROURapprovalIndicator.codingSystem = seg[&apos;UB1.13&apos;][&apos;UB1.13.3&apos;]; }
+		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.4&apos;].toString() != &quot;&quot;) { ub1[index].PSROURapprovalIndicator.altId = seg[&apos;UB1.13&apos;][&apos;UB1.13.4&apos;]; }
+		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.5&apos;].toString() != &quot;&quot;) { ub1[index].PSROURapprovalIndicator.altText = seg[&apos;UB1.13&apos;][&apos;UB1.13.5&apos;]; }
+		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.6&apos;].toString() != &quot;&quot;) { ub1[index].PSROURapprovalIndicator.altCodingSystem = seg[&apos;UB1.13&apos;][&apos;UB1.13.6&apos;]; }
+		if (Object.keys(ub1[index].PSROURapprovalIndicator).length == 0) {
+			delete ub1[index].PSROURapprovalIndicator;
 		}
 
 	    // UB1.14, PSROURapprovedStayFrom
-	    if (seg[&apos;UB1.14&apos;][&apos;UB1.14.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].PSROURapprovedStayFrom = seg[&apos;UB1.14&apos;][&apos;UB1.14.1&apos;]; }
+	    if (seg[&apos;UB1.14&apos;][&apos;UB1.14.1&apos;].toString() != &quot;&quot;) { ub1[index].PSROURapprovedStayFrom = seg[&apos;UB1.14&apos;][&apos;UB1.14.1&apos;]; }
 
 	    // UB1.15, PSROURapprovedStayTo
-	    if (seg[&apos;UB1.15&apos;][&apos;UB1.15.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].PSROURapprovedStayTo = seg[&apos;UB1.15&apos;][&apos;UB1.15.1&apos;]; }
+	    if (seg[&apos;UB1.15&apos;][&apos;UB1.15.1&apos;].toString() != &quot;&quot;) { ub1[index].PSROURapprovedStayTo = seg[&apos;UB1.15&apos;][&apos;UB1.15.1&apos;]; }
 
 	    // UB1.16, occurrence
-	    ub1[hl7JSON].occurrence = [];
+	    ub1[index].occurrence = [];
 	    for each (field in seg[&apos;UB1.16&apos;]) {
 	    	var block = {};
 	    	if (field[&apos;UB1.16.1&apos;].toString() != &quot;&quot;) { block.occurrenceCode = field[&apos;UB1.16.1&apos;]; }
 	    	if (field[&apos;UB1.16.2&apos;].toString() != &quot;&quot;) { block.occurrenceDate = field[&apos;UB1.16.2&apos;]; }
 	    	if (Object.keys(block).length &gt; 0) {
-	    		ub1[hl7JSON].occurrence.push(block);
+	    		ub1[index].occurrence.push(block);
 	    	}
 	    }
-	    if (ub1[hl7JSON].occurrence.length == 0) {
-	    	delete ub1[hl7JSON].occurrence;
+	    if (ub1[index].occurrence.length == 0) {
+	    	delete ub1[index].occurrence;
 	    }
 
 	    // UB1.17, occurrenceSpan
-	    ub1[hl7JSON].occurrenceSpan = {};
-		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].occurrenceSpan.id = seg[&apos;UB1.17&apos;][&apos;UB1.17.1&apos;]; }
-		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.2&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].occurrenceSpan.text = seg[&apos;UB1.17&apos;][&apos;UB1.17.2&apos;]; }
-		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.3&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].occurrenceSpan.codingSystem = seg[&apos;UB1.17&apos;][&apos;UB1.17.3&apos;]; }
-		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.4&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].occurrenceSpan.altId = seg[&apos;UB1.17&apos;][&apos;UB1.17.4&apos;]; }
-		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.5&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].occurrenceSpan.altText = seg[&apos;UB1.17&apos;][&apos;UB1.17.5&apos;]; }
-		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.6&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].occurrenceSpan.altCodingSystem = seg[&apos;UB1.17&apos;][&apos;UB1.17.6&apos;]; }
-		if (Object.keys(ub1[hl7JSON].occurrenceSpan).length == 0) {
-			delete ub1[hl7JSON].occurrenceSpan;
+	    ub1[index].occurrenceSpan = {};
+		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.1&apos;].toString() != &quot;&quot;) { ub1[index].occurrenceSpan.id = seg[&apos;UB1.17&apos;][&apos;UB1.17.1&apos;]; }
+		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.2&apos;].toString() != &quot;&quot;) { ub1[index].occurrenceSpan.text = seg[&apos;UB1.17&apos;][&apos;UB1.17.2&apos;]; }
+		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.3&apos;].toString() != &quot;&quot;) { ub1[index].occurrenceSpan.codingSystem = seg[&apos;UB1.17&apos;][&apos;UB1.17.3&apos;]; }
+		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.4&apos;].toString() != &quot;&quot;) { ub1[index].occurrenceSpan.altId = seg[&apos;UB1.17&apos;][&apos;UB1.17.4&apos;]; }
+		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.5&apos;].toString() != &quot;&quot;) { ub1[index].occurrenceSpan.altText = seg[&apos;UB1.17&apos;][&apos;UB1.17.5&apos;]; }
+		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.6&apos;].toString() != &quot;&quot;) { ub1[index].occurrenceSpan.altCodingSystem = seg[&apos;UB1.17&apos;][&apos;UB1.17.6&apos;]; }
+		if (Object.keys(ub1[index].occurrenceSpan).length == 0) {
+			delete ub1[index].occurrenceSpan;
 		}
 
 	    // UB1.18, occurrenceSpanStartDate
-	    if (seg[&apos;UB1.18&apos;][&apos;UB1.18.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].occurrenceSpanStartDate = seg[&apos;UB1.18&apos;][&apos;UB1.18.1&apos;]; }
+	    if (seg[&apos;UB1.18&apos;][&apos;UB1.18.1&apos;].toString() != &quot;&quot;) { ub1[index].occurrenceSpanStartDate = seg[&apos;UB1.18&apos;][&apos;UB1.18.1&apos;]; }
 
 	    // UB1.19, occurrenceSpanEndDate
-	    if (seg[&apos;UB1.19&apos;][&apos;UB1.19.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].occurrenceSpanEndDate = seg[&apos;UB1.19&apos;][&apos;UB1.19.1&apos;]; }
+	    if (seg[&apos;UB1.19&apos;][&apos;UB1.19.1&apos;].toString() != &quot;&quot;) { ub1[index].occurrenceSpanEndDate = seg[&apos;UB1.19&apos;][&apos;UB1.19.1&apos;]; }
 
 	    // UB1.20, UB82Locator2
-	    if (seg[&apos;UB1.20&apos;][&apos;UB1.20.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].UB82Locator2 = seg[&apos;UB1.20&apos;][&apos;UB1.20.1&apos;]; }
+	    if (seg[&apos;UB1.20&apos;][&apos;UB1.20.1&apos;].toString() != &quot;&quot;) { ub1[index].UB82Locator2 = seg[&apos;UB1.20&apos;][&apos;UB1.20.1&apos;]; }
 
 	    // UB1.21, UB82Locator9
-	    if (seg[&apos;UB1.21&apos;][&apos;UB1.21.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].UB82Locator9 = seg[&apos;UB1.21&apos;][&apos;UB1.21.1&apos;]; }
+	    if (seg[&apos;UB1.21&apos;][&apos;UB1.21.1&apos;].toString() != &quot;&quot;) { ub1[index].UB82Locator9 = seg[&apos;UB1.21&apos;][&apos;UB1.21.1&apos;]; }
 
 	    // UB1.22, UB82Locator27
-	    if (seg[&apos;UB1.22&apos;][&apos;UB1.22.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].UB82Locator27 = seg[&apos;UB1.22&apos;][&apos;UB1.22.1&apos;]; }
+	    if (seg[&apos;UB1.22&apos;][&apos;UB1.22.1&apos;].toString() != &quot;&quot;) { ub1[index].UB82Locator27 = seg[&apos;UB1.22&apos;][&apos;UB1.22.1&apos;]; }
 
 	    // UB1.23, UB82Locator45
-	    if (seg[&apos;UB1.23&apos;][&apos;UB1.23.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].UB82Locator45 = seg[&apos;UB1.23&apos;][&apos;UB1.23.1&apos;]; }
+	    if (seg[&apos;UB1.23&apos;][&apos;UB1.23.1&apos;].toString() != &quot;&quot;) { ub1[index].UB82Locator45 = seg[&apos;UB1.23&apos;][&apos;UB1.23.1&apos;]; }
 
-	    // clean up UB1 and increment hl7JSON
-	    if (Object.keys(ub1[hl7JSON]).length == 0) {
-			delete ub1[hl7JSON];
+	    // clean up UB1 and increment index
+	    if (Object.keys(ub1[index]).length == 0) {
+			delete ub1[index];
 		} else {
-			hl7JSON++;
+			index++;
 		}
 	}
 }
@@ -11298,11 +11298,11 @@ if (msg[&apos;UB1&apos;].length() &gt; 0) {
 // Optional: save a copy of the completed UB1 segment for reference later
 //channelMap.put(&quot;ub1&quot;, ub1); // uncomment to save
 
-// If it has content, add the UB1 segment to the hl7Json object
+// If it has content, add the UB1 segment to the hl7JSON object
 if (ub1 &amp;&amp; Object.keys(ub1).length != 0) {
-	var hl7Json = JSON.parse($(&apos;hl7Json&apos;));
-	hl7Json.content.UB1 = ub1;
-	channelMap.put(&quot;hl7Json&quot;, JSON.stringify(hl7Json));
+	var hl7JSON = JSON.parse($(&apos;hl7JSON&apos;));
+	hl7JSON.content.UB1 = ub1;
+	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
           <type>JavaScript</type>
           <data>
@@ -11312,141 +11312,141 @@ if (ub1 &amp;&amp; Object.keys(ub1).length != 0) {
 var ub1;
 if (msg[&apos;UB1&apos;].length() &gt; 0) {
 	ub1 = [];
-	var hl7JSON = 0;
+	var index = 0;
 	for each (seg in msg.UB1) {
-		ub1[hl7JSON] = {};
+		ub1[index] = {};
 
 		// UB1.1, setId
-		if (seg[&apos;UB1.1&apos;][&apos;UB1.1.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].setId = seg[&apos;UB1.1&apos;][&apos;UB1.1.1&apos;]; }
+		if (seg[&apos;UB1.1&apos;][&apos;UB1.1.1&apos;].toString() != &quot;&quot;) { ub1[index].setId = seg[&apos;UB1.1&apos;][&apos;UB1.1.1&apos;]; }
 
 	    // UB1.2, bloodDeductible
-	    if (seg[&apos;UB1.2&apos;][&apos;UB1.2.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].bloodDeductible = seg[&apos;UB1.2&apos;][&apos;UB1.2.1&apos;]; }
+	    if (seg[&apos;UB1.2&apos;][&apos;UB1.2.1&apos;].toString() != &quot;&quot;) { ub1[index].bloodDeductible = seg[&apos;UB1.2&apos;][&apos;UB1.2.1&apos;]; }
 
 	    // UB1.3, bloodFurnishedPints
-	    if (seg[&apos;UB1.3&apos;][&apos;UB1.3.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].bloodFurnishedPints = seg[&apos;UB1.3&apos;][&apos;UB1.3.1&apos;]; }
+	    if (seg[&apos;UB1.3&apos;][&apos;UB1.3.1&apos;].toString() != &quot;&quot;) { ub1[index].bloodFurnishedPints = seg[&apos;UB1.3&apos;][&apos;UB1.3.1&apos;]; }
 
 	    // UB1.4, bloodReplacedPints
-	    if (seg[&apos;UB1.4&apos;][&apos;UB1.4.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].bloodReplacedPints = seg[&apos;UB1.4&apos;][&apos;UB1.4.1&apos;]; }
+	    if (seg[&apos;UB1.4&apos;][&apos;UB1.4.1&apos;].toString() != &quot;&quot;) { ub1[index].bloodReplacedPints = seg[&apos;UB1.4&apos;][&apos;UB1.4.1&apos;]; }
 
 	    // UB1.5, bloodNotReplacedPints
-	    if (seg[&apos;UB1.5&apos;][&apos;UB1.5.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].bloodNotReplacedPints = seg[&apos;UB1.5&apos;][&apos;UB1.5.1&apos;]; }
+	    if (seg[&apos;UB1.5&apos;][&apos;UB1.5.1&apos;].toString() != &quot;&quot;) { ub1[index].bloodNotReplacedPints = seg[&apos;UB1.5&apos;][&apos;UB1.5.1&apos;]; }
 
 	    // UB1.6, coinsuranceDates
-	    if (seg[&apos;UB1.6&apos;][&apos;UB1.6.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].coinsuranceDates = seg[&apos;UB1.6&apos;][&apos;UB1.6.1&apos;]; }
+	    if (seg[&apos;UB1.6&apos;][&apos;UB1.6.1&apos;].toString() != &quot;&quot;) { ub1[index].coinsuranceDates = seg[&apos;UB1.6&apos;][&apos;UB1.6.1&apos;]; }
 
 	    // UB1.7, conditionCode
-	    ub1[hl7JSON].conditionCode = [];
+	    ub1[index].conditionCode = [];
 	    for each (field in seg[&apos;UB1.7&apos;]) {
 	    	if (field[&apos;UB1.8.1&apos;].toString() != &quot;&quot;) {
-	    		ub1[hl7JSON].conditionCode.push(field[&apos;UB1.7.1&apos;]);
+	    		ub1[index].conditionCode.push(field[&apos;UB1.7.1&apos;]);
 	    	}
 	    }
-	    if (ub1[hl7JSON].conditionCode.length == 0) {
-	    	delete ub1[hl7JSON].conditionCode;
+	    if (ub1[index].conditionCode.length == 0) {
+	    	delete ub1[index].conditionCode;
 	    }
 	    
 	    // UB1.8, coveredDays
-	    if (seg[&apos;UB1.8&apos;][&apos;UB1.8.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].coveredDays = seg[&apos;UB1.8&apos;][&apos;UB1.8.1&apos;]; }
+	    if (seg[&apos;UB1.8&apos;][&apos;UB1.8.1&apos;].toString() != &quot;&quot;) { ub1[index].coveredDays = seg[&apos;UB1.8&apos;][&apos;UB1.8.1&apos;]; }
 
 	    // UB1.9, nonCoveredDays
-	    if (seg[&apos;UB1.9&apos;][&apos;UB1.9.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].nonCoveredDays = seg[&apos;UB1.9&apos;][&apos;UB1.9.1&apos;]; }
+	    if (seg[&apos;UB1.9&apos;][&apos;UB1.9.1&apos;].toString() != &quot;&quot;) { ub1[index].nonCoveredDays = seg[&apos;UB1.9&apos;][&apos;UB1.9.1&apos;]; }
 
 	    // UB1.10, valueAmountAndCode
-	    ub1[hl7JSON].valueAmountAndCode = [];
+	    ub1[index].valueAmountAndCode = [];
 	    for each (field in seg[&apos;UB1.10&apos;]) {
 	    	var block = {};
 	    	if (field[&apos;UB1.10.1&apos;].toString() != &quot;&quot;) { block.valueCode = field[&apos;UB1.10.1&apos;]; }
 	    	if (field[&apos;UB1.10.2&apos;].toString() != &quot;&quot;) { block.valueAmount = field[&apos;UB1.10.2&apos;]; }
 	    	if (Object.keys(block).length &gt; 0) {
-	    		ub1[hl7JSON].valueAmountAndCode.push(block);
+	    		ub1[index].valueAmountAndCode.push(block);
 	    	}
 	    }
-	    if (ub1[hl7JSON].valueAmountAndCode.length == 0) {
-	    	delete ub1[hl7JSON].valueAmountAndCode;
+	    if (ub1[index].valueAmountAndCode.length == 0) {
+	    	delete ub1[index].valueAmountAndCode;
 	    }
 
 	    // UB1.11, numberOfGraceDays
-	    if (seg[&apos;UB1.11&apos;][&apos;UB1.11.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].numberOfGraceDays = seg[&apos;UB1.11&apos;][&apos;UB1.11.1&apos;]; }
+	    if (seg[&apos;UB1.11&apos;][&apos;UB1.11.1&apos;].toString() != &quot;&quot;) { ub1[index].numberOfGraceDays = seg[&apos;UB1.11&apos;][&apos;UB1.11.1&apos;]; }
 
 	    // UB1.12, specProgramIndicator
-	    ub1[hl7JSON].specProgramIndicator = {};
-		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].specProgramIndicator.id = seg[&apos;UB1.12&apos;][&apos;UB1.12.1&apos;]; }
-		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.2&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].specProgramIndicator.text = seg[&apos;UB1.12&apos;][&apos;UB1.12.2&apos;]; }
-		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.3&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].specProgramIndicator.codingSystem = seg[&apos;UB1.12&apos;][&apos;UB1.12.3&apos;]; }
-		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.4&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].specProgramIndicator.altId = seg[&apos;UB1.12&apos;][&apos;UB1.12.4&apos;]; }
-		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.5&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].specProgramIndicator.altText = seg[&apos;UB1.12&apos;][&apos;UB1.12.5&apos;]; }
-		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.6&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].specProgramIndicator.altCodingSystem = seg[&apos;UB1.12&apos;][&apos;UB1.12.6&apos;]; }
-		if (Object.keys(ub1[hl7JSON].specProgramIndicator).length == 0) {
-			delete ub1[hl7JSON].specProgramIndicator;
+	    ub1[index].specProgramIndicator = {};
+		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.1&apos;].toString() != &quot;&quot;) { ub1[index].specProgramIndicator.id = seg[&apos;UB1.12&apos;][&apos;UB1.12.1&apos;]; }
+		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.2&apos;].toString() != &quot;&quot;) { ub1[index].specProgramIndicator.text = seg[&apos;UB1.12&apos;][&apos;UB1.12.2&apos;]; }
+		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.3&apos;].toString() != &quot;&quot;) { ub1[index].specProgramIndicator.codingSystem = seg[&apos;UB1.12&apos;][&apos;UB1.12.3&apos;]; }
+		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.4&apos;].toString() != &quot;&quot;) { ub1[index].specProgramIndicator.altId = seg[&apos;UB1.12&apos;][&apos;UB1.12.4&apos;]; }
+		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.5&apos;].toString() != &quot;&quot;) { ub1[index].specProgramIndicator.altText = seg[&apos;UB1.12&apos;][&apos;UB1.12.5&apos;]; }
+		if (seg[&apos;UB1.12&apos;][&apos;UB1.12.6&apos;].toString() != &quot;&quot;) { ub1[index].specProgramIndicator.altCodingSystem = seg[&apos;UB1.12&apos;][&apos;UB1.12.6&apos;]; }
+		if (Object.keys(ub1[index].specProgramIndicator).length == 0) {
+			delete ub1[index].specProgramIndicator;
 		}
 
 	    // UB1.13, PSROURapprovalIndicator
-	    ub1[hl7JSON].PSROURapprovalIndicator = {};
-		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].PSROURapprovalIndicator.id = seg[&apos;UB1.13&apos;][&apos;UB1.13.1&apos;]; }
-		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.2&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].PSROURapprovalIndicator.text = seg[&apos;UB1.13&apos;][&apos;UB1.13.2&apos;]; }
-		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.3&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].PSROURapprovalIndicator.codingSystem = seg[&apos;UB1.13&apos;][&apos;UB1.13.3&apos;]; }
-		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.4&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].PSROURapprovalIndicator.altId = seg[&apos;UB1.13&apos;][&apos;UB1.13.4&apos;]; }
-		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.5&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].PSROURapprovalIndicator.altText = seg[&apos;UB1.13&apos;][&apos;UB1.13.5&apos;]; }
-		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.6&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].PSROURapprovalIndicator.altCodingSystem = seg[&apos;UB1.13&apos;][&apos;UB1.13.6&apos;]; }
-		if (Object.keys(ub1[hl7JSON].PSROURapprovalIndicator).length == 0) {
-			delete ub1[hl7JSON].PSROURapprovalIndicator;
+	    ub1[index].PSROURapprovalIndicator = {};
+		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.1&apos;].toString() != &quot;&quot;) { ub1[index].PSROURapprovalIndicator.id = seg[&apos;UB1.13&apos;][&apos;UB1.13.1&apos;]; }
+		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.2&apos;].toString() != &quot;&quot;) { ub1[index].PSROURapprovalIndicator.text = seg[&apos;UB1.13&apos;][&apos;UB1.13.2&apos;]; }
+		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.3&apos;].toString() != &quot;&quot;) { ub1[index].PSROURapprovalIndicator.codingSystem = seg[&apos;UB1.13&apos;][&apos;UB1.13.3&apos;]; }
+		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.4&apos;].toString() != &quot;&quot;) { ub1[index].PSROURapprovalIndicator.altId = seg[&apos;UB1.13&apos;][&apos;UB1.13.4&apos;]; }
+		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.5&apos;].toString() != &quot;&quot;) { ub1[index].PSROURapprovalIndicator.altText = seg[&apos;UB1.13&apos;][&apos;UB1.13.5&apos;]; }
+		if (seg[&apos;UB1.13&apos;][&apos;UB1.13.6&apos;].toString() != &quot;&quot;) { ub1[index].PSROURapprovalIndicator.altCodingSystem = seg[&apos;UB1.13&apos;][&apos;UB1.13.6&apos;]; }
+		if (Object.keys(ub1[index].PSROURapprovalIndicator).length == 0) {
+			delete ub1[index].PSROURapprovalIndicator;
 		}
 
 	    // UB1.14, PSROURapprovedStayFrom
-	    if (seg[&apos;UB1.14&apos;][&apos;UB1.14.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].PSROURapprovedStayFrom = seg[&apos;UB1.14&apos;][&apos;UB1.14.1&apos;]; }
+	    if (seg[&apos;UB1.14&apos;][&apos;UB1.14.1&apos;].toString() != &quot;&quot;) { ub1[index].PSROURapprovedStayFrom = seg[&apos;UB1.14&apos;][&apos;UB1.14.1&apos;]; }
 
 	    // UB1.15, PSROURapprovedStayTo
-	    if (seg[&apos;UB1.15&apos;][&apos;UB1.15.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].PSROURapprovedStayTo = seg[&apos;UB1.15&apos;][&apos;UB1.15.1&apos;]; }
+	    if (seg[&apos;UB1.15&apos;][&apos;UB1.15.1&apos;].toString() != &quot;&quot;) { ub1[index].PSROURapprovedStayTo = seg[&apos;UB1.15&apos;][&apos;UB1.15.1&apos;]; }
 
 	    // UB1.16, occurrence
-	    ub1[hl7JSON].occurrence = [];
+	    ub1[index].occurrence = [];
 	    for each (field in seg[&apos;UB1.16&apos;]) {
 	    	var block = {};
 	    	if (field[&apos;UB1.16.1&apos;].toString() != &quot;&quot;) { block.occurrenceCode = field[&apos;UB1.16.1&apos;]; }
 	    	if (field[&apos;UB1.16.2&apos;].toString() != &quot;&quot;) { block.occurrenceDate = field[&apos;UB1.16.2&apos;]; }
 	    	if (Object.keys(block).length &gt; 0) {
-	    		ub1[hl7JSON].occurrence.push(block);
+	    		ub1[index].occurrence.push(block);
 	    	}
 	    }
-	    if (ub1[hl7JSON].occurrence.length == 0) {
-	    	delete ub1[hl7JSON].occurrence;
+	    if (ub1[index].occurrence.length == 0) {
+	    	delete ub1[index].occurrence;
 	    }
 
 	    // UB1.17, occurrenceSpan
-	    ub1[hl7JSON].occurrenceSpan = {};
-		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].occurrenceSpan.id = seg[&apos;UB1.17&apos;][&apos;UB1.17.1&apos;]; }
-		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.2&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].occurrenceSpan.text = seg[&apos;UB1.17&apos;][&apos;UB1.17.2&apos;]; }
-		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.3&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].occurrenceSpan.codingSystem = seg[&apos;UB1.17&apos;][&apos;UB1.17.3&apos;]; }
-		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.4&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].occurrenceSpan.altId = seg[&apos;UB1.17&apos;][&apos;UB1.17.4&apos;]; }
-		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.5&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].occurrenceSpan.altText = seg[&apos;UB1.17&apos;][&apos;UB1.17.5&apos;]; }
-		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.6&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].occurrenceSpan.altCodingSystem = seg[&apos;UB1.17&apos;][&apos;UB1.17.6&apos;]; }
-		if (Object.keys(ub1[hl7JSON].occurrenceSpan).length == 0) {
-			delete ub1[hl7JSON].occurrenceSpan;
+	    ub1[index].occurrenceSpan = {};
+		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.1&apos;].toString() != &quot;&quot;) { ub1[index].occurrenceSpan.id = seg[&apos;UB1.17&apos;][&apos;UB1.17.1&apos;]; }
+		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.2&apos;].toString() != &quot;&quot;) { ub1[index].occurrenceSpan.text = seg[&apos;UB1.17&apos;][&apos;UB1.17.2&apos;]; }
+		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.3&apos;].toString() != &quot;&quot;) { ub1[index].occurrenceSpan.codingSystem = seg[&apos;UB1.17&apos;][&apos;UB1.17.3&apos;]; }
+		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.4&apos;].toString() != &quot;&quot;) { ub1[index].occurrenceSpan.altId = seg[&apos;UB1.17&apos;][&apos;UB1.17.4&apos;]; }
+		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.5&apos;].toString() != &quot;&quot;) { ub1[index].occurrenceSpan.altText = seg[&apos;UB1.17&apos;][&apos;UB1.17.5&apos;]; }
+		if (seg[&apos;UB1.17&apos;][&apos;UB1.17.6&apos;].toString() != &quot;&quot;) { ub1[index].occurrenceSpan.altCodingSystem = seg[&apos;UB1.17&apos;][&apos;UB1.17.6&apos;]; }
+		if (Object.keys(ub1[index].occurrenceSpan).length == 0) {
+			delete ub1[index].occurrenceSpan;
 		}
 
 	    // UB1.18, occurrenceSpanStartDate
-	    if (seg[&apos;UB1.18&apos;][&apos;UB1.18.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].occurrenceSpanStartDate = seg[&apos;UB1.18&apos;][&apos;UB1.18.1&apos;]; }
+	    if (seg[&apos;UB1.18&apos;][&apos;UB1.18.1&apos;].toString() != &quot;&quot;) { ub1[index].occurrenceSpanStartDate = seg[&apos;UB1.18&apos;][&apos;UB1.18.1&apos;]; }
 
 	    // UB1.19, occurrenceSpanEndDate
-	    if (seg[&apos;UB1.19&apos;][&apos;UB1.19.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].occurrenceSpanEndDate = seg[&apos;UB1.19&apos;][&apos;UB1.19.1&apos;]; }
+	    if (seg[&apos;UB1.19&apos;][&apos;UB1.19.1&apos;].toString() != &quot;&quot;) { ub1[index].occurrenceSpanEndDate = seg[&apos;UB1.19&apos;][&apos;UB1.19.1&apos;]; }
 
 	    // UB1.20, UB82Locator2
-	    if (seg[&apos;UB1.20&apos;][&apos;UB1.20.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].UB82Locator2 = seg[&apos;UB1.20&apos;][&apos;UB1.20.1&apos;]; }
+	    if (seg[&apos;UB1.20&apos;][&apos;UB1.20.1&apos;].toString() != &quot;&quot;) { ub1[index].UB82Locator2 = seg[&apos;UB1.20&apos;][&apos;UB1.20.1&apos;]; }
 
 	    // UB1.21, UB82Locator9
-	    if (seg[&apos;UB1.21&apos;][&apos;UB1.21.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].UB82Locator9 = seg[&apos;UB1.21&apos;][&apos;UB1.21.1&apos;]; }
+	    if (seg[&apos;UB1.21&apos;][&apos;UB1.21.1&apos;].toString() != &quot;&quot;) { ub1[index].UB82Locator9 = seg[&apos;UB1.21&apos;][&apos;UB1.21.1&apos;]; }
 
 	    // UB1.22, UB82Locator27
-	    if (seg[&apos;UB1.22&apos;][&apos;UB1.22.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].UB82Locator27 = seg[&apos;UB1.22&apos;][&apos;UB1.22.1&apos;]; }
+	    if (seg[&apos;UB1.22&apos;][&apos;UB1.22.1&apos;].toString() != &quot;&quot;) { ub1[index].UB82Locator27 = seg[&apos;UB1.22&apos;][&apos;UB1.22.1&apos;]; }
 
 	    // UB1.23, UB82Locator45
-	    if (seg[&apos;UB1.23&apos;][&apos;UB1.23.1&apos;].toString() != &quot;&quot;) { ub1[hl7JSON].UB82Locator45 = seg[&apos;UB1.23&apos;][&apos;UB1.23.1&apos;]; }
+	    if (seg[&apos;UB1.23&apos;][&apos;UB1.23.1&apos;].toString() != &quot;&quot;) { ub1[index].UB82Locator45 = seg[&apos;UB1.23&apos;][&apos;UB1.23.1&apos;]; }
 
-	    // clean up UB1 and increment hl7JSON
-	    if (Object.keys(ub1[hl7JSON]).length == 0) {
-			delete ub1[hl7JSON];
+	    // clean up UB1 and increment index
+	    if (Object.keys(ub1[index]).length == 0) {
+			delete ub1[index];
 		} else {
-			hl7JSON++;
+			index++;
 		}
 	}
 }
@@ -11454,11 +11454,11 @@ if (msg[&apos;UB1&apos;].length() &gt; 0) {
 // Optional: save a copy of the completed UB1 segment for reference later
 //channelMap.put(&quot;ub1&quot;, ub1); // uncomment to save
 
-// If it has content, add the UB1 segment to the hl7Json object
+// If it has content, add the UB1 segment to the hl7JSON object
 if (ub1 &amp;&amp; Object.keys(ub1).length != 0) {
-	var hl7Json = JSON.parse($(&apos;hl7Json&apos;));
-	hl7Json.content.UB1 = ub1;
-	channelMap.put(&quot;hl7Json&quot;, JSON.stringify(hl7Json));
+	var hl7JSON = JSON.parse($(&apos;hl7JSON&apos;));
+	hl7JSON.content.UB1 = ub1;
+	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</string>
             </entry>
           </data>
@@ -11470,49 +11470,49 @@ if (ub1 &amp;&amp; Object.keys(ub1).length != 0) {
 var ub2;
 if (msg[&apos;UB2&apos;].length() &gt; 0) {
 	ub2 = [];
-	var hl7JSON = 0;
+	var index = 0;
 	for each (seg in msg.UB2) {
-		ub2[hl7JSON] = {};
+		ub2[index] = {};
 
 	    // UB2.1, setId
-	    if (seg[&apos;UB2.1&apos;][&apos;UB2.1.1&apos;].toString() != &quot;&quot;) { ub2[hl7JSON].setId = seg[&apos;UB2.1&apos;][&apos;UB2.1.1&apos;]; }
+	    if (seg[&apos;UB2.1&apos;][&apos;UB2.1.1&apos;].toString() != &quot;&quot;) { ub2[index].setId = seg[&apos;UB2.1&apos;][&apos;UB2.1.1&apos;]; }
 
 	    // UB2.2, coinsuranceDays
-	    if (seg[&apos;UB2.2&apos;][&apos;UB2.2.1&apos;].toString() != &quot;&quot;) { ub2[hl7JSON].coinsuranceDays = seg[&apos;UB2.2&apos;][&apos;UB2.2.1&apos;]; }
+	    if (seg[&apos;UB2.2&apos;][&apos;UB2.2.1&apos;].toString() != &quot;&quot;) { ub2[index].coinsuranceDays = seg[&apos;UB2.2&apos;][&apos;UB2.2.1&apos;]; }
 	    
 	    // UB2.3, conditionCode
-	    ub2[hl7JSON].conditionCode = [];
+	    ub2[index].conditionCode = [];
 	    for each (field in seg[&apos;UB2.3&apos;]) {
 	    	if (field[&apos;UB2.3.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[hl7JSON].conditionCode.push(field[&apos;UB2.3.1&apos;]);
+	    		ub2[index].conditionCode.push(field[&apos;UB2.3.1&apos;]);
 	    	}
 	    }
-	    if (ub2[hl7JSON].conditionCode.length == 0) {
-	    	delete ub2[hl7JSON].conditionCode;
+	    if (ub2[index].conditionCode.length == 0) {
+	    	delete ub2[index].conditionCode;
 	    }
 	    
 	    // UB2.4, coveredDays
-	    if (seg[&apos;UB2.4&apos;][&apos;UB2.4.1&apos;].toString() != &quot;&quot;) { ub2[hl7JSON].coveredDays = seg[&apos;UB2.4&apos;][&apos;UB2.4.1&apos;]; }
+	    if (seg[&apos;UB2.4&apos;][&apos;UB2.4.1&apos;].toString() != &quot;&quot;) { ub2[index].coveredDays = seg[&apos;UB2.4&apos;][&apos;UB2.4.1&apos;]; }
 	    
 	    // UB2.5, nonCoveredDays
-	    if (seg[&apos;UB2.5&apos;][&apos;UB2.5.1&apos;].toString() != &quot;&quot;) { ub2[hl7JSON].nonCoveredDays = seg[&apos;UB2.5&apos;][&apos;UB2.5.1&apos;]; }
+	    if (seg[&apos;UB2.5&apos;][&apos;UB2.5.1&apos;].toString() != &quot;&quot;) { ub2[index].nonCoveredDays = seg[&apos;UB2.5&apos;][&apos;UB2.5.1&apos;]; }
 	    
 	    // UB2.6, valueAmountAndCode
-	    ub2[hl7JSON].valueAmountAndCode = [];
+	    ub2[index].valueAmountAndCode = [];
 	    for each (field in seg[&apos;UB2.6&apos;]) {
 	    	var block = {};
 	    	if (field[&apos;UB2.6.1&apos;].toString() != &quot;&quot;) { block.valueCode = field[&apos;UB2.6.1&apos;]; }
 	    	if (field[&apos;UB2.6.2&apos;].toString() != &quot;&quot;) { block.valueAmount = field[&apos;UB2.6.2&apos;]; }
 	    	if (Object.keys(block).length &gt; 0) {
-	    		ub2[hl7JSON].valueAmountAndCode.push(block);
+	    		ub2[index].valueAmountAndCode.push(block);
 	    	}
 	    }
-	    if (ub2[hl7JSON].valueAmountAndCode.length == 0) {
-	    	delete ub2[hl7JSON].valueAmountAndCode;
+	    if (ub2[index].valueAmountAndCode.length == 0) {
+	    	delete ub2[index].valueAmountAndCode;
 	    }
 
 	    // UB2.7, occurrence
-	    ub2[hl7JSON].occurrence = [];
+	    ub2[index].occurrence = [];
 	    for each (field in seg[&apos;UB2.7&apos;]) {
 	    	var block = {};
 	    	block.occurrenceCode = {};
@@ -11528,15 +11528,15 @@ if (msg[&apos;UB2&apos;].length() &gt; 0) {
 	    	}
 	    	if (field[&apos;UB2.7.2&apos;].toString() != &quot;&quot;) { block.occurrenceDate = field[&apos;UB2.7.2&apos;]; }
 	    	if (Object.keys(block).length &gt; 0) {
-	    		ub2[hl7JSON].occurrence.push(block);
+	    		ub2[index].occurrence.push(block);
 	    	}
 	    }
-	    if (ub2[hl7JSON].occurrence.length == 0) {
-	    	delete ub2[hl7JSON].occurrence;
+	    if (ub2[index].occurrence.length == 0) {
+	    	delete ub2[index].occurrence;
 	    }
 
 	    // UB2.8, occurrenceSpanCodeAndDate
-	    ub2[hl7JSON].occurrenceSpanCodeAndDate = [];
+	    ub2[index].occurrenceSpanCodeAndDate = [];
 	    for each (field in seg[&apos;UB2.8&apos;]) {
 	    	var block = {};
 	    	block.occurrenceSpanCode = {};
@@ -11553,94 +11553,94 @@ if (msg[&apos;UB2&apos;].length() &gt; 0) {
 	    	if (field[&apos;UB2.8.2&apos;].toString() != &quot;&quot;) { block.occurrenceSpanStartDate = field[&apos;UB2.8.2&apos;]; }
 	    	if (field[&apos;UB2.8.3&apos;].toString() != &quot;&quot;) { block.occurrenceSpanEndDate = field[&apos;UB2.8.3&apos;]; }
 	    	if (Object.keys(block).length &gt; 0) {
-	    		ub2[hl7JSON].occurrenceSpanCodeAndDate.push(block);
+	    		ub2[index].occurrenceSpanCodeAndDate.push(block);
 	    	}
 	    }
-	    if (ub2[hl7JSON].occurrenceSpanCodeAndDate.length == 0) {
-	    	delete ub2[hl7JSON].occurrenceSpanCodeAndDate;
+	    if (ub2[index].occurrenceSpanCodeAndDate.length == 0) {
+	    	delete ub2[index].occurrenceSpanCodeAndDate;
 	    }
 
 	    // UB2.9, UB92Locator2
-	    ub2[hl7JSON].UB92Locator2 = [];
+	    ub2[index].UB92Locator2 = [];
 	    for each (field in seg[&apos;UB2.9&apos;]) {
 	    	if (field[&apos;UB2.9.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[hl7JSON].UB92Locator2.push(field[&apos;UB2.9.1&apos;]);
+	    		ub2[index].UB92Locator2.push(field[&apos;UB2.9.1&apos;]);
 	    	}
 	    }
-	    if (ub2[hl7JSON].UB92Locator2.length == 0) {
-	    	delete ub2[hl7JSON].UB92Locator2;
+	    if (ub2[index].UB92Locator2.length == 0) {
+	    	delete ub2[index].UB92Locator2;
 	    }
 	    
 	    
 	    // UB2.10, UB92Locator11
-	    ub2[hl7JSON].UB92Locator11 = [];
+	    ub2[index].UB92Locator11 = [];
 	    for each (field in seg[&apos;UB2.10&apos;]) {
 	    	if (field[&apos;UB2.10.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[hl7JSON].UB92Locator11.push(field[&apos;UB2.10.1&apos;]);
+	    		ub2[index].UB92Locator11.push(field[&apos;UB2.10.1&apos;]);
 	    	}
 	    }
-	    if (ub2[hl7JSON].UB92Locator11.length == 0) {
-	    	delete ub2[hl7JSON].UB92Locator11;
+	    if (ub2[index].UB92Locator11.length == 0) {
+	    	delete ub2[index].UB92Locator11;
 	    }
 	    
 	    // UB2.11, UB92Locator31
-	    if (seg[&apos;UB2.11&apos;][&apos;UB2.11.1&apos;].toString() != &quot;&quot;) { ub2[hl7JSON].UB92Locator31 = seg[&apos;UB2.11&apos;][&apos;UB2.11.1&apos;]; }
+	    if (seg[&apos;UB2.11&apos;][&apos;UB2.11.1&apos;].toString() != &quot;&quot;) { ub2[index].UB92Locator31 = seg[&apos;UB2.11&apos;][&apos;UB2.11.1&apos;]; }
 	    
 	    // UB2.12, documentControlNumber
-	    ub2[hl7JSON].documentControlNumber = [];
+	    ub2[index].documentControlNumber = [];
 	    for each (field in seg[&apos;UB2.12&apos;]) {
 	    	if (field[&apos;UB2.12.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[hl7JSON].documentControlNumber.push(field[&apos;UB2.12.1&apos;]);
+	    		ub2[index].documentControlNumber.push(field[&apos;UB2.12.1&apos;]);
 	    	}
 	    }
-	    if (ub2[hl7JSON].documentControlNumber.length == 0) {
-	    	delete ub2[hl7JSON].documentControlNumber;
+	    if (ub2[index].documentControlNumber.length == 0) {
+	    	delete ub2[index].documentControlNumber;
 	    }
 	    
 	    // UB2.13, UB92Locator49
-	    ub2[hl7JSON].UB92Locator49 = [];
+	    ub2[index].UB92Locator49 = [];
 	    for each (field in seg[&apos;UB2.13&apos;]) {
 	    	if (field[&apos;UB2.13.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[hl7JSON].UB92Locator49.push(field[&apos;UB2.13.1&apos;]);
+	    		ub2[index].UB92Locator49.push(field[&apos;UB2.13.1&apos;]);
 	    	}
 	    }
-	    if (ub2[hl7JSON].UB92Locator49.length == 0) {
-	    	delete ub2[hl7JSON].UB92Locator49;
+	    if (ub2[index].UB92Locator49.length == 0) {
+	    	delete ub2[index].UB92Locator49;
 	    }
 	    
 	    // UB2.14, UB92Locator56
-	    ub2[hl7JSON].UB92Locator56 = [];
+	    ub2[index].UB92Locator56 = [];
 	    for each (field in seg[&apos;UB2.14&apos;]) {
 	    	if (field[&apos;UB2.14.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[hl7JSON].UB92Locator56.push(field[&apos;UB2.14.1&apos;]);
+	    		ub2[index].UB92Locator56.push(field[&apos;UB2.14.1&apos;]);
 	    	}
 	    }
-	    if (ub2[hl7JSON].UB92Locator56.length == 0) {
-	    	delete ub2[hl7JSON].UB92Locator56;
+	    if (ub2[index].UB92Locator56.length == 0) {
+	    	delete ub2[index].UB92Locator56;
 	    }
 	    
 	    // UB2.15, UB92Locator57
-	    if (seg[&apos;UB2.15&apos;][&apos;UB2.15.1&apos;].toString() != &quot;&quot;) { ub2[hl7JSON].UB92Locator57 = seg[&apos;UB2.15&apos;][&apos;UB2.15.1&apos;]; }
+	    if (seg[&apos;UB2.15&apos;][&apos;UB2.15.1&apos;].toString() != &quot;&quot;) { ub2[index].UB92Locator57 = seg[&apos;UB2.15&apos;][&apos;UB2.15.1&apos;]; }
 	    
 	    // UB2.16, UB92Locator78
-	    ub2[hl7JSON].UB92Locator78 = [];
+	    ub2[index].UB92Locator78 = [];
 	    for each (field in seg[&apos;UB2.16&apos;]) {
 	    	if (field[&apos;UB2.16.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[hl7JSON].UB92Locator78.push(field[&apos;UB2.16.1&apos;]);
+	    		ub2[index].UB92Locator78.push(field[&apos;UB2.16.1&apos;]);
 	    	}
 	    }
-	    if (ub2[hl7JSON].UB92Locator78.length == 0) {
-	    	delete ub2[hl7JSON].UB92Locator78;
+	    if (ub2[index].UB92Locator78.length == 0) {
+	    	delete ub2[index].UB92Locator78;
 	    }
 	    
 	    // UB2.17, specialVisitCount
-	    if (seg[&apos;UB2.17&apos;][&apos;UB2.17.1&apos;].toString() != &quot;&quot;) { ub2[hl7JSON].specialVisitCount = seg[&apos;UB2.17&apos;][&apos;UB2.17.1&apos;]; }
+	    if (seg[&apos;UB2.17&apos;][&apos;UB2.17.1&apos;].toString() != &quot;&quot;) { ub2[index].specialVisitCount = seg[&apos;UB2.17&apos;][&apos;UB2.17.1&apos;]; }
 
-	    // clean up UB2 and increment hl7JSON
-	    if (Object.keys(ub2[hl7JSON]).length == 0) {
-			delete ub2[hl7JSON];
+	    // clean up UB2 and increment index
+	    if (Object.keys(ub2[index]).length == 0) {
+			delete ub2[index];
 		} else {
-			hl7JSON++;
+			index++;
 		}
 	}
 }
@@ -11648,11 +11648,11 @@ if (msg[&apos;UB2&apos;].length() &gt; 0) {
 // Optional: save a copy of the completed UB2 segment for reference later
 //channelMap.put(&quot;ub2&quot;, ub2); // uncomment to save
 
-// If it has content, add the UB2 segment to the hl7Json object
+// If it has content, add the UB2 segment to the hl7JSON object
 if (ub2 &amp;&amp; Object.keys(ub2).length != 0) {
-	var hl7Json = JSON.parse($(&apos;hl7Json&apos;));
-	hl7Json.content.UB2 = ub2;
-	channelMap.put(&quot;hl7Json&quot;, JSON.stringify(hl7Json));
+	var hl7JSON = JSON.parse($(&apos;hl7JSON&apos;));
+	hl7JSON.content.UB2 = ub2;
+	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
           <type>JavaScript</type>
           <data>
@@ -11662,49 +11662,49 @@ if (ub2 &amp;&amp; Object.keys(ub2).length != 0) {
 var ub2;
 if (msg[&apos;UB2&apos;].length() &gt; 0) {
 	ub2 = [];
-	var hl7JSON = 0;
+	var index = 0;
 	for each (seg in msg.UB2) {
-		ub2[hl7JSON] = {};
+		ub2[index] = {};
 
 	    // UB2.1, setId
-	    if (seg[&apos;UB2.1&apos;][&apos;UB2.1.1&apos;].toString() != &quot;&quot;) { ub2[hl7JSON].setId = seg[&apos;UB2.1&apos;][&apos;UB2.1.1&apos;]; }
+	    if (seg[&apos;UB2.1&apos;][&apos;UB2.1.1&apos;].toString() != &quot;&quot;) { ub2[index].setId = seg[&apos;UB2.1&apos;][&apos;UB2.1.1&apos;]; }
 
 	    // UB2.2, coinsuranceDays
-	    if (seg[&apos;UB2.2&apos;][&apos;UB2.2.1&apos;].toString() != &quot;&quot;) { ub2[hl7JSON].coinsuranceDays = seg[&apos;UB2.2&apos;][&apos;UB2.2.1&apos;]; }
+	    if (seg[&apos;UB2.2&apos;][&apos;UB2.2.1&apos;].toString() != &quot;&quot;) { ub2[index].coinsuranceDays = seg[&apos;UB2.2&apos;][&apos;UB2.2.1&apos;]; }
 	    
 	    // UB2.3, conditionCode
-	    ub2[hl7JSON].conditionCode = [];
+	    ub2[index].conditionCode = [];
 	    for each (field in seg[&apos;UB2.3&apos;]) {
 	    	if (field[&apos;UB2.3.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[hl7JSON].conditionCode.push(field[&apos;UB2.3.1&apos;]);
+	    		ub2[index].conditionCode.push(field[&apos;UB2.3.1&apos;]);
 	    	}
 	    }
-	    if (ub2[hl7JSON].conditionCode.length == 0) {
-	    	delete ub2[hl7JSON].conditionCode;
+	    if (ub2[index].conditionCode.length == 0) {
+	    	delete ub2[index].conditionCode;
 	    }
 	    
 	    // UB2.4, coveredDays
-	    if (seg[&apos;UB2.4&apos;][&apos;UB2.4.1&apos;].toString() != &quot;&quot;) { ub2[hl7JSON].coveredDays = seg[&apos;UB2.4&apos;][&apos;UB2.4.1&apos;]; }
+	    if (seg[&apos;UB2.4&apos;][&apos;UB2.4.1&apos;].toString() != &quot;&quot;) { ub2[index].coveredDays = seg[&apos;UB2.4&apos;][&apos;UB2.4.1&apos;]; }
 	    
 	    // UB2.5, nonCoveredDays
-	    if (seg[&apos;UB2.5&apos;][&apos;UB2.5.1&apos;].toString() != &quot;&quot;) { ub2[hl7JSON].nonCoveredDays = seg[&apos;UB2.5&apos;][&apos;UB2.5.1&apos;]; }
+	    if (seg[&apos;UB2.5&apos;][&apos;UB2.5.1&apos;].toString() != &quot;&quot;) { ub2[index].nonCoveredDays = seg[&apos;UB2.5&apos;][&apos;UB2.5.1&apos;]; }
 	    
 	    // UB2.6, valueAmountAndCode
-	    ub2[hl7JSON].valueAmountAndCode = [];
+	    ub2[index].valueAmountAndCode = [];
 	    for each (field in seg[&apos;UB2.6&apos;]) {
 	    	var block = {};
 	    	if (field[&apos;UB2.6.1&apos;].toString() != &quot;&quot;) { block.valueCode = field[&apos;UB2.6.1&apos;]; }
 	    	if (field[&apos;UB2.6.2&apos;].toString() != &quot;&quot;) { block.valueAmount = field[&apos;UB2.6.2&apos;]; }
 	    	if (Object.keys(block).length &gt; 0) {
-	    		ub2[hl7JSON].valueAmountAndCode.push(block);
+	    		ub2[index].valueAmountAndCode.push(block);
 	    	}
 	    }
-	    if (ub2[hl7JSON].valueAmountAndCode.length == 0) {
-	    	delete ub2[hl7JSON].valueAmountAndCode;
+	    if (ub2[index].valueAmountAndCode.length == 0) {
+	    	delete ub2[index].valueAmountAndCode;
 	    }
 
 	    // UB2.7, occurrence
-	    ub2[hl7JSON].occurrence = [];
+	    ub2[index].occurrence = [];
 	    for each (field in seg[&apos;UB2.7&apos;]) {
 	    	var block = {};
 	    	block.occurrenceCode = {};
@@ -11720,15 +11720,15 @@ if (msg[&apos;UB2&apos;].length() &gt; 0) {
 	    	}
 	    	if (field[&apos;UB2.7.2&apos;].toString() != &quot;&quot;) { block.occurrenceDate = field[&apos;UB2.7.2&apos;]; }
 	    	if (Object.keys(block).length &gt; 0) {
-	    		ub2[hl7JSON].occurrence.push(block);
+	    		ub2[index].occurrence.push(block);
 	    	}
 	    }
-	    if (ub2[hl7JSON].occurrence.length == 0) {
-	    	delete ub2[hl7JSON].occurrence;
+	    if (ub2[index].occurrence.length == 0) {
+	    	delete ub2[index].occurrence;
 	    }
 
 	    // UB2.8, occurrenceSpanCodeAndDate
-	    ub2[hl7JSON].occurrenceSpanCodeAndDate = [];
+	    ub2[index].occurrenceSpanCodeAndDate = [];
 	    for each (field in seg[&apos;UB2.8&apos;]) {
 	    	var block = {};
 	    	block.occurrenceSpanCode = {};
@@ -11745,94 +11745,94 @@ if (msg[&apos;UB2&apos;].length() &gt; 0) {
 	    	if (field[&apos;UB2.8.2&apos;].toString() != &quot;&quot;) { block.occurrenceSpanStartDate = field[&apos;UB2.8.2&apos;]; }
 	    	if (field[&apos;UB2.8.3&apos;].toString() != &quot;&quot;) { block.occurrenceSpanEndDate = field[&apos;UB2.8.3&apos;]; }
 	    	if (Object.keys(block).length &gt; 0) {
-	    		ub2[hl7JSON].occurrenceSpanCodeAndDate.push(block);
+	    		ub2[index].occurrenceSpanCodeAndDate.push(block);
 	    	}
 	    }
-	    if (ub2[hl7JSON].occurrenceSpanCodeAndDate.length == 0) {
-	    	delete ub2[hl7JSON].occurrenceSpanCodeAndDate;
+	    if (ub2[index].occurrenceSpanCodeAndDate.length == 0) {
+	    	delete ub2[index].occurrenceSpanCodeAndDate;
 	    }
 
 	    // UB2.9, UB92Locator2
-	    ub2[hl7JSON].UB92Locator2 = [];
+	    ub2[index].UB92Locator2 = [];
 	    for each (field in seg[&apos;UB2.9&apos;]) {
 	    	if (field[&apos;UB2.9.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[hl7JSON].UB92Locator2.push(field[&apos;UB2.9.1&apos;]);
+	    		ub2[index].UB92Locator2.push(field[&apos;UB2.9.1&apos;]);
 	    	}
 	    }
-	    if (ub2[hl7JSON].UB92Locator2.length == 0) {
-	    	delete ub2[hl7JSON].UB92Locator2;
+	    if (ub2[index].UB92Locator2.length == 0) {
+	    	delete ub2[index].UB92Locator2;
 	    }
 	    
 	    
 	    // UB2.10, UB92Locator11
-	    ub2[hl7JSON].UB92Locator11 = [];
+	    ub2[index].UB92Locator11 = [];
 	    for each (field in seg[&apos;UB2.10&apos;]) {
 	    	if (field[&apos;UB2.10.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[hl7JSON].UB92Locator11.push(field[&apos;UB2.10.1&apos;]);
+	    		ub2[index].UB92Locator11.push(field[&apos;UB2.10.1&apos;]);
 	    	}
 	    }
-	    if (ub2[hl7JSON].UB92Locator11.length == 0) {
-	    	delete ub2[hl7JSON].UB92Locator11;
+	    if (ub2[index].UB92Locator11.length == 0) {
+	    	delete ub2[index].UB92Locator11;
 	    }
 	    
 	    // UB2.11, UB92Locator31
-	    if (seg[&apos;UB2.11&apos;][&apos;UB2.11.1&apos;].toString() != &quot;&quot;) { ub2[hl7JSON].UB92Locator31 = seg[&apos;UB2.11&apos;][&apos;UB2.11.1&apos;]; }
+	    if (seg[&apos;UB2.11&apos;][&apos;UB2.11.1&apos;].toString() != &quot;&quot;) { ub2[index].UB92Locator31 = seg[&apos;UB2.11&apos;][&apos;UB2.11.1&apos;]; }
 	    
 	    // UB2.12, documentControlNumber
-	    ub2[hl7JSON].documentControlNumber = [];
+	    ub2[index].documentControlNumber = [];
 	    for each (field in seg[&apos;UB2.12&apos;]) {
 	    	if (field[&apos;UB2.12.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[hl7JSON].documentControlNumber.push(field[&apos;UB2.12.1&apos;]);
+	    		ub2[index].documentControlNumber.push(field[&apos;UB2.12.1&apos;]);
 	    	}
 	    }
-	    if (ub2[hl7JSON].documentControlNumber.length == 0) {
-	    	delete ub2[hl7JSON].documentControlNumber;
+	    if (ub2[index].documentControlNumber.length == 0) {
+	    	delete ub2[index].documentControlNumber;
 	    }
 	    
 	    // UB2.13, UB92Locator49
-	    ub2[hl7JSON].UB92Locator49 = [];
+	    ub2[index].UB92Locator49 = [];
 	    for each (field in seg[&apos;UB2.13&apos;]) {
 	    	if (field[&apos;UB2.13.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[hl7JSON].UB92Locator49.push(field[&apos;UB2.13.1&apos;]);
+	    		ub2[index].UB92Locator49.push(field[&apos;UB2.13.1&apos;]);
 	    	}
 	    }
-	    if (ub2[hl7JSON].UB92Locator49.length == 0) {
-	    	delete ub2[hl7JSON].UB92Locator49;
+	    if (ub2[index].UB92Locator49.length == 0) {
+	    	delete ub2[index].UB92Locator49;
 	    }
 	    
 	    // UB2.14, UB92Locator56
-	    ub2[hl7JSON].UB92Locator56 = [];
+	    ub2[index].UB92Locator56 = [];
 	    for each (field in seg[&apos;UB2.14&apos;]) {
 	    	if (field[&apos;UB2.14.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[hl7JSON].UB92Locator56.push(field[&apos;UB2.14.1&apos;]);
+	    		ub2[index].UB92Locator56.push(field[&apos;UB2.14.1&apos;]);
 	    	}
 	    }
-	    if (ub2[hl7JSON].UB92Locator56.length == 0) {
-	    	delete ub2[hl7JSON].UB92Locator56;
+	    if (ub2[index].UB92Locator56.length == 0) {
+	    	delete ub2[index].UB92Locator56;
 	    }
 	    
 	    // UB2.15, UB92Locator57
-	    if (seg[&apos;UB2.15&apos;][&apos;UB2.15.1&apos;].toString() != &quot;&quot;) { ub2[hl7JSON].UB92Locator57 = seg[&apos;UB2.15&apos;][&apos;UB2.15.1&apos;]; }
+	    if (seg[&apos;UB2.15&apos;][&apos;UB2.15.1&apos;].toString() != &quot;&quot;) { ub2[index].UB92Locator57 = seg[&apos;UB2.15&apos;][&apos;UB2.15.1&apos;]; }
 	    
 	    // UB2.16, UB92Locator78
-	    ub2[hl7JSON].UB92Locator78 = [];
+	    ub2[index].UB92Locator78 = [];
 	    for each (field in seg[&apos;UB2.16&apos;]) {
 	    	if (field[&apos;UB2.16.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[hl7JSON].UB92Locator78.push(field[&apos;UB2.16.1&apos;]);
+	    		ub2[index].UB92Locator78.push(field[&apos;UB2.16.1&apos;]);
 	    	}
 	    }
-	    if (ub2[hl7JSON].UB92Locator78.length == 0) {
-	    	delete ub2[hl7JSON].UB92Locator78;
+	    if (ub2[index].UB92Locator78.length == 0) {
+	    	delete ub2[index].UB92Locator78;
 	    }
 	    
 	    // UB2.17, specialVisitCount
-	    if (seg[&apos;UB2.17&apos;][&apos;UB2.17.1&apos;].toString() != &quot;&quot;) { ub2[hl7JSON].specialVisitCount = seg[&apos;UB2.17&apos;][&apos;UB2.17.1&apos;]; }
+	    if (seg[&apos;UB2.17&apos;][&apos;UB2.17.1&apos;].toString() != &quot;&quot;) { ub2[index].specialVisitCount = seg[&apos;UB2.17&apos;][&apos;UB2.17.1&apos;]; }
 
-	    // clean up UB2 and increment hl7JSON
-	    if (Object.keys(ub2[hl7JSON]).length == 0) {
-			delete ub2[hl7JSON];
+	    // clean up UB2 and increment index
+	    if (Object.keys(ub2[index]).length == 0) {
+			delete ub2[index];
 		} else {
-			hl7JSON++;
+			index++;
 		}
 	}
 }
@@ -11840,11 +11840,11 @@ if (msg[&apos;UB2&apos;].length() &gt; 0) {
 // Optional: save a copy of the completed UB2 segment for reference later
 //channelMap.put(&quot;ub2&quot;, ub2); // uncomment to save
 
-// If it has content, add the UB2 segment to the hl7Json object
+// If it has content, add the UB2 segment to the hl7JSON object
 if (ub2 &amp;&amp; Object.keys(ub2).length != 0) {
-	var hl7Json = JSON.parse($(&apos;hl7Json&apos;));
-	hl7Json.content.UB2 = ub2;
-	channelMap.put(&quot;hl7Json&quot;, JSON.stringify(hl7Json));
+	var hl7JSON = JSON.parse($(&apos;hl7JSON&apos;));
+	hl7JSON.content.UB2 = ub2;
+	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</string>
             </entry>
           </data>
@@ -12095,24 +12095,27 @@ return;</undeployScript>
     <codeTemplateLibrary version="3.4.1">
       <id>10e63131-3e24-4419-a268-ed823aba5790</id>
       <name>Datica Mirth OCI Code Template Library</name>
-      <revision>1</revision>
+      <revision>5</revision>
       <lastModified>
-        <time>1512397292259</time>
+        <time>1520543329083</time>
         <timezone>America/New_York</timezone>
       </lastModified>
       <description>This library contains code templates used by the Datica Mirth OCI channels</description>
       <includeNewChannels>true</includeNewChannels>
       <enabledChannelIds>
+        <string>faeb3e6d-952b-4fb2-a03c-d96ea463d493</string>
+        <string>515eb748-bcc9-4b46-a086-be3174f3df41</string>
+        <string>647fa65c-d0bb-4f32-a1f6-b218136ebdb8</string>
         <string>1192bb86-1f4d-4ca0-9343-e1b87d790154</string>
         <string>44ade9e2-d2ec-40f0-99cd-c2518f1aef0a</string>
         <string>2edfb44b-d53e-43c0-9cee-dfb8c5d28c80</string>
+        <string>88f01b2f-8886-4b1e-907a-10671248c9c8</string>
         <string>12832ab3-cdac-485f-bf81-4c525359af88</string>
         <string>6546423b-30d4-46dc-92d7-3e651a542a42</string>
         <string>0d245f0f-1239-46cb-96db-b6c03ee91b18</string>
-        <string>515eb748-bcc9-4b46-a086-be3174f3df41</string>
         <string>f6ba16ce-08cf-499f-8dac-143646aadd51</string>
         <string>6a27e181-4776-46d7-b862-5cc4968ec8e7</string>
-        <string>647fa65c-d0bb-4f32-a1f6-b218136ebdb8</string>
+        <string>95daa2cf-34cc-4cf1-9b8f-a84e37558ed5</string>
       </enabledChannelIds>
       <disabledChannelIds>
         <string>8b69b2e3-4cb0-40f9-93e4-b56c33ba112d</string>
@@ -12267,11 +12270,11 @@ return;</undeployScript>
           <type>FUNCTION</type>
           <contextSet>
             <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_RECEIVER</contextType>
               <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
+              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+              <contextType>SOURCE_RECEIVER</contextType>
+              <contextType>DESTINATION_DISPATCHER</contextType>
             </delegate>
           </contextSet>
           <code>/**
@@ -12341,11 +12344,11 @@ function toISODate( hl7DateString, timezone ) {
           <type>FUNCTION</type>
           <contextSet>
             <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_RECEIVER</contextType>
               <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
+              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+              <contextType>SOURCE_RECEIVER</contextType>
+              <contextType>DESTINATION_DISPATCHER</contextType>
             </delegate>
           </contextSet>
           <code>/**
@@ -12424,11 +12427,11 @@ function toHL7Date( isoDateString, timezone )
           <type>FUNCTION</type>
           <contextSet>
             <delegate>
-              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-              <contextType>SOURCE_RECEIVER</contextType>
               <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-              <contextType>DESTINATION_DISPATCHER</contextType>
+              <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+              <contextType>SOURCE_RECEIVER</contextType>
+              <contextType>DESTINATION_DISPATCHER</contextType>
             </delegate>
           </contextSet>
           <code>/**

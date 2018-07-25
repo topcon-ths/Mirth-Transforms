@@ -101,16 +101,16 @@ if (Object.keys(sch.appointmentDurationUnits).length == 0) {
 sch.appointmentTimingQuantity = [];
 for each (field in msg['SCH']['SCH.11']) {
 	var block = {};
-	if (field['SCH.11.1'].toString() != "") { sch.quantity = field['SCH.11.1']; }
-	if (field['SCH.11.2'].toString() != "") { sch.interval = field['SCH.11.2']; }
-	if (field['SCH.11.3'].toString() != "") { sch.duration = field['SCH.11.3']; }
-	if (field['SCH.11.4'].toString() != "") { sch.startDateTime = field['SCH.11.4']; }
-	if (field['SCH.11.5'].toString() != "") { sch.endDateTime = field['SCH.11.5']; }
-	if (field['SCH.11.6'].toString() != "") { sch.priority = field['SCH.11.6']; }
-	if (field['SCH.11.7'].toString() != "") { sch.condition = field['SCH.11.7']; }
-	if (field['SCH.11.8'].toString() != "") { sch.text = field['SCH.11.8']; }
-	if (field['SCH.11.9'].toString() != "") { sch.conjunction = field['SCH.11.9']; }
-	if (field['SCH.11.10'].toString() != "") { sch.orderSequencing = field['SCH.11.10']; }
+	if (field['SCH.11.1'].toString() != "") { block.quantity = field['SCH.11.1']; }
+	if (field['SCH.11.2'].toString() != "") { block.interval = field['SCH.11.2']; }
+	if (field['SCH.11.3'].toString() != "") { block.duration = field['SCH.11.3']; }
+	if (field['SCH.11.4'].toString() != "") { block.startDateTime = field['SCH.11.4']; }
+	if (field['SCH.11.5'].toString() != "") { block.endDateTime = field['SCH.11.5']; }
+	if (field['SCH.11.6'].toString() != "") { block.priority = field['SCH.11.6']; }
+	if (field['SCH.11.7'].toString() != "") { block.condition = field['SCH.11.7']; }
+	if (field['SCH.11.8'].toString() != "") { block.text = field['SCH.11.8']; }
+	if (field['SCH.11.9'].toString() != "") { block.conjunction = field['SCH.11.9']; }
+	if (field['SCH.11.10'].toString() != "") { block.orderSequencing = field['SCH.11.10']; }
 	if (Object.keys(block).length > 0) {
 		sch.appointmentTimingQuantity.push(block)
 	}
@@ -331,15 +331,15 @@ if (Object.keys(sch.enteredByPerson).length == 0) {
 sch.enteredByPhoneNumber = [];
 for each (field in msg['SCH']['SCH.21']) {
 	var block = {};
-	if (field['SCH.21.1'].toString() != "") { sch.number = field['SCH.21.1']; }
-	if (field['SCH.21.2'].toString() != "") { sch.telecommunicationUseCode = field['SCH.21.2']; }
-	if (field['SCH.21.3'].toString() != "") { sch.telecommunicationEquipmentType = field['SCH.21.3']; }
-	if (field['SCH.21.4'].toString() != "") { sch.emailAddress = field['SCH.21.4']; }
-	if (field['SCH.21.5'].toString() != "") { sch.countryCode = field['SCH.21.5']; }
-	if (field['SCH.21.6'].toString() != "") { sch.areaCityCode = field['SCH.21.6']; }
-	if (field['SCH.21.7'].toString() != "") { sch.phoneNumber = field['SCH.21.7']; }
-	if (field['SCH.21.8'].toString() != "") { sch.extension = field['SCH.21.8']; }
-	if (field['SCH.21.9'].toString() != "") { sch.text = field['SCH.21.9']; }
+	if (field['SCH.21.1'].toString() != "") { block.number = field['SCH.21.1']; }
+	if (field['SCH.21.2'].toString() != "") { block.telecommunicationUseCode = field['SCH.21.2']; }
+	if (field['SCH.21.3'].toString() != "") { block.telecommunicationEquipmentType = field['SCH.21.3']; }
+	if (field['SCH.21.4'].toString() != "") { block.emailAddress = field['SCH.21.4']; }
+	if (field['SCH.21.5'].toString() != "") { block.countryCode = field['SCH.21.5']; }
+	if (field['SCH.21.6'].toString() != "") { block.areaCityCode = field['SCH.21.6']; }
+	if (field['SCH.21.7'].toString() != "") { block.phoneNumber = field['SCH.21.7']; }
+	if (field['SCH.21.8'].toString() != "") { block.extension = field['SCH.21.8']; }
+	if (field['SCH.21.9'].toString() != "") { block.text = field['SCH.21.9']; }
 	if (Object.keys(block).length > 0) {
 		sch.enteredByPhoneNumber.push(block);
 	}
