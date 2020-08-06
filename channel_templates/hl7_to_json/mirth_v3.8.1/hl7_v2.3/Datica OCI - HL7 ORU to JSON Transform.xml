@@ -3,7 +3,7 @@
   <nextMetaDataId>2</nextMetaDataId>
   <name>Datica OCI - HL7 ORU to JSON Transform</name>
   <description>Transform ORU HL7 to JSON</description>
-  <revision>48</revision>
+  <revision>51</revision>
   <sourceConnector version="3.8.1">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
@@ -50,7 +50,7 @@ var msh = {};
 if (msg[&apos;MSH&apos;][&apos;MSH.1&apos;][&apos;MSH.1.1&apos;].toString() != &quot;&quot;) {msh.fieldSeparator = msg[&apos;MSH&apos;][&apos;MSH.1&apos;][&apos;MSH.1.1&apos;].toString(); }
 
 // MSH.2, encodingCharacters
-if (msg[&apos;MSH&apos;][&apos;MSH.2&apos;][&apos;MSH.2.1&apos;].toString() != &quot;&quot;) {msh.fieldSeparator = msg[&apos;MSH&apos;][&apos;MSH.2&apos;][&apos;MSH.2.1&apos;].toString(); }
+if (msg[&apos;MSH&apos;][&apos;MSH.2&apos;][&apos;MSH.2.1&apos;].toString() != &quot;&quot;) {msh.encodingCharacters = msg[&apos;MSH&apos;][&apos;MSH.2&apos;][&apos;MSH.2.1&apos;].toString(); }
 
 // MSH.3, sendingApplication
 msh.sendingApplication = {};
@@ -1686,20 +1686,20 @@ if (msg[&apos;ORC&apos;].length() &gt; 0) {
 
 		// ORC.3, fillerOrderNumber
 		orc[index].fillerOrderNumber = {};
-		if (seg[&apos;ORC.2&apos;][&apos;ORC.2.1&apos;].toString() != &quot;&quot;) { orc[index].fillerOrderNumber.id = seg[&apos;ORC.2&apos;][&apos;ORC.2.1&apos;].toString(); }
-		if (seg[&apos;ORC.2&apos;][&apos;ORC.2.2&apos;].toString() != &quot;&quot;) { orc[index].fillerOrderNumber.namespaceId = seg[&apos;ORC.2&apos;][&apos;ORC.2.2&apos;].toString(); }
-		if (seg[&apos;ORC.2&apos;][&apos;ORC.2.3&apos;].toString() != &quot;&quot;) { orc[index].fillerOrderNumber.universalId = seg[&apos;ORC.2&apos;][&apos;ORC.2.3&apos;].toString(); }
-		if (seg[&apos;ORC.2&apos;][&apos;ORC.2.4&apos;].toString() != &quot;&quot;) { orc[index].fillerOrderNumber.universalIdType = seg[&apos;ORC.2&apos;][&apos;ORC.2.4&apos;].toString(); }
+		if (seg[&apos;ORC.3&apos;][&apos;ORC.3.1&apos;].toString() != &quot;&quot;) { orc[index].fillerOrderNumber.id = seg[&apos;ORC.2&apos;][&apos;ORC.2.1&apos;].toString(); }
+		if (seg[&apos;ORC.3&apos;][&apos;ORC.3.2&apos;].toString() != &quot;&quot;) { orc[index].fillerOrderNumber.namespaceId = seg[&apos;ORC.2&apos;][&apos;ORC.2.2&apos;].toString(); }
+		if (seg[&apos;ORC.3&apos;][&apos;ORC.3.3&apos;].toString() != &quot;&quot;) { orc[index].fillerOrderNumber.universalId = seg[&apos;ORC.2&apos;][&apos;ORC.2.3&apos;].toString(); }
+		if (seg[&apos;ORC.3&apos;][&apos;ORC.3.4&apos;].toString() != &quot;&quot;) { orc[index].fillerOrderNumber.universalIdType = seg[&apos;ORC.2&apos;][&apos;ORC.2.4&apos;].toString(); }
 		if (Object.keys(orc[index].fillerOrderNumber).length == 0) {
 			delete orc[index].fillerOrderNumber;
 		}
 
 		// ORC.4, placerGroupNumber
 		orc[index].placerGroupNumber = {};
-		if (seg[&apos;ORC.2&apos;][&apos;ORC.2.1&apos;].toString() != &quot;&quot;) { orc[index].placerGroupNumber.id = seg[&apos;ORC.2&apos;][&apos;ORC.2.1&apos;].toString(); }
-		if (seg[&apos;ORC.2&apos;][&apos;ORC.2.2&apos;].toString() != &quot;&quot;) { orc[index].placerGroupNumber.namespaceId = seg[&apos;ORC.2&apos;][&apos;ORC.2.2&apos;].toString(); }
-		if (seg[&apos;ORC.2&apos;][&apos;ORC.2.3&apos;].toString() != &quot;&quot;) { orc[index].placerGroupNumber.universalId = seg[&apos;ORC.2&apos;][&apos;ORC.2.3&apos;].toString(); }
-		if (seg[&apos;ORC.2&apos;][&apos;ORC.2.4&apos;].toString() != &quot;&quot;) { orc[index].placerGroupNumber.universalIdType = seg[&apos;ORC.2&apos;][&apos;ORC.2.4&apos;].toString(); }
+		if (seg[&apos;ORC.4&apos;][&apos;ORC.4.1&apos;].toString() != &quot;&quot;) { orc[index].placerGroupNumber.id = seg[&apos;ORC.2&apos;][&apos;ORC.2.1&apos;].toString(); }
+		if (seg[&apos;ORC.4&apos;][&apos;ORC.4.2&apos;].toString() != &quot;&quot;) { orc[index].placerGroupNumber.namespaceId = seg[&apos;ORC.2&apos;][&apos;ORC.2.2&apos;].toString(); }
+		if (seg[&apos;ORC.4&apos;][&apos;ORC.4.3&apos;].toString() != &quot;&quot;) { orc[index].placerGroupNumber.universalId = seg[&apos;ORC.2&apos;][&apos;ORC.2.3&apos;].toString(); }
+		if (seg[&apos;ORC.4&apos;][&apos;ORC.4.4&apos;].toString() != &quot;&quot;) { orc[index].placerGroupNumber.universalIdType = seg[&apos;ORC.2&apos;][&apos;ORC.2.4&apos;].toString(); }
 		if (Object.keys(orc[index].placerGroupNumber).length == 0) {
 			delete orc[index].placerGroupNumber;
 		}
@@ -1995,8 +1995,8 @@ if (msg[&apos;ORC&apos;].length() &gt; 0) {
 				}
 
 				// clean up NTE and increment index
-				if (Object.keys(nte[indexNTE]).length == 0) {
-					delete nte[indexNTE];
+				if (Object.keys(orc[index].nte[indexNTE]).length == 0) {
+					delete orc[index].nte[indexNTE];
 				} else {
 					indexNTE++;
 				}
@@ -3348,7 +3348,7 @@ return;</undeployScript>
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1594333149716</time>
+        <time>1596290494022</time>
         <timezone>America/New_York</timezone>
       </lastModified>
       <pruningSettings>
@@ -3552,11 +3552,11 @@ return;</undeployScript>
             </lastModified>
             <contextSet>
               <delegate>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -3628,11 +3628,11 @@ function toISODate( hl7DateString, timezone ) {
             </lastModified>
             <contextSet>
               <delegate>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -3713,11 +3713,11 @@ function toHL7Date( isoDateString, timezone )
             </lastModified>
             <contextSet>
               <delegate>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">

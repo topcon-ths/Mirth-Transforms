@@ -3,7 +3,7 @@
   <nextMetaDataId>2</nextMetaDataId>
   <name>Datica OCI - HL7 ADT to JSON Transform</name>
   <description>Transform ADT HL7 to JSON</description>
-  <revision>127</revision>
+  <revision>131</revision>
   <sourceConnector version="3.8.1">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
@@ -50,7 +50,7 @@ var msh = {};
 if (msg[&apos;MSH&apos;][&apos;MSH.1&apos;].toString() != &quot;&quot;) {msh.fieldSeparator = msg[&apos;MSH&apos;][&apos;MSH.1&apos;].toString(); }
 
 // MSH.2, encodingCharacters
-if (msg[&apos;MSH&apos;][&apos;MSH.2&apos;][&apos;MSH.2.1&apos;].toString() != &quot;&quot;) {msh.fieldSeparator = msg[&apos;MSH&apos;][&apos;MSH.2&apos;][&apos;MSH.2.1&apos;].toString(); }
+if (msg[&apos;MSH&apos;][&apos;MSH.2&apos;][&apos;MSH.2.1&apos;].toString() != &quot;&quot;) {msh.encodingCharacters = msg[&apos;MSH&apos;][&apos;MSH.2&apos;][&apos;MSH.2.1&apos;].toString(); }
 
 // MSH.3, sendingApplication
 msh.sendingApplication = {};
@@ -801,7 +801,7 @@ if (msg[&apos;PID&apos;].length() &gt; 0) {
 				for each (field in nteSeg[&apos;NTE.3&apos;]) {
 					var block = {};
 					if (field[&apos;NTE.3.1&apos;].toString() != &quot;&quot;) { 
-						pid[index].NTE[indexNTE].comment.push(field[&apos;NTE.3.1&apos;].toString());
+						pid[index].NTE[indexNTE].comment.ush(field[&apos;NTE.3.1&apos;].toString());
 					}
 				}
 				if (pid[index].NTE[indexNTE].comment.length == 0) {
@@ -2275,9 +2275,9 @@ if (msg[&apos;OBX&apos;].length() &gt; 0) {
 		
 		// OBX.8, abnormalFlag
 		obx[index].abnormalFlag = [];
-		for each (field in seg[&apos;OBX.9&apos;]) {
-			if (field[&apos;OBX.9.1&apos;].toString() != &quot;&quot;) { 
-				obx[index].abnormalFlag.push(field[&apos;OBX.9.1&apos;].toString()); 
+		for each (field in seg[&apos;OBX.8&apos;]) {
+			if (field[&apos;OBX.8.1&apos;].toString() != &quot;&quot;) { 
+				obx[index].abnormalFlag.push(field[&apos;OBX.8.1&apos;].toString()); 
 			}
 		}
 		if (obx[index].abnormalFlag.length == 0) {
@@ -3041,10 +3041,10 @@ if (msg[&apos;DRG&apos;].length() &gt; 0) {
 						}
 
 						// ROL.5, roleBeginDateTime
-						if (rolSeg[&apos;ROL.5&apos;][&apos;ROL.5.1&apos;].toString() != &quot;&quot;) { pr1[indexPR1].roleBeginDateTime = rolSeg[&apos;ROL.5&apos;][&apos;ROL.5.1&apos;].toString(); }
+						if (rolSeg[&apos;ROL.5&apos;][&apos;ROL.5.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].ROL[indexROL].roleBeginDateTime = rolSeg[&apos;ROL.5&apos;][&apos;ROL.5.1&apos;].toString(); }
 
 						// ROL.6, roleEndDateTime
-						if (rolSeg[&apos;ROL.6&apos;][&apos;ROL.6.1&apos;].toString() != &quot;&quot;) { pr1[indexPR1].roleEndDateTime = rolSeg[&apos;ROL.6&apos;][&apos;ROL.6.1&apos;].toString(); }
+						if (rolSeg[&apos;ROL.6&apos;][&apos;ROL.6.1&apos;].toString() != &quot;&quot;) { drg[index].PR1[indexPR1].ROL[indexROL].roleEndDateTime = rolSeg[&apos;ROL.6&apos;][&apos;ROL.6.1&apos;].toString(); }
 
 						// ROL.7, roleDuration
 						drg[index].PR1[indexPR1].ROL[indexROL].roleDuration = {};
@@ -5618,7 +5618,7 @@ if (msg[&apos;UB1&apos;].length() &gt; 0) {
 	    // UB1.7, conditionCode
 	    ub1[index].conditionCode = [];
 	    for each (field in seg[&apos;UB1.7&apos;]) {
-	    	if (field[&apos;UB1.8.1&apos;].toString() != &quot;&quot;) {
+	    	if (field[&apos;UB1.7.1&apos;].toString() != &quot;&quot;) {
 	    		ub1[index].conditionCode.push(field[&apos;UB1.7.1&apos;].toString());
 	    	}
 	    }
@@ -5764,7 +5764,7 @@ if (msg[&apos;UB2&apos;].length() &gt; 0) {
 	    ub2[index].conditionCode = [];
 	    for each (field in seg[&apos;UB2.3&apos;]) {
 	    	if (field[&apos;UB2.3.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[index].conditionCode.push(field[&apos;UB2.3.1&apos;]);
+	    		ub2[index].conditionCode.push(field[&apos;UB2.3.1&apos;].toString());
 	    	}
 	    }
 	    if (ub2[index].conditionCode.length == 0) {
@@ -5844,7 +5844,7 @@ if (msg[&apos;UB2&apos;].length() &gt; 0) {
 	    ub2[index].UB92Locator2 = [];
 	    for each (field in seg[&apos;UB2.9&apos;]) {
 	    	if (field[&apos;UB2.9.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[index].UB92Locator2.push(field[&apos;UB2.9.1&apos;]);
+	    		ub2[index].UB92Locator2.push(field[&apos;UB2.9.1&apos;].toString());
 	    	}
 	    }
 	    if (ub2[index].UB92Locator2.length == 0) {
@@ -5856,7 +5856,7 @@ if (msg[&apos;UB2&apos;].length() &gt; 0) {
 	    ub2[index].UB92Locator11 = [];
 	    for each (field in seg[&apos;UB2.10&apos;]) {
 	    	if (field[&apos;UB2.10.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[index].UB92Locator11.push(field[&apos;UB2.10.1&apos;]);
+	    		ub2[index].UB92Locator11.push(field[&apos;UB2.10.1&apos;].toString());
 	    	}
 	    }
 	    if (ub2[index].UB92Locator11.length == 0) {
@@ -5870,7 +5870,7 @@ if (msg[&apos;UB2&apos;].length() &gt; 0) {
 	    ub2[index].documentControlNumber = [];
 	    for each (field in seg[&apos;UB2.12&apos;]) {
 	    	if (field[&apos;UB2.12.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[index].documentControlNumber.push(field[&apos;UB2.12.1&apos;]);
+	    		ub2[index].documentControlNumber.push(field[&apos;UB2.12.1&apos;].toString());
 	    	}
 	    }
 	    if (ub2[index].documentControlNumber.length == 0) {
@@ -5881,7 +5881,7 @@ if (msg[&apos;UB2&apos;].length() &gt; 0) {
 	    ub2[index].UB92Locator49 = [];
 	    for each (field in seg[&apos;UB2.13&apos;]) {
 	    	if (field[&apos;UB2.13.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[index].UB92Locator49.push(field[&apos;UB2.13.1&apos;]);
+	    		ub2[index].UB92Locator49.push(field[&apos;UB2.13.1&apos;].toString());
 	    	}
 	    }
 	    if (ub2[index].UB92Locator49.length == 0) {
@@ -5892,7 +5892,7 @@ if (msg[&apos;UB2&apos;].length() &gt; 0) {
 	    ub2[index].UB92Locator56 = [];
 	    for each (field in seg[&apos;UB2.14&apos;]) {
 	    	if (field[&apos;UB2.14.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[index].UB92Locator56.push(field[&apos;UB2.14.1&apos;]);
+	    		ub2[index].UB92Locator56.push(field[&apos;UB2.14.1&apos;].toString());
 	    	}
 	    }
 	    if (ub2[index].UB92Locator56.length == 0) {
@@ -5906,7 +5906,7 @@ if (msg[&apos;UB2&apos;].length() &gt; 0) {
 	    ub2[index].UB92Locator78 = [];
 	    for each (field in seg[&apos;UB2.16&apos;]) {
 	    	if (field[&apos;UB2.16.1&apos;].toString() != &quot;&quot;) {
-	    		ub2[index].UB92Locator78.push(field[&apos;UB2.16.1&apos;]);
+	    		ub2[index].UB92Locator78.push(field[&apos;UB2.16.1&apos;].toString());
 	    	}
 	    }
 	    if (ub2[index].UB92Locator78.length == 0) {
@@ -6223,7 +6223,7 @@ return;</undeployScript>
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1594333030503</time>
+        <time>1596290472934</time>
         <timezone>America/New_York</timezone>
       </lastModified>
       <pruningSettings>
@@ -6427,11 +6427,11 @@ return;</undeployScript>
             </lastModified>
             <contextSet>
               <delegate>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -6503,11 +6503,11 @@ function toISODate( hl7DateString, timezone ) {
             </lastModified>
             <contextSet>
               <delegate>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -6588,11 +6588,11 @@ function toHL7Date( isoDateString, timezone )
             </lastModified>
             <contextSet>
               <delegate>
-                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
                 <contextType>DESTINATION_DISPATCHER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
