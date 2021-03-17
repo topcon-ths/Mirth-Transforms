@@ -1,16 +1,16 @@
-<channel version="3.8.1">
+<channel version="3.10.1">
   <id>0d245f0f-1239-46cb-96db-b6c03ee91b18</id>
   <nextMetaDataId>2</nextMetaDataId>
-  <name>Datica OCI - HL7 ADT to JSON Transform</name>
+  <name>HL7 ADT to HL7 JSON</name>
   <description>Transform ADT HL7 to JSON</description>
-  <revision>131</revision>
-  <sourceConnector version="3.8.1">
+  <revision>5</revision>
+  <sourceConnector version="3.10.1">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
-    <properties class="com.mirth.connect.connectors.vm.VmReceiverProperties" version="3.8.1">
+    <properties class="com.mirth.connect.connectors.vm.VmReceiverProperties" version="3.10.1">
       <pluginProperties/>
-      <sourceConnectorProperties version="3.8.1">
-        <responseVariable>None</responseVariable>
+      <sourceConnectorProperties version="3.10.1">
+        <responseVariable>d1</responseVariable>
         <respondAfterProcessing>true</respondAfterProcessing>
         <processBatch>false</processBatch>
         <firstResponse>false</firstResponse>
@@ -24,9 +24,9 @@
         <queueBufferSize>1000</queueBufferSize>
       </sourceConnectorProperties>
     </properties>
-    <transformer version="3.8.1">
+    <transformer version="3.10.1">
       <elements>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>Create the JSON wrapper</name>
           <sequenceNumber>0</sequenceNumber>
           <enabled>true</enabled>
@@ -39,7 +39,7 @@ var hl7JSON = {
 // Save the wrapper in a channelMap variable for later usage
 channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>MSH (Message Header) Segment</name>
           <sequenceNumber>1</sequenceNumber>
           <enabled>true</enabled>
@@ -162,7 +162,7 @@ if (msh &amp;&amp; Object.keys(msh).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>EVN (Event) Segment</name>
           <sequenceNumber>2</sequenceNumber>
           <enabled>true</enabled>
@@ -242,7 +242,7 @@ if (evn &amp;&amp; Object.keys(evn).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>PID (Patient Identification), PD1 (Patient Demographic), and related NTE (Note) Segments</name>
           <sequenceNumber>3</sequenceNumber>
           <enabled>true</enabled>
@@ -836,7 +836,7 @@ if (pid &amp;&amp; Object.keys(pid).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>NK1 (Next of Kin) Segment</name>
           <sequenceNumber>4</sequenceNumber>
           <enabled>true</enabled>
@@ -1266,7 +1266,7 @@ if (nk1 &amp;&amp; Object.keys(nk1).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>PV1 (Patient Visit) Segment</name>
           <sequenceNumber>5</sequenceNumber>
           <enabled>true</enabled>
@@ -1846,7 +1846,7 @@ if (pv1 &amp;&amp; Object.keys(pv1).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>--PV2 (Additional Patient Visit Info) Segment - REQUIRES PV1 MAPPING STEP ABOVE</name>
           <sequenceNumber>6</sequenceNumber>
           <enabled>true</enabled>
@@ -2128,7 +2128,7 @@ if (pv1 &amp;&amp; Object.keys(pv1).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>DB1 (Disability) Segment</name>
           <sequenceNumber>7</sequenceNumber>
           <enabled>true</enabled>
@@ -2212,7 +2212,7 @@ if (db1 &amp;&amp; Object.keys(db1).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>OBX (Observation), related NTE (Notes) Segments</name>
           <sequenceNumber>8</sequenceNumber>
           <enabled>true</enabled>
@@ -2428,7 +2428,7 @@ if (obx &amp;&amp; Object.keys(obx).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>AL1 (Allergy) Segment</name>
           <sequenceNumber>9</sequenceNumber>
           <enabled>true</enabled>
@@ -2486,7 +2486,7 @@ if (al1 &amp;&amp; Object.keys(al1).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>DG1 (Diagnosis) Segment</name>
           <sequenceNumber>10</sequenceNumber>
           <enabled>true</enabled>
@@ -2672,7 +2672,7 @@ if (dg1 &amp;&amp; Object.keys(dg1).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>DRG (Diagnosis Related Group), PR1 (Procedures), and ROL (Role) Segments</name>
           <sequenceNumber>11</sequenceNumber>
           <enabled>true</enabled>
@@ -3107,7 +3107,7 @@ if (drg &amp;&amp; Object.keys(drg).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>GT1 (Guarantor) Segment</name>
           <sequenceNumber>12</sequenceNumber>
           <enabled>true</enabled>
@@ -3724,7 +3724,7 @@ if (gt1 &amp;&amp; Object.keys(gt1).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>IN1 (Insurance) Segment</name>
           <sequenceNumber>13</sequenceNumber>
           <enabled>true</enabled>
@@ -4343,7 +4343,7 @@ if (in1 &amp;&amp; Object.keys(in1).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>--IN2 (Insurance Additional Info) Segment - REQUIRES IN1 MAPPING STEP ABOVE</name>
           <sequenceNumber>14</sequenceNumber>
           <enabled>true</enabled>
@@ -5131,7 +5131,7 @@ if (in1 &amp;&amp; Object.keys(in1).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>--IN3 (Insurance Additional Info, Certification) Segment - REQUIRES IN1 MAPPING STEP ABOVE</name>
           <sequenceNumber>15</sequenceNumber>
           <enabled>true</enabled>
@@ -5518,7 +5518,7 @@ if (in1 &amp;&amp; Object.keys(in1).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>ACC (Accident) Segment</name>
           <sequenceNumber>16</sequenceNumber>
           <enabled>true</enabled>
@@ -5585,7 +5585,7 @@ if (acc &amp;&amp; Object.keys(acc).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>UB1 (UB82 Data) Segment</name>
           <sequenceNumber>17</sequenceNumber>
           <enabled>true</enabled>
@@ -5742,7 +5742,7 @@ if (ub1 &amp;&amp; Object.keys(ub1).length != 0) {
 	channelMap.put(&quot;hl7JSON&quot;, JSON.stringify(hl7JSON));
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
-        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.1">
+        <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.10.1">
           <name>UB2 (UB92 Data) Segment</name>
           <sequenceNumber>18</sequenceNumber>
           <enabled>true</enabled>
@@ -5936,55 +5936,12 @@ if (ub2 &amp;&amp; Object.keys(ub2).length != 0) {
 }</script>
         </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
       </elements>
-      <inboundTemplate encoding="base64">TVNIfF5+XCZ8U0VOREFQUHxTRU5ERkFDfFJFQ1ZBUFB8UkVDVkZBQ3wyMDA3MDcxOTEzMDgxMS0w
-ODAwfHxBRFReQTAxfDQ2NTE3MXxEfDIuMwpFVk58QTAxfDIwMTAwOTI3MDczNzQ1LTA4MDB8MjAx
-MTEyMTEwOTA1MjMtMDgwMHxVfDI1MTEwMXwyMDExMDMxNDE2MTI0NS0wODAwfEVWRU5URkFDClBJ
-RHwxfHw1MDUyMTkzNV5eXl5NUk58fFpaVEVTVF5CSUxMXkN8QUFURVNUfDE5OTEwMzEwMDgwOTEw
-LTA4MDB8TXxST05BTER8fDY0MCBXIEJBUkZPUkQgQVZFXl5NSUxXQVVLRUVeV0leNTMyMTFeVVNB
-fHwoNDE0KTg4OC01NTg4Xl5eYnp6dGVzdEBnbWFpbC5jb21+Xl5ecm9ubnltY2Rvbm55QHJlYWxz
-aXRlLm5ldHwoNDE0KTQ0NC0zMzMzfEVOR3xNfE1PVHw2NjAwMDc1NzYzfDMzMzc3MjIyMnxZNTUy
-OTU4MzExMDA0Mnx8VXx8Tnx8VVNBfHx8fE4KTksxfDF8WlpURVNUXkRBVUdIVEVSfENIRHw0NDIy
-IFMgTE9PTUlTIEJMVkReMTAzXldFU1QgQUxMSVNeV0leNTMyMTR8KDQxNCkyMjItODg4OHwoNDE0
-KTMzMy01NTU1fE4KTksxfDJ8WlpURVNUXlNQT1VTRXxTUE98OTIwMCBXIFNUQVRFIFNUXjNeTUFE
-SVNPTl5XSV41MzIyNnwoNDE0KTg4Ny02NDUzfCg2MDgpNDU2LTc4OTB8QwpQVjF8MXxJfFhYUE9D
-XjIwNF4xXlhYRkFDXlhYU1RBVFVTXk5VUlNJTkdeWFhCVUlMRElOR3xVfHxYWFBSSU9SfDEyMzQ1
-Nl5EVUNLXkRBRkZZXlBeSlJeRFJeUGguRC58fHxNRUR8WFhURU1QfHx8fEEwfHw3ODIyMDBeUElH
-XlBPUktZfHxFNDAwMzY5Mnx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHwyMDE1MTIyMjEzMjMwNi0w
-ODAwClBWMnxaWlBSSU9SUEVORElOR3x8MjY3MTY4MDAxXkJsb29kIGluIHVyaW5lXlNOT01FRC1D
-VHx8V2FsbGV0LCBrZXlzLCBjZWxsIHBob25lLCBmaXRiaXQufFpaVkFMTE9DfHwyMDE2MDQyMTEx
-MTU0NS0wODAwfDIwMTYwNDIxMTc0NTAwLTA4MDB8fHxUeXBpY2FsIGxhYiBzdHVmZi4gWW91IGtu
-b3csIGxpa2UgYmxvb2QgZHJhd3MuIFRoYXQgc29ydCBvZiB0aGluZy58fDIwMTYwMzIxfE58UHwy
-MDE3MDQyMXxPfE58MXxVfFl8WlpDTElOSUN8fHwyMDE2MDIxMHx8MjAxNDAxMDF8MjAxNTAyMzB8
-fFJFQ1VSfHx8Tnx8Tnx8Q3xNT3xBQ3xEfEF8WXxOCk9CWHwxfENXRXwyNzE2NDkwMDZeU3lzdG9s
-aWMgYmxvb2QgcHJlc3N1cmVeU05PTUVELUNUfHwxMjB8bW1IZ3x8fHx8Rnx8fDIwMTUxMjIyMTMz
-NTAwLTA4MDB8fDUyOTM2ODgxXkRVQ0teREFGRlkKT0JYfDJ8Q1dFfDI3MTY1MDAwNl5EaWFzdG9s
-aWMgYmxvb2QgcHJlc3N1cmVeU05PTUVELUNUfHw4MHxtbUhnfHx8fHxGfHx8MjAxNTEyMjIxMzM1
-MDAtMDgwMHx8NTI5MzY4ODFeRFVDS15EQUZGWQpST0x8MXxBRHxQUHw3ODM5MDJeTU9VU0VeTUlD
-S0VZXk18MjAxNjAyMTYxMTE1MDAtMDgwMHwyMDE2MDIxNjEyNDUwMC0wODAwfDEgaG91ciAzMCBt
-aW51dGVzfFJFQVNPTlMgRk9SIFJPTEV8UFJPVklERVIgVFlQRXwyfDEyMyBGQUtFIFNUXjQ1Nl5N
-QURJU09OXldJXjUzNzAzfCg2MDgpNTU1LTExMTF8WFhQT0NeMjAxXl5YWEZBQ3xIRUFMVEhDQVJF
-IE9SRwpST0x8MnxVTHxPUHw1NjY3ODNeUkFCQklUXkpFU1NJQ0FeS3wyMDExMDcxNzE2MDAwMC0w
-ODAwfDIwMTEwNzE3MTYyMDAwLTA4MDB8MjAgbWludXRlc3xSRUFTT05TIEZPUiBST0xFfFBST1ZJ
-REVSIFRZUEV8T3w4NzYgUEhPTlkgQk9MT0dORSBDVF4xMjM0Xk1BRElTT05eV0leNTM3MTZ8KDYw
-OCk1NTUtNjY2NnxXV1BPQ14zMDNeXldXRkFDfEhFQUxUSENBUkUgT1JHCkRHMXwxfHw1MjcuN15E
-cnkgbW91dGheSUNEIDl8fDIwMTUxMjIyMTcwMDAwLTA4MDB8VwpERzF8Mnx8RTkyNy4xXk92ZXJl
-eGVydGlvbiBmcm9tIHByb2xvbmdlZCBzdGF0aWMgcG9zaXRpb25eSUNEIDl8fDIwMTUxMjIyMTcw
-MDAwLTA4MDB8RgpJTjF8MXw3NDgyOTQ3NXwxOTMwNDczfFdXSU5TVVJBTkNFfDQwMDAgUkVHRU5U
-IFNUXjNeTUFESVNPTl5XSV41MzIxMV5VU0F8V1dDT05UQUNUXkdFUkFMRF5QfCg2MDgpNDQ0LTEy
-MTJ8Rlo0Mjg5NjV8fHxIVUVZLCBERVdFWSBBTkQgTE9VSUUgTEFXIE9GRklDRVN8MjAxMzA2MTQw
-MDAwMDAtMDgwMHwyMDE4MDYxNDAwMDAwMC0wODAwfEFVVEhOVU18fFFRVEVTVF5CSUZGXkx8RlRI
-fDE5NjIwNTIyMjEyMDU1LTA4MDB8NDIxIFMgQlVSUiBPQUsgRFJeXk1BRElTT05eV0leNTM3MTNe
-VVNBfFl8Q098fE58fE58fHx8fHx8fHx8Rlo1OFgyOTNWfDY3ODkzNDUyfHx8fHx8MXxNfDY3MzIg
-TUlORVJBTCBQT0lOVCBSRF5eTUFESVNPTl5XSV41MzcxOV5VU0F8fHxIfHw3MTEzCklOMnwxMTQy
-MDc3ODN8MTIyLTMzLTQ0NTV8fHxQfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHxQcml2YXRlXlBlcmNl
-bnRhZ2VeOTB8fHx8VVNBfEVOR3x8fHxOfE1PVHx8fE18fHxEZWZlbnNlIEF0dG9ybmV5fGxhd3ll
-cnwxfEhETENPTlRBQ1ReSHVleV5EfCg2MDgpNjY2LTY5Njl8fHx8fHx8fCg2MDgpNDQ0LTEyMTJ8
-ZmFtaWx5fHwxMTAwOTM0NTJ8RlRIfCg2MDgpMjIyLTMwMDB8KDYwOCk3NzctMjI0Mwo=</inboundTemplate>
+      <inboundTemplate encoding="base64">TVNIfF5+XCZ8U0VOREFQUHxTRU5ERkFDfFJFQ1ZBUFB8UkVDVkZBQ3wyMDA3MDcxOTEzMDgxMS0wODAwfHxBRFReQTAxfDQ2NTE3MXxEfDIuMwpFVk58QTAxfDIwMTAwOTI3MDczNzQ1LTA4MDB8MjAxMTEyMTEwOTA1MjMtMDgwMHxVfDI1MTEwMXwyMDExMDMxNDE2MTI0NS0wODAwfEVWRU5URkFDClBJRHwxfHw1MDUyMTkzNV5eXl5NUk58fFpaVEVTVF5CSUxMXkN8QUFURVNUfDE5OTEwMzEwMDgwOTEwLTA4MDB8TXxST05BTER8fDY0MCBXIEJBUkZPUkQgQVZFXl5NSUxXQVVLRUVeV0leNTMyMTFeVVNBfHwoNDE0KTg4OC01NTg4Xl5eYnp6dGVzdEBnbWFpbC5jb21+Xl5ecm9ubnltY2Rvbm55QHJlYWxzaXRlLm5ldHwoNDE0KTQ0NC0zMzMzfEVOR3xNfE1PVHw2NjAwMDc1NzYzfDMzMzc3MjIyMnxZNTUyOTU4MzExMDA0Mnx8VXx8Tnx8VVNBfHx8fE4KTksxfDF8WlpURVNUXkRBVUdIVEVSfENIRHw0NDIyIFMgTE9PTUlTIEJMVkReMTAzXldFU1QgQUxMSVNeV0leNTMyMTR8KDQxNCkyMjItODg4OHwoNDE0KTMzMy01NTU1fE4KTksxfDJ8WlpURVNUXlNQT1VTRXxTUE98OTIwMCBXIFNUQVRFIFNUXjNeTUFESVNPTl5XSV41MzIyNnwoNDE0KTg4Ny02NDUzfCg2MDgpNDU2LTc4OTB8QwpQVjF8MXxJfFhYUE9DXjIwNF4xXlhYRkFDXlhYU1RBVFVTXk5VUlNJTkdeWFhCVUlMRElOR3xVfHxYWFBSSU9SfDEyMzQ1Nl5EVUNLXkRBRkZZXlBeSlJeRFJeUGguRC58fHxNRUR8WFhURU1QfHx8fEEwfHw3ODIyMDBeUElHXlBPUktZfHxFNDAwMzY5Mnx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHwyMDE1MTIyMjEzMjMwNi0wODAwClBWMnxaWlBSSU9SUEVORElOR3x8MjY3MTY4MDAxXkJsb29kIGluIHVyaW5lXlNOT01FRC1DVHx8V2FsbGV0LCBrZXlzLCBjZWxsIHBob25lLCBmaXRiaXQufFpaVkFMTE9DfHwyMDE2MDQyMTExMTU0NS0wODAwfDIwMTYwNDIxMTc0NTAwLTA4MDB8fHxUeXBpY2FsIGxhYiBzdHVmZi4gWW91IGtub3csIGxpa2UgYmxvb2QgZHJhd3MuIFRoYXQgc29ydCBvZiB0aGluZy58fDIwMTYwMzIxfE58UHwyMDE3MDQyMXxPfE58MXxVfFl8WlpDTElOSUN8fHwyMDE2MDIxMHx8MjAxNDAxMDF8MjAxNTAyMzB8fFJFQ1VSfHx8Tnx8Tnx8Q3xNT3xBQ3xEfEF8WXxOCk9CWHwxfENXRXwyNzE2NDkwMDZeU3lzdG9saWMgYmxvb2QgcHJlc3N1cmVeU05PTUVELUNUfHwxMjB8bW1IZ3x8fHx8Rnx8fDIwMTUxMjIyMTMzNTAwLTA4MDB8fDUyOTM2ODgxXkRVQ0teREFGRlkKT0JYfDJ8Q1dFfDI3MTY1MDAwNl5EaWFzdG9saWMgYmxvb2QgcHJlc3N1cmVeU05PTUVELUNUfHw4MHxtbUhnfHx8fHxGfHx8MjAxNTEyMjIxMzM1MDAtMDgwMHx8NTI5MzY4ODFeRFVDS15EQUZGWQpST0x8MXxBRHxQUHw3ODM5MDJeTU9VU0VeTUlDS0VZXk18MjAxNjAyMTYxMTE1MDAtMDgwMHwyMDE2MDIxNjEyNDUwMC0wODAwfDEgaG91ciAzMCBtaW51dGVzfFJFQVNPTlMgRk9SIFJPTEV8UFJPVklERVIgVFlQRXwyfDEyMyBGQUtFIFNUXjQ1Nl5NQURJU09OXldJXjUzNzAzfCg2MDgpNTU1LTExMTF8WFhQT0NeMjAxXl5YWEZBQ3xIRUFMVEhDQVJFIE9SRwpST0x8MnxVTHxPUHw1NjY3ODNeUkFCQklUXkpFU1NJQ0FeS3wyMDExMDcxNzE2MDAwMC0wODAwfDIwMTEwNzE3MTYyMDAwLTA4MDB8MjAgbWludXRlc3xSRUFTT05TIEZPUiBST0xFfFBST1ZJREVSIFRZUEV8T3w4NzYgUEhPTlkgQk9MT0dORSBDVF4xMjM0Xk1BRElTT05eV0leNTM3MTZ8KDYwOCk1NTUtNjY2NnxXV1BPQ14zMDNeXldXRkFDfEhFQUxUSENBUkUgT1JHCkRHMXwxfHw1MjcuN15EcnkgbW91dGheSUNEIDl8fDIwMTUxMjIyMTcwMDAwLTA4MDB8VwpERzF8Mnx8RTkyNy4xXk92ZXJleGVydGlvbiBmcm9tIHByb2xvbmdlZCBzdGF0aWMgcG9zaXRpb25eSUNEIDl8fDIwMTUxMjIyMTcwMDAwLTA4MDB8RgpJTjF8MXw3NDgyOTQ3NXwxOTMwNDczfFdXSU5TVVJBTkNFfDQwMDAgUkVHRU5UIFNUXjNeTUFESVNPTl5XSV41MzIxMV5VU0F8V1dDT05UQUNUXkdFUkFMRF5QfCg2MDgpNDQ0LTEyMTJ8Rlo0Mjg5NjV8fHxIVUVZLCBERVdFWSBBTkQgTE9VSUUgTEFXIE9GRklDRVN8MjAxMzA2MTQwMDAwMDAtMDgwMHwyMDE4MDYxNDAwMDAwMC0wODAwfEFVVEhOVU18fFFRVEVTVF5CSUZGXkx8RlRIfDE5NjIwNTIyMjEyMDU1LTA4MDB8NDIxIFMgQlVSUiBPQUsgRFJeXk1BRElTT05eV0leNTM3MTNeVVNBfFl8Q098fE58fE58fHx8fHx8fHx8Rlo1OFgyOTNWfDY3ODkzNDUyfHx8fHx8MXxNfDY3MzIgTUlORVJBTCBQT0lOVCBSRF5eTUFESVNPTl5XSV41MzcxOV5VU0F8fHxIfHw3MTEzCklOMnwxMTQyMDc3ODN8MTIyLTMzLTQ0NTV8fHxQfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHxQcml2YXRlXlBlcmNlbnRhZ2VeOTB8fHx8VVNBfEVOR3x8fHxOfE1PVHx8fE18fHxEZWZlbnNlIEF0dG9ybmV5fGxhd3llcnwxfEhETENPTlRBQ1ReSHVleV5EfCg2MDgpNjY2LTY5Njl8fHx8fHx8fCg2MDgpNDQ0LTEyMTJ8ZmFtaWx5fHwxMTAwOTM0NTJ8RlRIfCg2MDgpMjIyLTMwMDB8KDYwOCk3NzctMjI0Mwo=</inboundTemplate>
       <outboundTemplate encoding="base64"></outboundTemplate>
       <inboundDataType>HL7V2</inboundDataType>
-      <outboundDataType>HL7V2</outboundDataType>
-      <inboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.8.1">
-        <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.8.1">
+      <outboundDataType>JSON</outboundDataType>
+      <inboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.10.1">
+        <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.10.1">
           <handleRepetitions>true</handleRepetitions>
           <handleSubcomponents>true</handleSubcomponents>
           <useStrictParser>false</useStrictParser>
@@ -5993,16 +5950,16 @@ ZmFtaWx5fHwxMTAwOTM0NTJ8RlRIfCg2MDgpMjIyLTMwMDB8KDYwOCk3NzctMjI0Mwo=</inboundTem
           <segmentDelimiter>\r</segmentDelimiter>
           <convertLineBreaks>true</convertLineBreaks>
         </serializationProperties>
-        <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.8.1">
+        <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.10.1">
           <useStrictParser>false</useStrictParser>
           <useStrictValidation>false</useStrictValidation>
           <segmentDelimiter>\r</segmentDelimiter>
         </deserializationProperties>
-        <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.8.1">
+        <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.10.1">
           <splitType>MSH_Segment</splitType>
           <batchScript></batchScript>
         </batchProperties>
-        <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.8.1">
+        <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.10.1">
           <segmentDelimiter>\r</segmentDelimiter>
           <successfulACKCode>AA</successfulACKCode>
           <successfulACKMessage></successfulACKMessage>
@@ -6013,7 +5970,7 @@ ZmFtaWx5fHwxMTAwOTM0NTJ8RlRIfCg2MDgpMjIyLTMwMDB8KDYwOCk3NzctMjI0Mwo=</inboundTem
           <msh15ACKAccept>false</msh15ACKAccept>
           <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
         </responseGenerationProperties>
-        <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.8.1">
+        <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.10.1">
           <successfulACKCode>AA,CA</successfulACKCode>
           <errorACKCode>AE,CE</errorACKCode>
           <rejectedACKCode>AR,CR</rejectedACKCode>
@@ -6022,47 +5979,14 @@ ZmFtaWx5fHwxMTAwOTM0NTJ8RlRIfCg2MDgpMjIyLTMwMDB8KDYwOCk3NzctMjI0Mwo=</inboundTem
           <originalIdMapVariable></originalIdMapVariable>
         </responseValidationProperties>
       </inboundProperties>
-      <outboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.8.1">
-        <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.8.1">
-          <handleRepetitions>true</handleRepetitions>
-          <handleSubcomponents>true</handleSubcomponents>
-          <useStrictParser>false</useStrictParser>
-          <useStrictValidation>false</useStrictValidation>
-          <stripNamespaces>true</stripNamespaces>
-          <segmentDelimiter>\r</segmentDelimiter>
-          <convertLineBreaks>true</convertLineBreaks>
-        </serializationProperties>
-        <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.8.1">
-          <useStrictParser>false</useStrictParser>
-          <useStrictValidation>false</useStrictValidation>
-          <segmentDelimiter>\r</segmentDelimiter>
-        </deserializationProperties>
-        <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.8.1">
-          <splitType>MSH_Segment</splitType>
+      <outboundProperties class="com.mirth.connect.plugins.datatypes.json.JSONDataTypeProperties" version="3.10.1">
+        <batchProperties class="com.mirth.connect.plugins.datatypes.json.JSONBatchProperties" version="3.10.1">
+          <splitType>JavaScript</splitType>
           <batchScript></batchScript>
         </batchProperties>
-        <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.8.1">
-          <segmentDelimiter>\r</segmentDelimiter>
-          <successfulACKCode>AA</successfulACKCode>
-          <successfulACKMessage></successfulACKMessage>
-          <errorACKCode>AE</errorACKCode>
-          <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
-          <rejectedACKCode>AR</rejectedACKCode>
-          <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
-          <msh15ACKAccept>false</msh15ACKAccept>
-          <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
-        </responseGenerationProperties>
-        <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.8.1">
-          <successfulACKCode>AA,CA</successfulACKCode>
-          <errorACKCode>AE,CE</errorACKCode>
-          <rejectedACKCode>AR,CR</rejectedACKCode>
-          <validateMessageControlId>true</validateMessageControlId>
-          <originalMessageControlId>Destination_Encoded</originalMessageControlId>
-          <originalIdMapVariable></originalIdMapVariable>
-        </responseValidationProperties>
       </outboundProperties>
     </transformer>
-    <filter version="3.8.1">
+    <filter version="3.10.1">
       <elements/>
     </filter>
     <transportName>Channel Reader</transportName>
@@ -6071,12 +5995,12 @@ ZmFtaWx5fHwxMTAwOTM0NTJ8RlRIfCg2MDgpMjIyLTMwMDB8KDYwOCk3NzctMjI0Mwo=</inboundTem
     <waitForPrevious>true</waitForPrevious>
   </sourceConnector>
   <destinationConnectors>
-    <connector version="3.8.1">
+    <connector version="3.10.1">
       <metaDataId>1</metaDataId>
-      <name>Internal Test</name>
-      <properties class="com.mirth.connect.connectors.vm.VmDispatcherProperties" version="3.8.1">
+      <name>Transformed to JSON</name>
+      <properties class="com.mirth.connect.connectors.js.JavaScriptDispatcherProperties" version="3.10.1">
         <pluginProperties/>
-        <destinationConnectorProperties version="3.8.1">
+        <destinationConnectorProperties version="3.10.1">
           <queueEnabled>false</queueEnabled>
           <sendFirst>false</sendFirst>
           <retryIntervalMillis>10000</retryIntervalMillis>
@@ -6096,81 +6020,48 @@ ZmFtaWx5fHwxMTAwOTM0NTJ8RlRIfCg2MDgpMjIyLTMwMDB8KDYwOCk3NzctMjI0Mwo=</inboundTem
           <queueBufferSize>1000</queueBufferSize>
           <reattachAttachments>true</reattachAttachments>
         </destinationConnectorProperties>
-        <channelId>none</channelId>
-        <channelTemplate>${hl7JSON}</channelTemplate>
-        <mapVariables/>
+        <script>return $(&apos;hl7JSON&apos;);</script>
       </properties>
-      <transformer version="3.8.1">
+      <transformer version="3.10.1">
         <elements/>
-        <inboundDataType>HL7V2</inboundDataType>
+        <inboundTemplate encoding="base64"></inboundTemplate>
+        <outboundTemplate encoding="base64"></outboundTemplate>
+        <inboundDataType>JSON</inboundDataType>
         <outboundDataType>JSON</outboundDataType>
-        <inboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.8.1">
-          <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.8.1">
-            <handleRepetitions>true</handleRepetitions>
-            <handleSubcomponents>true</handleSubcomponents>
-            <useStrictParser>false</useStrictParser>
-            <useStrictValidation>false</useStrictValidation>
-            <stripNamespaces>true</stripNamespaces>
-            <segmentDelimiter>\r</segmentDelimiter>
-            <convertLineBreaks>true</convertLineBreaks>
-          </serializationProperties>
-          <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.8.1">
-            <useStrictParser>false</useStrictParser>
-            <useStrictValidation>false</useStrictValidation>
-            <segmentDelimiter>\r</segmentDelimiter>
-          </deserializationProperties>
-          <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.8.1">
-            <splitType>MSH_Segment</splitType>
+        <inboundProperties class="com.mirth.connect.plugins.datatypes.json.JSONDataTypeProperties" version="3.10.1">
+          <batchProperties class="com.mirth.connect.plugins.datatypes.json.JSONBatchProperties" version="3.10.1">
+            <splitType>JavaScript</splitType>
             <batchScript></batchScript>
           </batchProperties>
-          <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.8.1">
-            <segmentDelimiter>\r</segmentDelimiter>
-            <successfulACKCode>AA</successfulACKCode>
-            <successfulACKMessage></successfulACKMessage>
-            <errorACKCode>AE</errorACKCode>
-            <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
-            <rejectedACKCode>AR</rejectedACKCode>
-            <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
-            <msh15ACKAccept>false</msh15ACKAccept>
-            <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
-          </responseGenerationProperties>
-          <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.8.1">
-            <successfulACKCode>AA,CA</successfulACKCode>
-            <errorACKCode>AE,CE</errorACKCode>
-            <rejectedACKCode>AR,CR</rejectedACKCode>
-            <validateMessageControlId>true</validateMessageControlId>
-            <originalMessageControlId>Destination_Encoded</originalMessageControlId>
-            <originalIdMapVariable></originalIdMapVariable>
-          </responseValidationProperties>
         </inboundProperties>
-        <outboundProperties class="com.mirth.connect.plugins.datatypes.json.JSONDataTypeProperties" version="3.8.1">
-          <batchProperties class="com.mirth.connect.plugins.datatypes.json.JSONBatchProperties" version="3.8.1">
+        <outboundProperties class="com.mirth.connect.plugins.datatypes.json.JSONDataTypeProperties" version="3.10.1">
+          <batchProperties class="com.mirth.connect.plugins.datatypes.json.JSONBatchProperties" version="3.10.1">
             <splitType>JavaScript</splitType>
             <batchScript></batchScript>
           </batchProperties>
         </outboundProperties>
       </transformer>
-      <responseTransformer version="3.8.1">
+      <responseTransformer version="3.10.1">
         <elements/>
         <inboundDataType>JSON</inboundDataType>
         <outboundDataType>JSON</outboundDataType>
-        <inboundProperties class="com.mirth.connect.plugins.datatypes.json.JSONDataTypeProperties" version="3.8.1">
-          <batchProperties class="com.mirth.connect.plugins.datatypes.json.JSONBatchProperties" version="3.8.1">
+        <inboundProperties class="com.mirth.connect.plugins.datatypes.json.JSONDataTypeProperties" version="3.10.1">
+          <batchProperties class="com.mirth.connect.plugins.datatypes.json.JSONBatchProperties" version="3.10.1">
             <splitType>JavaScript</splitType>
             <batchScript></batchScript>
           </batchProperties>
         </inboundProperties>
-        <outboundProperties class="com.mirth.connect.plugins.datatypes.json.JSONDataTypeProperties" version="3.8.1">
-          <batchProperties class="com.mirth.connect.plugins.datatypes.json.JSONBatchProperties" version="3.8.1">
+        <outboundProperties class="com.mirth.connect.plugins.datatypes.json.JSONDataTypeProperties" version="3.10.1">
+          <batchProperties class="com.mirth.connect.plugins.datatypes.json.JSONBatchProperties" version="3.10.1">
             <splitType>JavaScript</splitType>
             <batchScript></batchScript>
           </batchProperties>
         </outboundProperties>
       </responseTransformer>
-      <filter version="3.8.1">
+      <filter version="3.10.1">
         <elements/>
       </filter>
-      <transportName>Channel Writer</transportName>
+      <transportName>JavaScript Writer</transportName>
       <mode>DESTINATION</mode>
       <enabled>true</enabled>
       <waitForPrevious>true</waitForPrevious>
@@ -6187,7 +6078,7 @@ return;</deployScript>
   <undeployScript>// This script executes once when the channel is undeployed
 // You only have access to the globalMap and globalChannelMap here to persist data
 return;</undeployScript>
-  <properties version="3.8.1">
+  <properties version="3.10.1">
     <clearGlobalChannelMap>true</clearGlobalChannelMap>
     <messageStorageMode>DEVELOPMENT</messageStorageMode>
     <encryptData>false</encryptData>
@@ -6195,7 +6086,7 @@ return;</undeployScript>
     <removeOnlyFilteredOnCompletion>false</removeOnlyFilteredOnCompletion>
     <removeAttachmentsOnCompletion>false</removeAttachmentsOnCompletion>
     <initialState>STARTED</initialState>
-    <storeAttachments>false</storeAttachments>
+    <storeAttachments>true</storeAttachments>
     <metaDataColumns>
       <metaDataColumn>
         <name>SOURCE</name>
@@ -6208,7 +6099,7 @@ return;</undeployScript>
         <mappingName>mirth_type</mappingName>
       </metaDataColumn>
     </metaDataColumns>
-    <attachmentProperties version="3.8.1">
+    <attachmentProperties version="3.10.1">
       <type>None</type>
       <properties/>
     </attachmentProperties>
@@ -6223,21 +6114,21 @@ return;</undeployScript>
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1596290472934</time>
-        <timezone>America/New_York</timezone>
+        <time>1615459616780</time>
+        <timezone>Europe/Helsinki</timezone>
       </lastModified>
       <pruningSettings>
         <archiveEnabled>true</archiveEnabled>
       </pruningSettings>
     </metadata>
     <codeTemplateLibraries>
-      <codeTemplateLibrary version="3.8.1">
+      <codeTemplateLibrary version="3.10.1">
         <id>10e63131-3e24-4419-a268-ed823aba5790</id>
         <name>Datica Mirth OCI Code Template Library</name>
-        <revision>29</revision>
+        <revision>4</revision>
         <lastModified>
-          <time>1585663992236</time>
-          <timezone>America/New_York</timezone>
+          <time>1615459829739</time>
+          <timezone>Etc/UTC</timezone>
         </lastModified>
         <description>This library contains code templates used by the Datica Mirth OCI channels</description>
         <includeNewChannels>true</includeNewChannels>
@@ -6341,6 +6232,7 @@ return;</undeployScript>
           <string>30573bec-3215-4dc8-becb-091ab5485be0</string>
           <string>46214349-f697-4c7b-8d26-44fd409efc53</string>
           <string>f6b6cbe4-cdca-42f0-ac74-dfa7e49a27c6</string>
+          <string>9204d74f-b760-45b0-8df1-98bddf98129f</string>
           <string>abf6afe4-de93-44e8-b59c-1c967d045b38</string>
           <string>9966294e-7c31-4f52-9d2f-2fd705e583a9</string>
           <string>f1246189-09ae-4ecb-b73e-35d9d4a21876</string>
@@ -6368,6 +6260,7 @@ return;</undeployScript>
           <string>782cfee5-4ca6-49c3-ae7f-dd76a5e4df48</string>
           <string>d0b3a0e3-01ff-4ce5-a4a7-748c7413e51f</string>
           <string>20b589b6-4167-4f8d-b8ab-242f62a28452</string>
+          <string>b107e363-3b43-4f5d-bba4-16b76069948d</string>
           <string>993fe87c-697f-4259-b59f-ebd7e3913ac8</string>
           <string>640344b6-2d0e-4858-bd43-ef58d9329f75</string>
           <string>93aa0bb7-a3e4-488d-98ec-d14ba49d1c9c</string>
@@ -6417,21 +6310,21 @@ return;</undeployScript>
           <string>ce9ebf65-8647-46bb-83aa-f1acb687c877</string>
         </disabledChannelIds>
         <codeTemplates>
-          <codeTemplate version="3.8.1">
+          <codeTemplate version="3.10.1">
             <id>b9651842-7ccb-4761-aedf-a9a1461dd5f7</id>
             <name>Convert HL7 Date Format to ISO</name>
-            <revision>2</revision>
+            <revision>1</revision>
             <lastModified>
-              <time>1508796641140</time>
-              <timezone>America/New_York</timezone>
+              <time>1615282400896</time>
+              <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
                 <contextType>DESTINATION_DISPATCHER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
-                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -6493,21 +6386,21 @@ function toISODate( hl7DateString, timezone ) {
 }</code>
             </properties>
           </codeTemplate>
-          <codeTemplate version="3.8.1">
+          <codeTemplate version="3.10.1">
             <id>95e528b7-1e7f-490e-86da-7c14b23ee4f3</id>
             <name>Convert ISO Date Format to HL7</name>
-            <revision>2</revision>
+            <revision>1</revision>
             <lastModified>
-              <time>1508796641299</time>
-              <timezone>America/New_York</timezone>
+              <time>1615282401021</time>
+              <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
                 <contextType>DESTINATION_DISPATCHER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
-                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -6578,21 +6471,21 @@ function toHL7Date( isoDateString, timezone )
 }</code>
             </properties>
           </codeTemplate>
-          <codeTemplate version="3.8.1">
+          <codeTemplate version="3.10.1">
             <id>4cb42e06-7c9a-4fd2-bcb5-b9f4053a9c19</id>
             <name>Get Segments After a Particular Segment</name>
             <revision>1</revision>
             <lastModified>
-              <time>1508796287930</time>
-              <timezone>America/New_York</timezone>
+              <time>1615282400767</time>
+              <timezone>Etc/UTC</timezone>
             </lastModified>
             <contextSet>
               <delegate>
                 <contextType>DESTINATION_DISPATCHER</contextType>
-                <contextType>SOURCE_RECEIVER</contextType>
-                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
                 <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
                 <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
               </delegate>
             </contextSet>
             <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -6672,5 +6565,6 @@ function getSegmentsAfter(root, startSeg, segName, consecutiveInd, stopSegNames)
         </codeTemplates>
       </codeTemplateLibrary>
     </codeTemplateLibraries>
+    <channelTags/>
   </exportData>
 </channel>
